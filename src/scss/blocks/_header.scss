@@ -6,6 +6,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 15px;
 	}
 	&__second-row {
 		display: flex;
@@ -13,15 +14,17 @@
 		align-items: center;
 	}
 }
-.nav-header {
+.header__nav-header {
 	display: flex;
-
-	& li {
-		list-style-type: none;
-		font-weight: 600;
-		font-size: 24px;
-		padding-right: 22px;
-		color: #fff;
+}
+.header__link {
+	list-style-type: none;
+	font-weight: 600;
+	font-size: 24px;
+	padding-right: 22px;
+	color: #fff;
+	&:last-child {
+		padding-right: 0;
 	}
 }
 .header__container {
@@ -40,12 +43,13 @@
 .social-icons-container {
 	display: flex;
 	gap: 13px;
+	min-width: 145px;
 }
 .svg-icons--whatsaap-icon-dims {
 	width: 48px;
 	height: 48px;
 }
-// 1170
+
 .svg-icons--telegram-icon-dims {
 	width: 48px;
 	height: 48px;
@@ -58,22 +62,26 @@
 	width: 30px;
 	height: 30px;
 }
-.phone-container{
+.phone-container {
+	min-width: 253px;
 	display: flex;
 	gap: 12px;
 	align-items: center;
-	& span{
-		color: #fff;
-		font-size: 16px;
-		font-weight: 600;
-	}
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+
 }
-.numbers-container{
+
+
+.callback-btn {
 	display: flex;
-	flex-direction: column;
-	& span{
-		color: #fff;
-		font-size: 16px;
-		font-weight: 600;
-	}
+	background-color: #ffcc33;
+	border-radius: 10px;
+}
+.callback-btn__text {
+	color: var(--color-main);
+	padding: 12px;
+	font-size: 16px;
+	font-weight: 600;
 }

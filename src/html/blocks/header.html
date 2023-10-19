@@ -1,11 +1,19 @@
 <header class="header">
-    <div class="container">
-        <div class="header__row">
-            <div class="logo">Logo</div>
-            <button class="mobile-nav-btn">
-                <div class="nav-icon"></div>
-            </button>
-        </div>
-    </div>
+	<div class="container">
+		<div class="header__container">
+			<div class="header__first-row">
+
+				@@include('nav.html')
+				@@include('social.html')
+				<button class="mobile-nav-btn">
+					<div class="nav-icon"></div>
+				</button>
+			</div>
+			<div class="header__second-row">
+				<div class="logo">Logo</div>
+				<h1 class="banner">Идеальные аппартаменты</h1>
+			</div>
+		</div>
+	</div>
 </header>
 @@include('mobile-nav.html')

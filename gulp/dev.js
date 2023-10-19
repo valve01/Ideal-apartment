@@ -52,7 +52,7 @@ function cleanDev(done) {
 // ============================================================= HTML ================================================================
 
 function htmlIncludeDev() {
-	return src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+	return src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
 		.pipe(changed('./build/', { hasChanged: changed.compareContents })) // Настройка нужна, чтобы при изменении файлов, подключенных к index.html сам index.html также пересобирался
 		.pipe(plumber(plumberConfig('Html')))
 		.pipe(fileInclude(fileIncludeSettings))

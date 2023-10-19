@@ -61,7 +61,7 @@ function cleanDocs() {
 // ============================================================= HTML ================================================================
 
 function htmlIncludeDocs() {
-	return src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+	return src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
 		.pipe(changed('./docs/'))
 		.pipe(plumber(plumberConfig('Html')))
 		.pipe(fileInclude(fileIncludeSettings))

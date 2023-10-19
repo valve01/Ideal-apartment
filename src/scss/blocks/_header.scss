@@ -26,6 +26,7 @@
 }
 .header__container {
 	height: 230px;
+	max-width: var(--container-width);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -36,7 +37,7 @@
 	font-weight: 600;
 	text-transform: uppercase;
 }
-.social-icons-container{
+.social-icons-container {
 	display: flex;
 	gap: 13px;
 }
@@ -52,4 +53,27 @@
 .svg-icons--avito-icon-dims {
 	width: 48px;
 	height: 48px;
+}
+.svg-icons--phone-icon-dims {
+	width: 30px;
+	height: 30px;
+}
+.phone-container{
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	& span{
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+	}
+}
+.numbers-container{
+	display: flex;
+	flex-direction: column;
+	& span{
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+	}
 }

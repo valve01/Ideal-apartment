@@ -10,8 +10,9 @@
 	}
 	&__second-row {
 		display: flex;
-		justify-content: center;
+		justify-content:center;
 		align-items: center;
+		gap: 50px;
 	}
 }
 .header__nav-header {
@@ -28,7 +29,7 @@
 	}
 }
 .header__container {
-	height: 230px;
+	height: 200px;
 	max-width: var(--container-width);
 	display: flex;
 	flex-direction: column;
@@ -70,9 +71,7 @@
 	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
-
 }
-
 
 .callback-btn {
 	display: flex;
@@ -84,4 +83,8 @@
 	padding: 12px;
 	font-size: 16px;
 	font-weight: 600;
+}
+.svg-icons--logo-dims {
+	width: 170px;
+	height: auto;
 }

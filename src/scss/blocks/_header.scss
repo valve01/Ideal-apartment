@@ -25,20 +25,24 @@
 	}
 	&__menu-link {
 		color: #fff;
-		font-weight: 600;
-		font-size: 24px;
+		font: {
+			weight: 600;
+			size: 24px;
+		}
 	}
 	&__container {
 		height: 200px;
-		max-width: var(--container-width);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
 	&__banner {
 		color: #fff;
-		font-size: 40px;
-		font-weight: 600;
+		font: {
+			size: 40px;
+			weight: 600;
+		}
+
 		text-transform: uppercase;
 	}
 	&__phone-container {
@@ -47,8 +51,10 @@
 		gap: 12px;
 		align-items: center;
 		color: #fff;
-		font-size: 16px;
-		font-weight: 600;
+		font: {
+			size: 16px;
+			weight: 600;
+		}
 	}
 }
 .social-icons-container {
@@ -86,7 +92,8 @@
 .callback-btn__text {
 	color: var(--color-main);
 	padding: 12px;
-	font-size: 16px;
-	font-weight: 600;
+	font: {
+		size: 16px;
+		weight: 600;
+	}
 }
-

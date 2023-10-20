@@ -15,18 +15,19 @@
 		gap: 50px;
 	}
 }
-.header__nav-header {
+.menu__list {
 	display: flex;
 }
-.header__link {
-	list-style-type: none;
-	font-weight: 600;
-	font-size: 24px;
+.menu__list-item {
 	padding-right: 22px;
-	color: #fff;
 	&:last-child {
 		padding-right: 0;
 	}
+}
+.menu__link {
+	color: #fff;
+	font-weight: 600;
+	font-size: 24px;
 }
 .header__container {
 	height: 200px;
@@ -35,7 +36,7 @@
 	flex-direction: column;
 	justify-content: center;
 }
-.header__second-row .banner {
+.header__banner {
 	color: #fff;
 	font-size: 40px;
 	font-weight: 600;

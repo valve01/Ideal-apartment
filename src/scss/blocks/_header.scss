@@ -14,66 +14,70 @@
 		align-items: center;
 		gap: 50px;
 	}
-}
-.menu__list {
-	display: flex;
-}
-.menu__list-item {
-	padding-right: 22px;
-	&:last-child {
-		padding-right: 0;
+	&__menu-list {
+		display: flex;
 	}
-}
-.menu__link {
-	color: #fff;
-	font-weight: 600;
-	font-size: 24px;
-}
-.header__container {
-	height: 200px;
-	max-width: var(--container-width);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-.header__banner {
-	color: #fff;
-	font-size: 40px;
-	font-weight: 600;
-	text-transform: uppercase;
+	&__menu-list-item {
+		padding-right: 22px;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+	&__menu-link {
+		color: #fff;
+		font-weight: 600;
+		font-size: 24px;
+	}
+	&__container {
+		height: 200px;
+		max-width: var(--container-width);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__banner {
+		color: #fff;
+		font-size: 40px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	&__phone-container {
+		min-width: 253px;
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+	}
 }
 .social-icons-container {
 	display: flex;
 	gap: 13px;
 	min-width: 145px;
 }
-.svg-icons--whatsaap-icon-dims {
-	width: 48px;
-	height: 48px;
+.svg-icons {
+	&--whatsaap-icon-dims {
+		width: 48px;
+		height: 48px;
+	}
+	&--telegram-icon-dims {
+		width: 48px;
+		height: 48px;
+	}
+	&--avito-icon-dims {
+		width: 48px;
+		height: 48px;
+	}
+	&--phone-icon-dims {
+		width: 30px;
+		height: 30px;
+	}
 }
-
-.svg-icons--telegram-icon-dims {
-	width: 48px;
-	height: 48px;
+.svg-logo-dims {
+	width: 170px;
+	height: auto;
 }
-.svg-icons--avito-icon-dims {
-	width: 48px;
-	height: 48px;
-}
-.svg-icons--phone-icon-dims {
-	width: 30px;
-	height: 30px;
-}
-.phone-container {
-	min-width: 253px;
-	display: flex;
-	gap: 12px;
-	align-items: center;
-	color: #fff;
-	font-size: 16px;
-	font-weight: 600;
-}
-
 .callback-btn {
 	display: flex;
 	background-color: #ffcc33;
@@ -85,7 +89,4 @@
 	font-size: 16px;
 	font-weight: 600;
 }
-.svg-logo-dims {
-	width: 170px;
-	height: auto;
-}
+

@@ -1,0 +1,42 @@
+.card {
+		&__container {
+			display: flex;
+			max-width: 865px;
+
+		}
+		&__photo-container {
+			max-width: 472px;
+		}
+		&__price {
+		}
+		&__rooms {
+		}
+		&__photo {
+		}
+		&__description {
+		}
+		&__title {
+		}
+		&__adress {
+		}
+		&__bed-place-container {
+		}
+		&__bed-place-title {
+		}
+		&__bed-place {
+			display: flex;
+			align-items: center;
+		}
+		&__bed-place-number {
+		}
+		&__bed-place-icon {
+		}
+		&__facilities {
+		}
+		&__facilities-icon {
+		}
+}
+.svg-icons--bed-place-icon-dims{
+	width: 40px;
+	height: 50px;
+}

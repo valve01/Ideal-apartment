@@ -1,42 +1,72 @@
 .card {
-		&__container {
-			display: flex;
-			max-width: 865px;
-
+	&__container {
+		display: flex;
+		max-width: 865px;
+	}
+	&__photo-container {
+		max-width: 472px;
+	}
+	&__price {
+	}
+	&__rooms {
+	}
+	&__photo {
+	}
+	&__description {
+		padding-top: 27px;
+		padding-left: 40px;
+	}
+	&__title {
+		font: {
+			size: 22px;
+			weight: 400;
 		}
-		&__photo-container {
-			max-width: 472px;
+	}
+	&__adress {
+		margin-top: 5px;
+		font: {
+			size: 16px;
+			weight: 400;
 		}
-		&__price {
+	}
+	&__bed-place-container {
+	}
+	&__bed-place-title {
+		margin-top: 32px;
+		font: {
+			size: 16px;
+			weight: 400;
 		}
-		&__rooms {
-		}
-		&__photo {
-		}
-		&__description {
-		}
-		&__title {
-		}
-		&__adress {
-		}
-		&__bed-place-container {
-		}
-		&__bed-place-title {
-		}
-		&__bed-place {
-			display: flex;
-			align-items: center;
-		}
-		&__bed-place-number {
-		}
-		&__bed-place-icon {
-		}
-		&__facilities {
-		}
-		&__facilities-icon {
-		}
+	}
+	&__bed-place {
+		display: flex;
+		align-items: center;
+	}
+	&__bed-place-number {
+	}
+	&__bed-place-icon {
+	}
+	&__facilities {
+		display: flex;
+	}
+	&__facilities-icon {
+		display: flex;
+		align-items: center;
+	}
 }
-.svg-icons--bed-place-icon-dims{
+.svg-icons--bed-place-icon-dims {
 	width: 40px;
 	height: 50px;
+}
+.svg-icons--WiFi-icon-dims {
+	width: 40px;
+	height: 40px;
+}
+.svg-icons--conditioner-icon-dims {
+	width: 50px;
+	height: 50px;
+}
+.svg-icons--washer-icon-dims {
+	width: 40px;
+	height: 40px;
 }

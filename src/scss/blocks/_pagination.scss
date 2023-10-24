@@ -7,9 +7,22 @@
 	padding: 0px 11px;
 	background: white;
 	border-radius: 4px;
+	&:hover {
+		@extend %active-page;
+	}
+	&:active {
+		transform: translate(3px, 3px);
+		box-shadow: none;
+
+	}
 
 	@extend %--shadow-main;
 	border: 1px #d8d8d8 solid;
+}
+%active-page {
+	background-color: #3399cc;
+	color: #fff;
+	border: #3399cc 1px solid;
 }
 .pagination {
 	display: flex;
@@ -40,7 +53,5 @@
 	}
 }
 .--active-page {
-	background-color: #3399cc;
-	color: #fff;
-	border: none;
+	@extend %active-page;
 }

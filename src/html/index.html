@@ -14,13 +14,19 @@
 	<aside>
 
 	</aside>
-<main class="container">
-	<div class="spacing"></div>
-	@@include('blocks/card/card.html')
-	@@include('blocks/card/card.html')
-	@@include('blocks/card/card.html')
-</main>
-@@include('blocks/pagination/pagination.html')
+	<main class="container">
+		<div class="spacing"></div>
+		@@include('blocks/card/card.html')
+		@@include('blocks/card/card.html')
+		@@include('blocks/card/card.html')
+	</main>
+	@@include('blocks/pagination/pagination.html')
+	<section class="info">Здесь может быть размещена дополнительная информация о чем угодно. Например акции или условия
+		заселения, информация о городе или достопримечательностях. Либо можно совсем убать этот блок.</section>
+	<button class="up-btn">
+		<img src="../img/sprite.svg#icons--up-btn-icon" class="svg-icons--up-btn-icon-dims" alt="icons--up-btn-icon">
+
+	</button>
 	@@include('blocks/footer/footer.html')
 	<script src="./js/index.bundle.js"></script>
 </body>

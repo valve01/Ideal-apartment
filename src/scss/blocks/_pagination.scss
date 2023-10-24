@@ -8,18 +8,16 @@
 	background: white;
 	border-radius: 4px;
 	&:hover {
-		@extend %active-page;
+		@extend %active-page-style;
 	}
 	&:active {
 		transform: translate(3px, 3px);
 		box-shadow: none;
-
 	}
-
 	@extend %--shadow-main;
 	border: 1px #d8d8d8 solid;
 }
-%active-page {
+%active-page-style {
 	background-color: #3399cc;
 	color: #fff;
 	border: #3399cc 1px solid;
@@ -53,5 +51,5 @@
 	}
 }
 .--active-page {
-	@extend %active-page;
+	@extend %active-page-style;
 }

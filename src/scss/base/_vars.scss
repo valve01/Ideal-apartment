@@ -10,7 +10,9 @@
 	--accent: #ac182c;
 
 	--color-main: #006699;
-
+	%--shadow-main {
+		box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+	}
 	--laptop-size: 1199px;
 	--tablet-size: 959px;
 	--mobile-size: 599px;
@@ -20,3 +22,4 @@
 	--page-bg: #252526;
 	--text-color: #fff;
 }
+

@@ -83,18 +83,19 @@ function copyImagesDev() {
 			.pipe(changed('./build/img/'))
 			// .pipe(imagemin({ verbose: true })) // настройка включает отображение в консоли какие файлы были оптимизированы и сколько места сэкономлено
 			.pipe(dest('./build/img/'))
-
-			.pipe(src('./src/img/icons/up-btn-icon.svg'))
-			.pipe(changed('./build/img'))
-			.pipe(dest('./build/img/icons'))
 	);
 }
 
 function spriteDev() {
-	return src(['./src/img/**/*.svg', '!./src/img/icons/up-btn-icon.svg'])
+	return src(['./src/img/**/*.svg'])
 		.pipe(changed('./build/img/'))
 		.pipe(
 			svgSprite({
+				shape: {
+					spacing: {
+						box: 'icon',
+					},
+				},
 				mode: {
 					stack: {
 						sprite: '../sprite.svg',

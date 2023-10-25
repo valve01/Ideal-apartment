@@ -112,14 +112,19 @@ function imagesDocs() {
 }
 
 function spriteDocs() {
-	return src('./src/img/**/*.svg')
+	return src(['./src/img/**/*.svg'])
 		.pipe(changed('./docs/img/'))
 		.pipe(
 			svgSprite({
+				shape: {
+					spacing: {
+						box: 'icon',
+					},
+				},
 				mode: {
 					stack: {
 						sprite: '../sprite.svg',
-						example: false, //отвечает за создания папки stack с вложенным в нее файлом sprite.stack.html , где есть примеры применения конкрентного файла из спрайта
+						example: true, //отвечает за создания папки stack с вложенным в нее файлом sprite.stack.html , где есть примеры применения конкрентного файла из спрайта
 					},
 				},
 			}),

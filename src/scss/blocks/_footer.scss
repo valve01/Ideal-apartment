@@ -48,24 +48,36 @@
 	}
 	&__social-icons-container {
 		display: flex;
+		gap: 15px;
 	}
 }
 .up-btn {
-	// width:100px;
-	// height: 150px;
-	// display: flex;
-	// position: relative;
+	position: relative;
+	display: flex;
+	flex-direction: row-reverse;
 }
 .svg-icons--up-btn-icon-dims {
-	// position: absolute;
-	// display: flex;
-	width:70px;
-	height:70px;
-
-	// padding: -10px;
-	// border-radius: 50%;
-	// @extend %--shadow-main;
-	// box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2); ;
-	// border: gray;
-	// border: 1px dotted crimson;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	right: 150px;
+	bottom: 100px;
+	z-index: 999;
+	display: none;
+	&:active {
+		transform: translate(3px, 3px);
+	}
+}
+@keyframes btn-icon-uppear {
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+.btn-icon-uppear {
+	display: block;
+	animation: btn-icon-uppear 1s 1;
 }

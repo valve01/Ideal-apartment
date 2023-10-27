@@ -1,4 +1,17 @@
-<header class="header">
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Идеальные аппартаменты</title>
+	<link rel="stylesheet" href="../../../css/main.css" />
+</head>
+
+<body>
+
+	<header class="header">
 		<div class="container header__container">
 			<div class="header__first-row">
 				@@include('__menu.html')
@@ -10,10 +23,13 @@
 				</button>
 			</div>
 			<div class="header__second-row">
-				<img src="../img/sprite.svg#logo" class="svg-logo-dims" alt="logo">
+				<a href="/" class="logo-link">
+					<img src="../img/sprite.svg#logo" class="svg-logo-dims" alt="logo">
+				</a>
 				<h1 class="header__banner">Идеальные аппартаменты</h1>
 			</div>
 
-	</div>
-</header>
-@@include('../mobile-nav.html')
+		</div>
+	</header>
+	@@include('../mobile-nav.html')
+	<main class="container">

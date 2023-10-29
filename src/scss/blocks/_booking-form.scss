@@ -7,6 +7,7 @@
 		flex-direction: column;
 		position: relative;
 		padding-top: 30px;
+		align-items: center;
 	}
 	&__price-block-wrapper {
 		align-self: center;
@@ -50,11 +51,11 @@
 	&__input {
 		height: 10px;
 		background-color: #fff;
+		width: 90%;
+		align-self: center;
 	}
 	&__input-hide {
 	}
 	&__submit-btn {
 	}
-}
-.booking-form-container {
 }

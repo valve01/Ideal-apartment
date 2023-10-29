@@ -49,10 +49,11 @@
 		display: flex;
 		padding: 10px;
 		justify-self: center;
+		font-weight: 600;
+		color: #00000088;
+
 	}
-	&__necessarily-star {
-		color: red;
-	}
+
 	&__input-container {
 		border: 2px solid #9fcfe7;
 		padding: 0 5px 0 5px;
@@ -60,16 +61,18 @@
 		height: 40px;
 		background-color: #fff;
 		width: 94%;
-		align-self: center;
+		justify-content: center;
+		align-items: center;
 	}
 	&__input {
 		display: none;
 	}
-	&__input-hide {
-		width: 100%;
-		&::placeholder {
-			text-align: center;
-		}
+	&__input-fake {
+		opacity: 0.5;
+		font-weight: 400;
+	}
+	&__necessarily-star {
+		color: red;
 	}
 	&__empty-space {
 		height: 20px;

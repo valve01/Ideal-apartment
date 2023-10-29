@@ -1,11 +1,45 @@
 .booking-form {
+	&__booking-form-container {
+		border-radius: 0px 0px 20px 20px;
+		background-color: #9fcfe7;
+		max-width: 270px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-top: 30px;
+	}
+	&__price-block-wrapper {
+		align-self: center;
+		width: 86%;
+		position: absolute;
+		top: -12%;
+	}
 	&__price-block {
+		display: flex;
+		background-color: var(--accent);
+		border-radius: 8px;
+		border: 2px solid #fff;
+		padding: 10px 20px;
+		justify-content: center;
+		align-items: center;
+	}
+	&__price-block-text {
+		display: flex;
+		align-items: center;
+		font-style: normal;
+		font-weight: 400;
+		font-family: Montserrat;
+		line-height: normal;
+		color: var(--color-main);
 	}
 	&__price {
+		font-size: 24px;
 	}
 	&__price-span {
+		font-size: 16px;
 	}
 	&__block {
+		align-content: center;
 	}
 	&__block-title {
 	}
@@ -14,6 +48,8 @@
 	&__input-container {
 	}
 	&__input {
+		height: 10px;
+		background-color: #fff;
 	}
 	&__input-hide {
 	}

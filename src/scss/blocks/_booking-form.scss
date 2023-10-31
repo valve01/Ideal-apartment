@@ -1,4 +1,6 @@
 .booking-form {
+	top: 50px;
+	position: sticky;
 	&__booking-form-container {
 		border-radius: 0px 0px 20px 20px;
 		background-color: #9fcfe7;
@@ -51,7 +53,6 @@
 		justify-self: center;
 		font-weight: 600;
 		color: var(--text-color);
-
 	}
 
 	&__input-container {

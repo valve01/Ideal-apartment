@@ -5,11 +5,10 @@
 		display: grid;
 		grid-template-columns: 9fr 3fr;
 		gap: 30px;
+		margin-bottom: 20px;
 	}
 	&__adress {
-		// height: 100px;		color: --text-color;
 		font-size: 40px;
-
 		padding: 30px 0 30px 0;
 	}
 	&__slider {
@@ -24,12 +23,14 @@
 		justify-content: center;
 		height: 100%;
 		position: absolute;
-
+		cursor: pointer;
+		&:hover {
+			transition: 0.5s;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 	}
 	.svg-icons--slider-prev-btn-icon-dims {
 		height: 50px;
-		cursor: pointer;
-
 	}
 	&__slider-next-btn {
 		right: 0%;
@@ -38,16 +39,20 @@
 		justify-content: center;
 		height: 100%;
 		position: absolute;
+		cursor: pointer;
+		&:hover {
+			transition: 0.5s;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 	}
 	.svg-icons--slider-next-btn-icon-dims {
 		height: 50px;
-		cursor: pointer;
 	}
 	&__slider-main-img {
 	}
 	&__slider-full-screen-btn {
-		right: 10px;
-		bottom: 10px;
+		right: 5px;
+		bottom: 5px;
 		position: absolute;
 		width: 40px;
 		height: 40px;
@@ -61,14 +66,26 @@
 		grid-template-rows: repeat(2, 1fr);
 	}
 	&__label-row-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 	&__rooms-quantity {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	&__rooms-number {
+
 	}
 	&__rooms-span {
+
 	}
 	&__bed-places-quantity {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	&__bed-places-number {
 	}

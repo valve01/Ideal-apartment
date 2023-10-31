@@ -66,6 +66,8 @@
 		grid-template-rows: repeat(2, 1fr);
 	}
 	&__label-row-container {
+		margin-top: 34px;
+		font-weight: 500;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
@@ -76,10 +78,9 @@
 		justify-content: center;
 	}
 	&__rooms-number {
-
 	}
 	&__rooms-span {
-
+		font-size: 14px;
 	}
 	&__bed-places-quantity {
 		display: flex;
@@ -90,6 +91,7 @@
 	&__bed-places-number {
 	}
 	&__bed-places-span {
+		font-size: 14px;
 	}
 }
 .slider-main-img {
@@ -157,6 +159,10 @@
 .slider-mini-img {
 }
 .section {
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
 	&__table-container {
 	}
 	&__table-row {
@@ -165,24 +171,26 @@
 	}
 	&__table-value {
 	}
-	&__left-container {
-	}
+
 	&__checked-condition {
-	}
-	&__rigth-container {
+		display: flex;
+		align-items: center;
 	}
 }
 .price-section {
 }
 .section-title {
+	font-size: 33px;
+	color: var(--text-color);
+	margin-top: 35px;
 }
-.container-left {
-}
-.checked-condition {
-}
+
+
 .marked-checkbox-img-container {
 }
 .svg-icons--marked-checkbox-icon-dims {
+	width: 40px;
+	height: 40px;
 }
 .checked-condition-span {
 }

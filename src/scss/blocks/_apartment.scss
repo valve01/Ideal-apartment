@@ -66,6 +66,7 @@
 		grid-template-rows: repeat(2, 1fr);
 	}
 	&__label-row-container {
+		font-size: 20px;
 		margin-top: 34px;
 		font-weight: 500;
 		display: grid;
@@ -92,6 +93,12 @@
 	}
 	&__bed-places-span {
 		font-size: 14px;
+	}
+	&__detailed-description {
+		max-width: 770px;
+	}
+	&__detailed-description-container {
+		display: flex;
 	}
 }
 .slider-main-img {
@@ -160,12 +167,27 @@
 }
 .section {
 	&__container {
+		font-weight: 500;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
 	&__table-container {
+		margin-top: 15px;
+		font-weight: 500;
 	}
-	&__table-row {
+	&__table-row-1 {
+		padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+		display: flex;
+		justify-content: space-between;
+		background-color: #F7F7F7;
+		min-height: 2rem;
+	}
+	&__table-row-2 {
+		padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+		display: flex;
+		justify-content: space-between;
+		background-color: #FCFCFC;
+		min-height: 2rem;
 	}
 	&__table-property {
 	}
@@ -184,8 +206,8 @@
 	font-size: 33px;
 	color: var(--text-color);
 	margin-top: 35px;
+	font-weight: 500;
 }
-
 
 .marked-checkbox-img-container {
 }
@@ -198,6 +220,10 @@
 .container-rigth {
 }
 .separator {
+}
+.separator-vert {
+	margin: 63px 35px 0 63px;
+	border: 1px solid #d8d8d8;
 }
 .map {
 	&__container {

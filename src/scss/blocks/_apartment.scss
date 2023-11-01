@@ -168,8 +168,8 @@
 .section {
 	&__container {
 		font-weight: 500;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		flex-wrap: wrap;
 	}
 	&__table-container {
 		margin-top: 15px;
@@ -179,14 +179,14 @@
 		padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 		display: flex;
 		justify-content: space-between;
-		background-color: #F7F7F7;
+		background-color: #f7f7f7;
 		min-height: 2rem;
 	}
 	&__table-row-2 {
 		padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 		display: flex;
 		justify-content: space-between;
-		background-color: #FCFCFC;
+		background-color: #fcfcfc;
 		min-height: 2rem;
 	}
 	&__table-property {
@@ -195,6 +195,7 @@
 	}
 
 	&__checked-condition {
+		width: 50%;
 		display: flex;
 		align-items: center;
 		margin-top: 15px;
@@ -212,18 +213,20 @@
 .marked-checkbox-img-container {
 }
 .svg-icons--marked-checkbox-icon-dims {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 }
 .checked-condition-span {
 }
 .container-rigth {
 }
 .separator {
+	margin: 35px 35px 35px 70px;
+	border: 1px solid #d8d8d879;
 }
 .separator-vert {
-	margin: 63px 35px 0 63px;
-	border: 1px solid #d8d8d8;
+	margin: 110px 35px 35px 63px;
+	border: 1px solid #d8d8d879;
 }
 .map {
 	&__container {

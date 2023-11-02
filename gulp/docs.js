@@ -200,7 +200,6 @@ function deployGhP() {
 
 exports.cleanDocs = cleanDocs;
 exports.htmlIncludeDocs = htmlIncludeDocs;
-
 exports.scssDocs = scssDocs;
 exports.imagesDocs = imagesDocs;
 exports.spriteDocs = spriteDocs;

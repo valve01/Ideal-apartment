@@ -38,5 +38,6 @@ const {
 exports.docs = series(
 	parallel(cleanDocs, cleanPublish),
 	parallel(htmlIncludeDocs, scssDocs, imagesDocs, spriteDocs, fontsDocs, copyFilesDocs, jsDocs),
-	parallel(startServerDocs, deployGhP),
+	parallel(startServerDocs),
 );
+exports.deployGhP = deployGhP;

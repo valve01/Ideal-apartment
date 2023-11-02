@@ -52,10 +52,11 @@ const plumberConfig = (title) => {
 // ============================================================ Tasks ================================================================
 // ============================================================ Clean ===============================================================
 
-function cleanDocs() {
+function cleanDocs(done) {
 	if (fs.existsSync('./docs/')) {
 		return src('./docs/', { read: false }).pipe(clean({ force: true }));
 	}
+	done();
 }
 
 // ============================================================= HTML ================================================================
@@ -65,7 +66,7 @@ function htmlIncludeDocs() {
 		.pipe(changed('./docs/'))
 		.pipe(plumber(plumberConfig('Html')))
 		.pipe(fileInclude(fileIncludeSettings))
-		.pipe(avifWebpHtml())
+		// .pipe(avifWebpHtml())
 		.pipe(htmlClean())
 		.pipe(dest('./docs/'));
 }
@@ -95,11 +96,11 @@ function scssDocs() {
 function imagesDocs() {
 	return (
 		src(['./src/img/**/*', '!./src/img/**/*.svg'])
-			.pipe(changed('./docs/img/'))
-			.pipe(avif({ quality: 50 }))
-			.pipe(dest('./docs/img/'))
-			// Два раза обращаемся к /img/
-			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
+			// .pipe(changed('./docs/img/'))
+			// .pipe(avif({ quality: 50 }))
+			// .pipe(dest('./docs/img/'))
+			// // Два раза обращаемся к /img/
+			// .pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
 			.pipe(changed('./docs/img/'))
 			.pipe(webp())
 			.pipe(dest('./docs/img/'))

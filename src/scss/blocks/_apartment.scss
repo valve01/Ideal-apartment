@@ -106,6 +106,7 @@
 }
 
 %slider-mini-img-container-style {
+	cursor: pointer;
 	height: 84px;
 	width: 100%;
 	background-size: cover;
@@ -231,16 +232,26 @@
 }
 .map {
 	&__container {
+		height: 500px;
+		width: 100%;
 	}
 }
 .section-p {
 	margin-top: 20px;
 }
 .comment {
+	margin: 35px 0 50px 0;
+	background-color: #f7f7f7;
+	padding: 10px 1rem 1rem 1rem;
+
 }
 .comment-title {
+	font-size: 25px;
+	color: var(--text-color);
+	font-weight: 500;
 }
 .comment-p {
+	margin-top:15px;
 }
 .aside-booking-form {
 }

@@ -3,7 +3,7 @@ const fs = require('fs');
 const clean = require('gulp-clean');
 const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
-const server = require('gulp-server-livereload');
+// const server = require('gulp-server-livereload');
 const ghPages = require('gulp-gh-pages');
 
 //HTML
@@ -80,8 +80,6 @@ function htmlIncludeDocs() {
 			.pipe(dest('./docs/'))
 	);
 }
-
-
 
 // ============================================================ SCSS ================================================================
 
@@ -183,14 +181,14 @@ function jsDocs() {
 
 // =========================================================== Server ============================================================
 
-function startServerDocs() {
-	return src('./docs/').pipe(
-		server({
-			livereload: true,
-			open: true,
-		}),
-	);
-}
+// function startServerDocs() {
+// 	return src('./docs/').pipe(
+// 		server({
+// 			livereload: true,
+// 			open: true,
+// 		}),
+// 	);
+// }
 
 // =========================================================================================================================
 

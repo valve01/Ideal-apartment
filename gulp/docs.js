@@ -9,7 +9,7 @@ const ghPages = require('gulp-gh-pages');
 //HTML
 const fileInclude = require('gulp-file-include');
 const htmlClean = require('gulp-htmlclean'); //минификатор
-const avifWebpHtml = require('gulp-avif-webp-html'); //auto avif+webp <picture>
+// const avifWebpHtml = require('gulp-avif-webp-html'); //auto avif+webp <picture>
 
 //SCSS
 const sassGlob = require('gulp-sass-glob');

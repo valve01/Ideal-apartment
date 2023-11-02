@@ -204,6 +204,6 @@ exports.spriteDocs = spriteDocs;
 exports.fontsDocs = fontsDocs;
 exports.copyFilesDocs = copyFilesDocs;
 exports.jsDocs = jsDocs;
-exports.startServerDocs = startServerDocs;
+// exports.startServerDocs = startServerDocs;
 exports.deployGhP = deployGhP;
 exports.cleanPublish = cleanPublish;

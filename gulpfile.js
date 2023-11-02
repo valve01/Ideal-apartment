@@ -32,11 +32,11 @@ const {
 	startServerDocs,
 	spriteDocs,
 	deployGhP,
+	cleanPublish,
 } = require('./gulp/docs.js');
 
 exports.docs = series(
-	cleanDocs,
+	parallel(cleanDocs, cleanPublish),
 	parallel(htmlIncludeDocs, scssDocs, imagesDocs, spriteDocs, fontsDocs, copyFilesDocs, jsDocs),
-	parallel(startServerDocs,deployGhP),
+	parallel(startServerDocs, deployGhP),
 );
-

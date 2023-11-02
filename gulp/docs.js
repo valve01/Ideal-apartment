@@ -60,11 +60,18 @@ function cleanDocs(done) {
 	done();
 }
 
+function cleanPublish(done) {
+	if (fs.existsSync('./.publish/')) {
+		return src('./.publish/', { read: false }).pipe(clean({ force: true }));
+	}
+	done();
+}
+
 // ============================================================= HTML ================================================================
 
 function htmlIncludeDocs() {
 	return (
-		src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
+		src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
 			.pipe(changed('./docs/'))
 			.pipe(plumber(plumberConfig('Html')))
 			.pipe(fileInclude(fileIncludeSettings))
@@ -73,6 +80,8 @@ function htmlIncludeDocs() {
 			.pipe(dest('./docs/'))
 	);
 }
+
+
 
 // ============================================================ SCSS ================================================================
 
@@ -98,12 +107,12 @@ function scssDocs() {
 
 function imagesDocs() {
 	return (
-		src(['./src/img/**/*', '!./src/img/**/*.svg'])
-			// .pipe(changed('./docs/img/'))
-			// .pipe(avif({ quality: 50 }))
-			// .pipe(dest('./docs/img/'))
-			// // Два раза обращаемся к /img/
-			// .pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
+		src('./src/img/**/*.{png,jpg,jpeg}')
+			.pipe(changed('./docs/img/'))
+			.pipe(avif())
+			.pipe(dest('./docs/img/'))
+			// Два раза обращаемся к /img/
+			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
 			.pipe(changed('./docs/img/'))
 			.pipe(webp())
 			.pipe(dest('./docs/img/'))
@@ -191,6 +200,7 @@ function deployGhP() {
 
 exports.cleanDocs = cleanDocs;
 exports.htmlIncludeDocs = htmlIncludeDocs;
+
 exports.scssDocs = scssDocs;
 exports.imagesDocs = imagesDocs;
 exports.spriteDocs = spriteDocs;
@@ -199,3 +209,4 @@ exports.copyFilesDocs = copyFilesDocs;
 exports.jsDocs = jsDocs;
 exports.startServerDocs = startServerDocs;
 exports.deployGhP = deployGhP;
+exports.cleanPublish = cleanPublish;

@@ -4,6 +4,7 @@ const clean = require('gulp-clean');
 const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
 const server = require('gulp-server-livereload');
+const ghPages = require('gulp-gh-pages');
 
 //HTML
 const fileInclude = require('gulp-file-include');
@@ -62,13 +63,15 @@ function cleanDocs(done) {
 // ============================================================= HTML ================================================================
 
 function htmlIncludeDocs() {
-	return src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
-		.pipe(changed('./docs/'))
-		.pipe(plumber(plumberConfig('Html')))
-		.pipe(fileInclude(fileIncludeSettings))
-		// .pipe(avifWebpHtml())
-		.pipe(htmlClean())
-		.pipe(dest('./docs/'));
+	return (
+		src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
+			.pipe(changed('./docs/'))
+			.pipe(plumber(plumberConfig('Html')))
+			.pipe(fileInclude(fileIncludeSettings))
+			// .pipe(avifWebpHtml())
+			.pipe(htmlClean())
+			.pipe(dest('./docs/'))
+	);
 }
 
 // ============================================================ SCSS ================================================================
@@ -182,6 +185,10 @@ function startServerDocs() {
 
 // =========================================================================================================================
 
+function deployGhP() {
+	return src('./docs/**/*').pipe(ghPages());
+}
+
 exports.cleanDocs = cleanDocs;
 exports.htmlIncludeDocs = htmlIncludeDocs;
 exports.scssDocs = scssDocs;
@@ -191,3 +198,4 @@ exports.fontsDocs = fontsDocs;
 exports.copyFilesDocs = copyFilesDocs;
 exports.jsDocs = jsDocs;
 exports.startServerDocs = startServerDocs;
+exports.deployGhP = deployGhP;

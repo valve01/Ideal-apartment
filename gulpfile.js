@@ -31,6 +31,7 @@ const {
 	jsDocs,
 	startServerDocs,
 	spriteDocs,
+	deployGhP,
 } = require('./gulp/docs.js');
 
 exports.docs = series(
@@ -38,3 +39,4 @@ exports.docs = series(
 	parallel(htmlIncludeDocs, scssDocs, imagesDocs, spriteDocs, fontsDocs, copyFilesDocs, jsDocs),
 	parallel(startServerDocs),
 );
+exports.deployGhP = deployGhP;

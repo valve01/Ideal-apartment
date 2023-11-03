@@ -115,7 +115,7 @@ function imagesDocs() {
 			.pipe(webp())
 			.pipe(dest('./docs/img/'))
 			// Третий раза обращаемся к /img/
-			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
+			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg', './src/img/logo.svg']))
 			.pipe(changed('./docs/img/'))
 			.pipe(imagemin({ verbose: true }))
 			.pipe(dest('./docs/img/'))

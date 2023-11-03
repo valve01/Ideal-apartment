@@ -8,12 +8,7 @@
 		align-items: center;
 		gap: 15px;
 	}
-	&__second-row {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 50px;
-	}
+
 	&__menu-list {
 		display: flex;
 	}
@@ -21,6 +16,15 @@
 		padding-right: 22px;
 		&:last-child {
 			padding-right: 0;
+		}
+
+		&:hover {
+			text-shadow: 4px 4px 10px #ffffffb9;
+			transform: translate(0, -3px);
+			transition: 0, 2s;
+		}
+		&:active {
+			transform: translate(3px, 0px);
 		}
 	}
 	&__menu-link {
@@ -30,21 +34,17 @@
 			size: 24px;
 		}
 	}
+	&__menu-link--active {
+		color: var(--accent);
+		text-shadow: 4px 4px 10px rgba(255, 204, 51, 0.7);
+	}
 	&__container {
-padding-top: 10px;
+		padding: 15px 0 15px 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-	&__banner {
-		color: #fff;
-		font: {
-			size: 40px;
-			weight: 600;
-		}
 
-		text-transform: uppercase;
-	}
 	&__phone-container {
 		min-width: 253px;
 		display: flex;
@@ -57,7 +57,7 @@ padding-top: 10px;
 		}
 	}
 }
-.contact-phones{
+.contact-phones {
 	display: flex;
 	align-items: center;
 	gap: 12px;
@@ -85,14 +85,22 @@ padding-top: 10px;
 		height: 30px;
 	}
 }
-.svg-logo-dims {
-	// width: 170px;
-	height: 170px;
-}
+
 .callback-btn {
 	display: flex;
 	background-color: #ffcc33;
 	border-radius: 10px;
+
+
+	&:hover {
+		transform: translate(0, -3px);
+		transition: translate 0.5s;
+		box-shadow: 4px 4px 10px rgba(255, 204, 51, 0.5);
+	}
+	&:active {
+		transform: translate(3px, 3px);
+		box-shadow: none;
+	}
 }
 .callback-btn__text {
 	color: var(--color-main);

@@ -6,6 +6,12 @@
 		@extend %--shadow-main;
 		margin-top: 10px;
 		margin-bottom: 40px;
+		&:hover {
+			transform: translate(20px);
+			transition: transform 0.5s ease-in-out;
+		}
+
+		transition: transform 0.5s ease-in-out;
 	}
 
 	&__photo-labels-container {

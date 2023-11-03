@@ -79,7 +79,7 @@ function scssDev() {
 
 function copyImagesDev() {
 	return (
-		src(['./src/img/**/*', '!./src/img/**/*.svg'])
+		src(['./src/img/**/*', '!./src/img/**/*.svg', './src/img/logo.svg'])
 			.pipe(changed('./build/img/'))
 			// .pipe(imagemin({ verbose: true })) // настройка включает отображение в консоли какие файлы были оптимизированы и сколько места сэкономлено
 			.pipe(dest('./build/img/'))
@@ -87,7 +87,7 @@ function copyImagesDev() {
 }
 
 function spriteDev() {
-	return src(['./src/img/**/*.svg'])
+	return src(['./src/img/**/*.svg','!./src/img/logo.svg'])
 		.pipe(changed('./build/img/'))
 		.pipe(
 			svgSprite({

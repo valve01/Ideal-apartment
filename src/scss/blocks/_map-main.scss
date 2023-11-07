@@ -1,9 +1,9 @@
-.map__title {
-	align-self: center;
-}
-.map-container {
+.map-main {
 	display: flex;
 	flex-direction: column;
+}
+.map__title {
+	align-self: center;
 }
 .yandex-map {
 	margin: 20px 0 20px 0;

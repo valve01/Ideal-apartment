@@ -1,0 +1,33 @@
+.advantages {
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		align-self: center;
+		@extend %--main-h2-title;
+	}
+	&__items {
+		padding: 30px 10px 0 10px;
+		gap: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__item {
+		font-weight: 500;
+	}
+	&__in-each-apartment-container {
+		display: flex;
+		flex-direction: column;
+	}
+	&__in-each-apartment-items {
+		padding: 30px 10px 0 10px;
+		gap: 10px;
+		display: flex;
+		flex-direction: column;
+
+	}
+	&__in-each-apartment-item {
+		font-weight: 500;
+	}
+}

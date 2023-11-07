@@ -1,4 +1,11 @@
-.map-all {
+.map__title {
+	align-self: center;
+}
+.map-container {
+	display: flex;
+	flex-direction: column;
+}
+.yandex-map {
 	margin: 20px 0 20px 0;
 	@extend %--shadow-main;
 }

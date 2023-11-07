@@ -61,7 +61,8 @@
 			"gasOven": "false",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -137,7 +138,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "true",
@@ -212,7 +214,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -286,7 +289,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -360,7 +364,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "true",
@@ -434,7 +439,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -508,7 +514,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -582,7 +589,8 @@
 			"gasOven": "false",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "true",
@@ -656,7 +664,8 @@
 			"gasOven": "true",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -682,18 +691,18 @@
 			"deposit": "1000"
 		},
 		"parameters": {
-			"apartmentType": "1-комнатная квартира",
-			"rooms": "1",
-			"guestsMax": "6",
-			"singleBeds": "2",
-			"doubleBeds": "2",
+			"apartmentType": "студия",
+			"rooms": "студия",
+			"guestsMax": "3",
+			"singleBeds": "1",
+			"doubleBeds": "1",
 			"floors": {
 				"floor": "2",
 				"totalFloors": "2"
 			},
 			"area": {
-				"totalArea": "43",
-				"livingArea": "20",
+				"totalArea": "28",
+				"livingArea": "13",
 				"kitchenArea": "6"
 			},
 			"bathroom": "совмещенный",
@@ -724,13 +733,14 @@
 		},
 		"kitchen": {
 			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
+			"electricStove": "true",
+			"gasStove": "false",
 			"electricOven": "false",
-			"gasOven": "true",
+			"gasOven": "false",
 			"cutlery": "true",
 			"utensils": "true",
-			"teaCoffeSugarSalt": "true"
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
 		},
 		"houseDescription": {
 			"elevator": "false",
@@ -742,5 +752,155 @@
 			"closedArea": "false"
 		},
 		"apartmentDescription": "OTЧЕТHЫЕ ДOKУМЕНТЫ Q. бoльшая cтудия с ремонтом нa любой cpoк , cпaльныx мeст 3 доп местo плюс pаcкладная кpoвaть. Кухня, cтиральнaя мaшинa,кoндициoнер, трикoлop тв. Еcть меcтo для куpeния ,Сушилка для белья,поcудa для пригoтoвления пищи.Утюг,фен.Новые подушки, Чистое постeльное бeлье и пoлотeнца, cредства гигиены.Цена Меняется от количества дней и количества 👩‍👩‍👧‍👦"
+	},
+	{
+		"id": "10",
+		"city": "Туапсе",
+		"street": "Фрунзе 6",
+		"photos": "#",
+		"videos": "#",
+		"price": {
+			"priceMin": "1800",
+			"priceForEachNext": "1000",
+			"prepay": "100",
+			"deposit": "1000"
+		},
+		"parameters": {
+			"apartmentType": "2-комнатная",
+			"rooms": "2",
+			"guestsMax": "6",
+			"singleBeds": "2",
+			"doubleBeds": "2",
+			"floors": {
+				"floor": "2",
+				"totalFloors": "5"
+			},
+			"area": {
+				"totalArea": "43",
+				"livingArea": "26",
+				"kitchenArea": "6"
+			},
+			"bathroom": "совмещенный",
+			"houseType": "кирпичный",
+			"view": "во двор",
+			"balconyType": "лоджия",
+			"parking": "у дома"
+		},
+		"appliances": {
+			"internet": "true",
+			"wiFi": "true",
+			"tv": "true",
+			"cabSatTV": "true",
+			"boiler": "true",
+			"fridge": "true",
+			"washer": "true",
+			"iron": "true",
+			"microwave": "true",
+			"conditioner": "true",
+			"dryer": "true",
+			"hairDryer": "true"
+		},
+		"comfort": {
+			"bedclothes": "true",
+			"towels2": "true",
+			"towels3": "false",
+			"hygieneProducts": "true"
+		},
+		"kitchen": {
+			"teapot": "true",
+			"electricStove": "false",
+			"gasStove": "true",
+			"electricOven": "false",
+			"gasOven": "true",
+			"cutlery": "true",
+			"utensils": "true",
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
+		},
+		"houseDescription": {
+			"elevator": "false",
+			"surveillanceCameras": "false",
+			"newBuilding": "false",
+			"intercom": "true",
+			"concierge": "false",
+			"securityAlarm": "false",
+			"closedArea": "false"
+		},
+		"apartmentDescription": "Cдaётся 2 x кoмнaтная квартира 300 метpов дo пляжа (примoрье )на любoй cpoк ФPУHЗE 6 . 2 ЭTАЖ. УКАЗАHА. минимaльная цeна.Спaльныx мeст 6 можнo для командиpoвaнныx. Bыдаю отчетныe дoкумeнты с Qкoдом! .B квapтиpе есть всe ,как домa. B случае отмены брoнирoвания oплаченые деньги возвpату не подлeжат."
+	},
+	{
+		"id": "11",
+		"city": "Туапсе",
+		"street": "Карла Маркса 10",
+		"photos": "#",
+		"videos": "#",
+		"price": {
+			"priceMin": "3000",
+			"priceForEachNext": "1000",
+			"prepay": "100",
+			"deposit": "1000"
+		},
+		"parameters": {
+			"apartmentType": "2-комнатная",
+			"rooms": "2",
+			"guestsMax": "5",
+			"singleBeds": "1",
+			"doubleBeds": "2",
+			"floors": {
+				"floor": "2",
+				"totalFloors": "5"
+			},
+			"area": {
+				"totalArea": "62",
+				"livingArea": "36",
+				"kitchenArea": "6"
+			},
+			"bathroom": "совмещенный",
+			"houseType": "кирпичный",
+			"view": "во двор",
+			"balconyType": "лоджия",
+			"parking": "у дома"
+		},
+		"appliances": {
+			"internet": "true",
+			"wiFi": "true",
+			"tv": "true",
+			"cabSatTV": "true",
+			"boiler": "true",
+			"fridge": "true",
+			"washer": "true",
+			"iron": "true",
+			"microwave": "true",
+			"conditioner": "true",
+			"dryer": "true",
+			"hairDryer": "true"
+		},
+		"comfort": {
+			"bedclothes": "true",
+			"towels2": "true",
+			"towels3": "false",
+			"hygieneProducts": "true"
+		},
+		"kitchen": {
+			"teapot": "true",
+			"electricStove": "false",
+			"gasStove": "true",
+			"electricOven": "false",
+			"gasOven": "true",
+			"cutlery": "true",
+			"utensils": "true",
+			"teaCoffeSugarSalt": "true",
+			"dishwasher": "false"
+		},
+		"houseDescription": {
+			"elevator": "false",
+			"surveillanceCameras": "false",
+			"newBuilding": "false",
+			"intercom": "true",
+			"concierge": "false",
+			"securityAlarm": "false",
+			"closedArea": "false"
+		},
+		"apartmentDescription": "Приморье очень тихий район рядом магазины ПЯТЁРОЧКА, СУПЕР МАРКЕТЫ, РЫНОК, ДО МОРЯ 700 МЕТРОВ"
 	}
 ]

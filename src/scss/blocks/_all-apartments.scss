@@ -1,0 +1,16 @@
+.all-apartments-container{
+
+}
+.all-apartments {
+	display: flex;
+	flex-direction: column;
+}
+.apartment__section {
+	display: flex;
+	flex-direction: column;
+}
+.section-index-title {
+	@extend %--main-h2-title;
+	align-self: center;
+	padding-bottom: 20px;
+}

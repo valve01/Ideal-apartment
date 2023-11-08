@@ -1,7 +1,7 @@
 .card {
 	&__container {
 		display: flex;
-		max-width: 865px;
+		width: 865px;
 		border: 1px solid #d8d8d8;
 		@extend %--shadow-main;
 		margin-top: 10px;
@@ -23,7 +23,7 @@
 		justify-content: space-between;
 	}
 	&__photo-container {
-		max-width: 472px;
+		width: 472px;
 		position: relative;
 		cursor: pointer;
 	}
@@ -48,10 +48,13 @@
 	&__photo {
 	}
 	&__description {
-		padding-top: 27px;
-		padding-left: 40px;
+		max-width: 393px;
+		padding: 30px 40px 0 30px;
 	}
 	&__title {
+		word-wrap: break-word;
+		max-height: 56px;
+		overflow: hidden;
 		font: {
 			size: 22px;
 			weight: 400;

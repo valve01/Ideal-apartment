@@ -13,9 +13,9 @@ const getApartments = async () => {
 };
 const cardRender = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
-		const { price, parameters, street, photos,apartmentDescription } = card;
+		const { price, parameters,city, street, photos,apartmentDescription } = card;
 		const cardItem = `
-		<div class="card">
+<div class="card">
 	<div class="card__container">
 		<a class="card__photo-container" href="Rechnaya-1g.html">
 			<div class="card__photo-labels-container">
@@ -29,9 +29,10 @@ const cardRender = (apartmentsData) => {
 				<img src="${photos}/(1).jpg" alt="card__photo">
 			</div>
 		</a>
-		<div class="card__description">
+		<div class="card__description ">
+		<div class="card__adress">г.${city} ул.${street}</div>
 			<div class="card__title">${apartmentDescription}</div>
-			<div class="card__adress">${street}</div>
+
 			<div class="card__bed-place-container">
 				<div class="card__bed-place-title">Спальных мест:</div>
 				<div class="card__bed-place">

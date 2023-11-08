@@ -2,6 +2,7 @@
 	&__container {
 		display: flex;
 		width: 865px;
+		// height: 250px;
 		border: 1px solid #d8d8d8;
 		@extend %--shadow-main;
 		margin-top: 10px;
@@ -48,8 +49,11 @@
 	&__photo {
 	}
 	&__description {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		max-width: 393px;
-		padding: 30px 40px 0 30px;
+		padding: 15px 30px 15px 30px;
 	}
 	&__title {
 		word-wrap: break-word;
@@ -63,14 +67,16 @@
 	&__adress {
 		margin-top: 5px;
 		font: {
-			size: 16px;
-			weight: 400;
+			size: 18px;
+			weight: 600;
 		}
 	}
 	&__bed-place-container {
+
 	}
 	&__bed-place-title {
-		margin-top: 32px;
+
+
 		font: {
 			size: 16px;
 			weight: 400;
@@ -85,6 +91,7 @@
 	&__bed-place-icon {
 	}
 	&__facilities {
+
 		display: flex;
 		gap: 10px;
 	}

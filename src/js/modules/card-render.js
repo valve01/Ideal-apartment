@@ -4,12 +4,13 @@ let apartmentsData = [];
 const cardsRender = async () => {
 	try {
 		if (!apartmentsData.length) {
-			const res = await fetch('../files/JSON/apartments.json');
+			const res = await fetch('https://64845cf9ee799e3216269459.mockapi.io/apartments');
 			apartmentsData = await res.json();
+			cardsCreate(apartmentsData);
 		}
 	} catch {}
 
-	cardsCreate(apartmentsData);
+
 };
 const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {

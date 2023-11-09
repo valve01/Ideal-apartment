@@ -25,6 +25,7 @@
 	}
 	&__photo-container {
 		width: 472px;
+		max-height: 300px;
 		position: relative;
 		cursor: pointer;
 	}
@@ -72,11 +73,8 @@
 		}
 	}
 	&__bed-place-container {
-
 	}
 	&__bed-place-title {
-
-
 		font: {
 			size: 16px;
 			weight: 400;
@@ -91,13 +89,44 @@
 	&__bed-place-icon {
 	}
 	&__facilities {
-
 		display: flex;
+
 		gap: 10px;
 	}
 	&__facilities-icon {
 		display: flex;
 		align-items: center;
+	}
+	&__bottom-row {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__detailed-btn {
+		height: 100%;
+		width: 100%;
+		padding: 2px 10px;
+		&:hover{
+			font-weight: 500;
+		}
+	}
+	&__detailed-btn-link {
+
+		display: inline-flex;
+		margin: 6px 0;
+		justify-content: center;
+		align-items: center;
+		border-radius: 4px;
+		background: var(--color-main);
+		color: #fff;
+		@extend %--shadow-main;
+		&:hover {
+			color: var(--color-main);
+			background-color: var(--accent);
+		}
+		&:active {
+			transform: translate(3px, 3px);
+			box-shadow: none;
+		}
 	}
 }
 .svg-icons--bed-place-icon-dims {

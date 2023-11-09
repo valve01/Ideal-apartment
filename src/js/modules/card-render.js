@@ -16,6 +16,7 @@ const cardRender = (apartmentsData) => {
 		const { price, parameters,city, street, photos,apartmentDescription } = card;
 		const cardItem = `
 <div class="card">
+
 	<div class="card__container">
 		<a class="card__photo-container" href="Rechnaya-1g.html">
 			<div class="card__photo-labels-container">
@@ -29,10 +30,10 @@ const cardRender = (apartmentsData) => {
 				<img src="${photos}/(1).jpg" alt="card__photo">
 			</div>
 		</a>
-		<div class="card__description ">
-		<div class="card__adress">г.${city} ул.${street}</div>
-			<div class="card__title">${apartmentDescription}</div>
 
+		<div class="card__description">
+			<div class="card__adress">г.${city} ул.${street}</div>
+			<div class="card__title">${apartmentDescription}</div>
 			<div class="card__bed-place-container">
 				<div class="card__bed-place-title">Спальных мест:</div>
 				<div class="card__bed-place">
@@ -43,18 +44,29 @@ const cardRender = (apartmentsData) => {
 					</div>
 				</div>
 			</div>
-			<div class="card__facilities">
-				<div class="card__facilities-icon">
-	
-					<img src="img/sprite.svg#icons--conditioner-icon" class="svg-icons--conditioner-icon-dims"
-						alt="icons--conditioner-icon">
+			<div class="card__bottom-row">
+
+				<div class="card__facilities">
+
+					<div class="card__facilities-icon">
+						<img src="img/sprite.svg#icons--conditioner-icon" class="svg-icons--conditioner-icon-dims" alt="icons--conditioner-icon">
+					</div>
+
+					<div class="card__facilities-icon">
+						<img src="img/sprite.svg#icons--washer-icon" class="svg-icons--washer-icon-dims" alt="icons--washer-icon">
+					</div>
+
+					<div class="card__facilities-icon">
+						<img src="img/sprite.svg#icons--WiFi-icon" class="svg-icons--WiFi-icon-dims" alt="icons--WiFi-icon">
+					</div>
+
 				</div>
-				<div class="card__facilities-icon"> <img src="img/sprite.svg#icons--washer-icon"
-						class="svg-icons--washer-icon-dims" alt="icons--washer-icon"></div>
-				<div class="card__facilities-icon"> <img src="img/sprite.svg#icons--WiFi-icon"
-						class="svg-icons--WiFi-icon-dims" alt="icons--WiFi-icon"></div>
+
+				<a class="card__detailed-btn-link" href="Rechnaya-1g.html"><button class="card__detailed-btn">Подробнее</button></a>
+
 			</div>
 		</div>
+
 	</div>
 		`;
 

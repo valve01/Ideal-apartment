@@ -1,6 +1,32 @@
-@@include('blocks/header/header.html')
-<div class="container">
-	<h1 class="apartment__adress">Туапсе, ул. Речная 1г</h1>
+let apartmentsData = [];
+const apartmentAdjacentHTML = document.querySelector('.container_apartment__AdjacentHTML');
+
+const getApartmentData = async () => {
+	try {
+		if (!apartmentsData.length) {
+			const res = await fetch('https://64845cf9ee799e3216269459.mockapi.io/apartments');
+			apartmentsData = await res.json();
+		}
+		findCurrentApartment(apartmentsData);
+	} catch {}
+};
+getApartmentData();
+
+const getParameterFromURL = (parameter) => {
+	const urlParams = new URLSearchParams(window.location.search);
+	return urlParams.get(parameter);
+};
+
+const findCurrentApartment = (apartmentsData) => {
+	const apartmentId = Number(getParameterFromURL('id'));
+	const findApartment = apartmentsData.find((apartment) => apartment.id === apartmentId);
+	renderApartmentDetailed(findApartment);
+};
+
+const renderApartmentDetailed = (findApartment) => {
+	// const {street} = findApartment;
+	const apartmentHTML = `
+	<h1 class="apartment__adress">${findApartment.street}</h1>
 	<div class="apartment__container">
 		<main class="apartment">
 
@@ -590,9 +616,7 @@
 			@@include('blocks/booking-form/booking-form.html')
 		</aside>
 	</div>
-</div>
-@@include('blocks/footer/footer.html')
-<script src="js/index.bundle.js"></script>
-</body>
+		`;
 
-</html>
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTML);
+};

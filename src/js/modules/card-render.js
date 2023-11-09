@@ -6,14 +6,14 @@ const cardsRender = async () => {
 		if (!apartmentsData.length) {
 			const res = await fetch('https://64845cf9ee799e3216269459.mockapi.io/apartments');
 			apartmentsData = await res.json();
-			cardsCreate(apartmentsData);
 		}
+		cardsCreate(apartmentsData);
 	} catch {}
 };
 const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
-		const { price, parameters, city, street, photos, apartmentDescription } = card;
-		const photoHref = 'Rechnaya-1g.html';
+		const { id, price, parameters, city, street, photos, apartmentDescription } = card;
+		const photoHref = `/apartment.html?id=${id}`;
 		const cardItem = `
 <div class="card">
 	<div class="card__container">

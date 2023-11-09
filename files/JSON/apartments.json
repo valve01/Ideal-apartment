@@ -3,7 +3,7 @@
 		"id": "1",
 		"city": "Туапсе",
 		"street": "Речная 1г",
-		"photos": "Ideal-apartment/img/apartments/Rechnaya-1g",
+		"photos": "img/apartments/Rechnaya-1g",
 		"videos": "#",
 		"price": {
 			"priceMin": "1700",
@@ -78,7 +78,7 @@
 		"id": "2",
 		"city": "Туапсе",
 		"street": "Маршала Жукова 5",
-		"photos": "../img/apartments/Zhukova-5",
+		"photos": "img/apartments/Zhukova-5",
 		"videos": "#",
 		"price": {
 			"priceMin": "3000",
@@ -149,7 +149,7 @@
 		"id": "3",
 		"city": "Туапсе",
 		"street": "Гоголя 6",
-		"photos": "../img/apartments/Gogolya-6",
+		"photos": "img/apartments/Gogolya-6",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -220,7 +220,7 @@
 		"id": "4",
 		"city": "Туапсе",
 		"street": "Карла Маркса 79",
-		"photos": "../img/apartments/Marx-79",
+		"photos": "img/apartments/Marx-79",
 		"videos": "#",
 		"price": {
 			"priceMin": "1500",
@@ -291,7 +291,7 @@
 		"id": "5",
 		"city": "Туапсе",
 		"street": "Карла Маркса 61",
-		"photos": "../img/apartments/Marx-61",
+		"photos": "img/apartments/Marx-61",
 		"videos": "#",
 		"price": {
 			"priceMin": "2500",
@@ -362,7 +362,7 @@
 		"id": "6",
 		"city": "Туапсе",
 		"street": "Рабфаковская 9",
-		"photos": "../img/apartments/Rabfacovskaya-9",
+		"photos": "img/apartments/Rabfacovskaya-9",
 		"videos": "#",
 		"price": {
 			"priceMin": "2500",
@@ -433,7 +433,7 @@
 		"id": "7",
 		"city": "Туапсе",
 		"street": "Портовиков 39/3",
-		"photos": "../img/apartments/Portovikov-39-3",
+		"photos": "img/apartments/Portovikov-39-3",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -504,7 +504,7 @@
 		"id": "8",
 		"city": "Туапсе",
 		"street": "Маршала Жукова 20",
-		"photos": "../img/apartments/Zhukova-20",
+		"photos": "img/apartments/Zhukova-20",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -575,7 +575,7 @@
 		"id": "9",
 		"city": "Туапсе",
 		"street": "Карла Маркса 10",
-		"photos": "../img/apartments/Marx-10",
+		"photos": "img/apartments/Marx-10",
 		"videos": "#",
 		"price": {
 			"priceMin": "3000",

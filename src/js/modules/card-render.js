@@ -1,7 +1,7 @@
 const allApartmentsContainer = document.querySelector('.all-apartments-container');
 let apartmentsData = [];
 
-const getApartments = async () => {
+const cardsRender = async () => {
 	try {
 		if (!apartmentsData.length) {
 			const res = await fetch('../files/JSON/apartments.json');
@@ -9,15 +9,15 @@ const getApartments = async () => {
 		}
 	} catch {}
 
-	cardRender(apartmentsData);
+	cardsCreate(apartmentsData);
 };
-const cardRender = (apartmentsData) => {
+const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
 		const { price, parameters,city, street, photos,apartmentDescription } = card;
 		const cardItem = `
 <div class="card">
-
 	<div class="card__container">
+
 		<a class="card__photo-container" href="Rechnaya-1g.html">
 			<div class="card__photo-labels-container">
 				<div class="card__price">
@@ -45,7 +45,6 @@ const cardRender = (apartmentsData) => {
 				</div>
 			</div>
 			<div class="card__bottom-row">
-
 				<div class="card__facilities">
 
 					<div class="card__facilities-icon">
@@ -61,12 +60,10 @@ const cardRender = (apartmentsData) => {
 					</div>
 
 				</div>
-
 				<a class="card__detailed-btn-link" href="Rechnaya-1g.html"><button class="card__detailed-btn">Подробнее</button></a>
-
 			</div>
-		</div>
 
+		</div>
 	</div>
 		`;
 
@@ -74,4 +71,4 @@ const cardRender = (apartmentsData) => {
 	});
 };
 // console.log(apartmentsData);
-getApartments();
+cardsRender();

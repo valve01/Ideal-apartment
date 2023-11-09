@@ -106,14 +106,14 @@ function scssDocs() {
 function imagesDocs() {
 	return (
 		src('./src/img/**/*.{png,jpg,jpeg}')
-			.pipe(changed('./docs/img/'))
-			.pipe(avif())
+			// .pipe(changed('./docs/img/'))
+			// .pipe(avif())
 			.pipe(dest('./docs/img/'))
 			// Два раза обращаемся к /img/
-			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
-			.pipe(changed('./docs/img/'))
-			.pipe(webp())
-			.pipe(dest('./docs/img/'))
+			// .pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
+			// .pipe(changed('./docs/img/'))
+			// .pipe(webp())
+			// .pipe(dest('./docs/img/'))
 			// Третий раза обращаемся к /img/
 			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg', './src/img/logo.svg']))
 			.pipe(changed('./docs/img/'))

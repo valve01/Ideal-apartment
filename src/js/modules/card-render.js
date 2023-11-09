@@ -9,17 +9,16 @@ const cardsRender = async () => {
 			cardsCreate(apartmentsData);
 		}
 	} catch {}
-
-
 };
 const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
-		const { price, parameters,city, street, photos,apartmentDescription } = card;
+		const { price, parameters, city, street, photos, apartmentDescription } = card;
+		const photoHref = 'Rechnaya-1g.html';
 		const cardItem = `
 <div class="card">
 	<div class="card__container">
 
-		<a class="card__photo-container" href="Rechnaya-1g.html">
+		<a class="card__photo-container" href=${photoHref} target="_blank">
 			<div class="card__photo-labels-container">
 				<div class="card__price">
 					<span class="price-number">${price.priceMin} р / </span>
@@ -61,7 +60,7 @@ const cardsCreate = (apartmentsData) => {
 					</div>
 
 				</div>
-				<a class="card__detailed-btn-link" href="Rechnaya-1g.html"><button class="card__detailed-btn">Подробнее</button></a>
+				<a class="card__detailed-btn-link" href=${photoHref} target="_blank"><button class="card__detailed-btn">Подробнее</button></a>
 			</div>
 
 		</div>

@@ -19,14 +19,18 @@ const getParameterFromURL = (parameter) => {
 
 const findCurrentApartment = (apartmentsData) => {
 	const apartmentId = Number(getParameterFromURL('id'));
-	const findApartment = apartmentsData.find((apartment) => apartment.id === apartmentId);
+	const findApartment = apartmentsData.find((apartment) => {
+		// console.log(apartment.id == apartmentId);
+		return apartment.id == apartmentId;
+	});
+	console.log(findApartment);
 	renderApartmentDetailed(findApartment);
 };
 
 const renderApartmentDetailed = (findApartment) => {
-	// const {street} = findApartment;
+	const { street } = findApartment;
 	const apartmentHTML = `
-	<h1 class="apartment__adress">${findApartment.street}</h1>
+	<h1 class="apartment__adress">${street}</h1>
 	<div class="apartment__container">
 		<main class="apartment">
 

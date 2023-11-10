@@ -59,18 +59,16 @@ const renderApartmentDetailed = (findApartment) => {
 		internet,
 		wiFi,
 		tv,
-		cabSatTV,
 		boiler,
 		fridge,
 		washer,
 		iron,
 		microwave,
 		conditioner,
-		dryer,
 		hairDryer,
 	} = appliances;
-	const { bedclothes, towels2, towels3, hygieneProducts, teaCoffeSugarSalt } = comfort;
-	const { teapot, electricStove, gasStove, electricOven, gasOven, cutlery, utensils, dishwasher } =
+	const { bedclothes, towels, dryer, hygieneProducts, teaCoffeSugarSalt, bathrobe, slippers } = comfort;
+	const { teapot, stove, oven, cutlery, utensils, dishwasher } =
 		kitchen;
 	const {
 		elevator,
@@ -329,13 +327,14 @@ const renderApartmentDetailed = (findApartment) => {
 <section class="section">
 	<h2 class="section-title">Техника</h2>
 	<div class="section__container">
+
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
 				<img src="img/sprite.svg#icons--marked-checkbox-icon"
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">интернет wi-fi</span>
+			<span class="checked-condition-span">${internet}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -344,7 +343,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">стиральная машина</span>
+			<span class="checked-condition-span">${wiFi}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -353,7 +352,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">телевизор</span>
+			<span class="checked-condition-span">${washer}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -362,7 +361,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">каб./спутниковое ТВ</span>
+			<span class="checked-condition-span">${tv}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -371,7 +370,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">микроволновка</span>
+			<span class="checked-condition-span">${microwave}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -380,7 +379,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">бойлер</span>
+			<span class="checked-condition-span">${boiler}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -389,7 +388,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">кондиционер</span>
+			<span class="checked-condition-span">${conditioner}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -398,7 +397,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">холодильник</span>
+			<span class="checked-condition-span">${fridge}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -407,7 +406,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">утюг</span>
+			<span class="checked-condition-span">${iron}</span>
 		</div>
 
 	</div>
@@ -422,13 +421,14 @@ const renderApartmentDetailed = (findApartment) => {
 <section class="section">
 	<h2 class="section-title">Кухня</h2>
 	<div class="section__container">
+
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
 				<img src="img/sprite.svg#icons--marked-checkbox-icon"
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">мебель на кухне</span>
+			<span class="checked-condition-span">${teapot}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -436,15 +436,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">электрическая духовка</span>
-		</div>
-		<div class="section__checked-condition checked-condition">
-			<div class="marked-checkbox-img-container">
-				<img src="img/sprite.svg#icons--marked-checkbox-icon"
-					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
-
-			</div>
-			<span class="checked-condition-span">духовка на газу</span>
+			<span class="checked-condition-span">${stove}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -453,7 +445,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">электроплита</span>
+			<span class="checked-condition-span">${oven}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -461,7 +453,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">газовая плита</span>
+			<span class="checked-condition-span">${cutlery}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -469,30 +461,14 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">столовые приборы</span>
+			<span class="checked-condition-span">${utensils}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
 				<img src="img/sprite.svg#icons--marked-checkbox-icon"
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 			</div>
-			<span class="checked-condition-span">посуда и принадлежности</span>
-		</div>
-		<div class="section__checked-condition checked-condition">
-			<div class="marked-checkbox-img-container">
-				<img src="img/sprite.svg#icons--marked-checkbox-icon"
-					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
-
-			</div>
-			<span class="checked-condition-span">электрочайник</span>
-		</div>
-		<div class="section__checked-condition checked-condition">
-			<div class="marked-checkbox-img-container">
-				<img src="img/sprite.svg#icons--marked-checkbox-icon"
-					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
-
-			</div>
-			<span class="checked-condition-span">посудомойка</span>
+			<span class="checked-condition-span">${dishwasher}</span>
 		</div>
 	</div>
 </section>
@@ -512,7 +488,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">полотенца (по 2 на гостя)</span>
+			<span class="checked-condition-span">${bedclothes}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -520,7 +496,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">полотенца (по 3 на гостя)</span>
+			<span class="checked-condition-span">${towels}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -528,7 +504,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">постельное белье</span>
+			<span class="checked-condition-span">${hygieneProducts}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -536,7 +512,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">средства гигиены</span>
+			<span class="checked-condition-span">${teaCoffeSugarSalt}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -544,7 +520,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">халаты</span>
+			<span class="checked-condition-span">${bathrobe}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -552,21 +528,14 @@ const renderApartmentDetailed = (findApartment) => {
 				<img src="img/sprite.svg#icons--marked-checkbox-icon"
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 			</div>
-			<span class="checked-condition-span">тапочки</span>
+			<span class="checked-condition-span">${slippers}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
 				<img src="img/sprite.svg#icons--marked-checkbox-icon"
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 			</div>
-			<span class="checked-condition-span">сушилка для белья</span>
-		</div>
-		<div class="section__checked-condition checked-condition">
-			<div class="marked-checkbox-img-container">
-				<img src="img/sprite.svg#icons--marked-checkbox-icon"
-					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
-			</div>
-			<span class="checked-condition-span">чай кофе сахар соль</span>
+			<span class="checked-condition-span">${dryer}</span>
 		</div>
 	</div>
 </section>
@@ -586,7 +555,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">лифт</span>
+			<span class="checked-condition-span">${elevator}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -603,7 +572,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">видеонаблюдение</span>
+			<span class="checked-condition-span">${surveillanceCameras}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -611,7 +580,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">огороженная территория</span>
+			<span class="checked-condition-span">${newBuilding}</span>
 		</div>
 
 		<div class="section__checked-condition checked-condition">
@@ -620,7 +589,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">новостройка</span>
+			<span class="checked-condition-span">${intercom}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -628,7 +597,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">охрана / сигнализация</span>
+			<span class="checked-condition-span">${securityAlarm}</span>
 		</div>
 		<div class="section__checked-condition checked-condition">
 			<div class="marked-checkbox-img-container">
@@ -636,7 +605,7 @@ const renderApartmentDetailed = (findApartment) => {
 					class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 
 			</div>
-			<span class="checked-condition-span">домофон</span>
+			<span class="checked-condition-span">${closedArea}</span>
 		</div>
 	</div>
 </section>
@@ -679,12 +648,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <section class="section">
 	<h2 class="section-title">Описание</h2>
-	<p class="section-p">СОобственник! ДОБРОГО времени суток! СПЛИТ. Апартаменты -студио оборудованы
-		всем
-		необходимым для комфортного отдыха. Безлимитный интернет. Высокий этаж - красивый вид на
-		Кубань.
-		Рядом
-		ост. В . ГАССия . маршрутки 37.41ю93 автобус № 2 1 СУТКИ 1000 Р . ОТ 20 СУТОК 900 Р</p>
+	<p class="section-p">${apartmentDescription}</p>
 </section>
 `;
 	const apartmentHTMLComments = `
@@ -711,7 +675,7 @@ const renderApartmentDetailed = (findApartment) => {
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComfort);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdditionaly);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLMap);
-	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLInfrastructure);
+	// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLInfrastructure);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLDescription);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComments);
 

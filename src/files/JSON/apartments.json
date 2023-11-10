@@ -11,7 +11,6 @@
 			"prepay": "100",
 			"deposit": "2000"
 		},
-
 		"parameters": {
 			"apartmentType": "1-комнатная квартира",
 			"rooms": "1",
@@ -30,43 +29,42 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
-			"elevator": "true",
-			"surveillanceCameras": "true",
-			"newBuilding": "true",
-			"intercom": "true",
+			"elevator": "лифт",
+			"surveillanceCameras": "видеонаблюдение",
+			"newBuilding": "новостройка",
+			"intercom": "домофон",
 			"concierge": "false",
-			"securityAlarm": "true",
+			"securityAlarm": "сигнализация",
 			"closedArea": "false"
 		},
 		"apartmentDescription": "Дoм бизнeс классa! С 12 чacoв на любыe даты. ЦEНА лояльная ОT 5 ДHЕЙ СKИДКИ. CДАЮТСЯ ИДЕAЛЬНЫE AПАРТАМЕНТЫ С ПОТРЯСАЮЩИМ ВИДОМ НА МОРЕ И ГОРОД. ЦЕНА ЗАВИСИТ ОТ КОЛИЧЕСТВА ЧЕЛОВЕК и ДНЕЙ. БЕЛЫЕ ХАЛАТ,ТАПОЧКИ ,ПОСТЕЛЬНОЕ БЕЛЬЕ 100% Х/Б. МАХРОВЫЕ БАННЫЕ ПОЛОТЕНЦА БЕЛАЯ АКРИЛОВАЯ ВАННА. В НАШИХ АПАРТАМЕНТАХ РАБОТАЕТ КЛИНИНГ, ВСЕГДА СВЕЖАЯ ЗДОРОВАЯ АТМОСФЕРА. ХОТИТЕ НЕЗАБЫВАЕМЫЙ УИКЕНД! ОТДОХНУТЬ С КОМФОРТОМ! ЭКСКЛЮЗИВНАЯ КВАРТИРА ЖДЕТ ВАС. ЗАЕЗД ПОСЛЕ 13 ЧАСОВ ВЫЕЗД ДО 12. Ранний заезд по договорённости. ЗВОНИТЬ С 8 ДО 23 ЧАСОВ. БЕСКОНТАКТНОЕ ЗАСЕЛЕНИЕ В ЛЮБОЕ ВРЕМЯ СУТОК ПО ПРЕДОПЛАТЕ.‼️ В СЛУЧАЕ ОТМЕНЫ БРОНИРОВАНИЯ ,ОПЛАЧЕНЫЕ ДЕНЬГИ ВОЗВРАТУ НЕ ПОДЛЕЖАТ. В наших апартаментах не курят .Есть благоустроеный балкон для курения на балконе мебель из ротанга 2 кресла диван и столик, чтобы любоваться морским пейзажем и пить утренний кофе. КОФЕ, ЧАЙ, САХАР, СОЛЬ ЕСТЬ В КАЖДОЙ КВАРТИРЕ. Автономное отопление, природный газ.ОРГАНИЗОВАНЫ ЭКСКУРСИИ.АКВАПАРК..морские прогулки РЫБАЛКА и т.д. Для командированных ПРЕДОСТАВЛЯЮ ОТЧЕТНЫЕ ДОКУМЕНТЫ.с QR кодом.",
@@ -102,41 +100,41 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
 			"elevator": "false",
 			"surveillanceCameras": "false",
 			"newBuilding": "false",
-			"intercom": "true",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"
@@ -173,41 +171,41 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
 			"elevator": "false",
 			"surveillanceCameras": "false",
 			"newBuilding": "false",
-			"intercom": "true",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"
@@ -244,41 +242,41 @@
 			"parking": "во дворе (есть пульт от шлагбаума)"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "false",
-			"towels3": "true",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 3 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
-			"elevator": "true",
-			"surveillanceCameras": "true",
-			"newBuilding": "true",
-			"intercom": "true",
+			"elevator": "лифт",
+			"surveillanceCameras": "видеонаблюдение",
+			"newBuilding": "новостройка",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"
@@ -315,41 +313,41 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "халаты",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
 			"elevator": "false",
 			"surveillanceCameras": "false",
 			"newBuilding": "false",
-			"intercom": "true",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"
@@ -386,41 +384,41 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
 			"elevator": "false",
 			"surveillanceCameras": "false",
 			"newBuilding": "false",
-			"intercom": "true",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"
@@ -457,43 +455,43 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 3 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "халаты",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "true",
-			"gasStove": "false",
-			"electricOven": "true",
-			"gasOven": "false",
-			"cutlery": "true",
-			"utensils": "true",
-			"dishwasher": "false"
+			"teapot": "электрочайник",
+			"stove": "электроплита",
+			"oven": "электрическая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
+			"dishwasher": "посудомойка"
 		},
 		"additionally": {
-			"elevator": "true",
-			"surveillanceCameras": "true",
-			"newBuilding": "true",
-			"intercom": "true",
-			"concierge": "true",
-			"securityAlarm": "true",
+			"elevator": "лифт",
+			"surveillanceCameras": "видеонаблюдение",
+			"newBuilding": "новостройка",
+			"intercom": "домофон",
+			"concierge": "консьерж",
+			"securityAlarm": "сигнализация",
 			"closedArea": "false"
 		},
 		"apartmentDescription": "Отчетныe докумeнты c QR. Под объявлением. Есть кнoпки позвoнить и написaть. 2 прocтоpныe кoмнaты c oгoромным балконoм.💢Тeплые пoлы,Во вcex комнатaх и на лoждии.💢 Дoплaтa зa гостя от 500. 🔥HOBАЯ УЛЬTРACOBРЕМЕHHАЯ 2 X KОМНАТHAЯ EВРOДВУШKА. ЖK /АДMИРАЛ /2 ЭТАЖ🏢ЭЛИТНАЯ КВАРТИРА. СПАЛЬНЫХ МЕСТ 6 МЕБЕЛЬ И ТЕХНИКА ПОСЛЕДНЕГО ПОКОЛЕНИЯ♨️ПОТРЯСАЮЩАЯ АТМОСФЕРА ПЕРВОЗДАННОЙ ЧИСТОТЫ И УЮТА ЖДЕТ ВАС!❤️ПРИ ЗАСЕЛЕНИИ ОТ 3 Х СУТОК ОПЛАЧИВАЕТСЯ ФИНАЛЬНАЯ УБОРКА. ЕЩЕ НИКТО НЕ ЖИЛ! ИДЕАЛЬНАЯ НОЧНАЯ ТИШИНА ! ОТКРЫТЫЙ БАЛКОН ДЛЯ КУРЕНИЯ! РЯДОМ ВЕЛИКОЛЕПНЫЙ ОТКРЫТЫЙ БАССЕЙН 🌊И РАЗВЛЕКАТЕЛЬНЫЙ КОМПЛЕКС/ КАНЬОН/НА 1 ЭТАЖЕ ДОМА СУПЕРМАРКЕТ! ТОЛЬКО ДЛЯ ЦЕНИТЕЛЕЙ ТИШИНЫ И КОМФОРТА!👆 ВОЗМОЖНО БЕСКОНТАКТНОЕ ЗАСЕЛЕНИЕ- ПО ПРЕДОПЛАТЕ. ЗВОНИТЬ С 8 ДО 23 ЧАСОВ ПО МОСКВЕ. При отмене брони,⚡по любому поводу, оплаченые за проживание деньги не возвращаются .⚠️"
@@ -528,41 +526,41 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
 			"elevator": "false",
 			"surveillanceCameras": "false",
 			"newBuilding": "false",
-			"intercom": "true",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"
@@ -599,41 +597,40 @@
 			"parking": "у дома"
 		},
 		"appliances": {
-			"internet": "true",
-			"wiFi": "true",
-			"tv": "true",
-			"cabSatTV": "true",
-			"boiler": "true",
-			"fridge": "true",
-			"washer": "true",
-			"iron": "true",
-			"microwave": "true",
-			"conditioner": "true",
-			"dryer": "true",
-			"hairDryer": "true"
+			"internet": "интернет",
+			"wiFi": "wiFi",
+			"tv": "кабельное/спутниковое ТВ",
+			"boiler": "бойлер",
+			"fridge": "холодильник",
+			"washer": "стиральная машина",
+			"iron": "утюг",
+			"microwave": "микроволновка",
+			"conditioner": "кондиционер",
+			
+			"hairDryer": "фен"
 		},
 		"comfort": {
-			"bedclothes": "true",
-			"towels2": "true",
-			"towels3": "false",
-			"hygieneProducts": "true",
-			"teaCoffeSugarSalt": "true"
+			"bedclothes": "постельное белье",
+			"towels": "полотенца по 2 на гостя",
+			"dryer": "сушилка для белья",
+			"hygieneProducts": "средства гигиены",
+			"teaCoffeSugarSalt": "чай кофе сахар соль",
+			"bathrobe": "false",
+			"slippers": "тапочки"
 		},
 		"kitchen": {
-			"teapot": "true",
-			"electricStove": "false",
-			"gasStove": "true",
-			"electricOven": "false",
-			"gasOven": "true",
-			"cutlery": "true",
-			"utensils": "true",
+			"teapot": "электрочайник",
+			"stove": "газовая плита",
+			"oven": "газовая духовка",
+			"cutlery": "столовые приборы",
+			"utensils": "посуда и принадлежности",
 			"dishwasher": "false"
 		},
 		"additionally": {
 			"elevator": "false",
 			"surveillanceCameras": "false",
 			"newBuilding": "false",
-			"intercom": "true",
+			"intercom": "домофон",
 			"concierge": "false",
 			"securityAlarm": "false",
 			"closedArea": "false"

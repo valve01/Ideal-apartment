@@ -31,6 +31,7 @@ const renderApartmentDetailed = (findApartment) => {
 		street,
 		photos,
 		price,
+		conditions,
 		parameters,
 		appliances,
 		comfort,
@@ -40,6 +41,17 @@ const renderApartmentDetailed = (findApartment) => {
 		avitoComments,
 	} = findApartment;
 	const { priceMin, priceForEachNext, prepay, deposit } = price;
+
+	const {
+		settlementHour,
+		documentsRequire,
+		smoking,
+		checkInTime,
+		party,
+		pets,
+		prepayConditions,
+		depositConditions,
+	} = conditions;
 	const {
 		apartmentType,
 		rooms,
@@ -55,21 +67,11 @@ const renderApartmentDetailed = (findApartment) => {
 		parking,
 	} = parameters;
 	const { floor, totalFloors } = floors;
-	const {
-		internet,
-		wiFi,
-		tv,
-		boiler,
-		fridge,
-		washer,
-		iron,
-		microwave,
-		conditioner,
-		hairDryer,
-	} = appliances;
-	const { bedclothes, towels, dryer, hygieneProducts, teaCoffeSugarSalt, bathrobe, slippers } = comfort;
-	const { teapot, stove, oven, cutlery, utensils, dishwasher } =
-		kitchen;
+	const { internet, wiFi, tv, boiler, fridge, washer, iron, microwave, conditioner, hairDryer } =
+		appliances;
+	const { bedclothes, towels, dryer, hygieneProducts, teaCoffeSugarSalt, bathrobe, slippers } =
+		comfort;
+	const { teapot, stove, oven, cutlery, utensils, dishwasher } = kitchen;
 	const {
 		elevator,
 		surveillanceCameras,
@@ -91,7 +93,6 @@ const renderApartmentDetailed = (findApartment) => {
 
 			<div class="apartment__slider">
 				<div class="apartment__slider-main-container">
-
 
 					<img class="slider-main-img" src="${photos}/(1).jpg" alt="apartment-mini-img">
 					<div class="apartment__slider-prev-btn">
@@ -194,7 +195,7 @@ const renderApartmentDetailed = (findApartment) => {
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">расчетный час 12:00</span>
+								<span class="checked-condition-span">${settlementHour}</span>
 							</div>
 
 							<div class="section__checked-condition checked-condition">
@@ -202,8 +203,7 @@ const renderApartmentDetailed = (findApartment) => {
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">при себе иметь документы, подтверждающие
-									личность</span>
+								<span class="checked-condition-span">${documentsRequire}</span>
 							</div>
 
 							<div class="section__checked-condition checked-condition">
@@ -211,7 +211,7 @@ const renderApartmentDetailed = (findApartment) => {
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">курить только на балконе</span>
+								<span class="checked-condition-span">${smoking}</span>
 							</div>
 
 							<div class="section__checked-condition checked-condition">
@@ -219,49 +219,41 @@ const renderApartmentDetailed = (findApartment) => {
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">заселение круглосуточно</span>
+								<span class="checked-condition-span">${checkInTime}</span>
 							</div>
-
-
-
-							<div class="section__checked-condition checked-condition none" id="no-smoking">
-								<div class="marked-checkbox-img-container">
-									<img src="img/sprite.svg#icons--marked-checkbox-icon"
-										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
-								</div>
-								<span class="checked-condition-span">${balconyType}</span>
-							</div>
-
-
 
 							<div class="section__checked-condition checked-condition">
 								<div class="marked-checkbox-img-container">
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">вечеринки запрещены</span>
+								<span class="checked-condition-span">${party}</span>
 							</div>
+
 							<div class="section__checked-condition checked-condition">
 								<div class="marked-checkbox-img-container">
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">с питомцами запрещено</span>
+								<span class="checked-condition-span">${pets}</span>
 							</div>
+
 							<div class="section__checked-condition checked-condition">
 								<div class="marked-checkbox-img-container">
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">предоплата</span>
+								<span class="checked-condition-span">${prepayConditions}</span>
 							</div>
+
 							<div class="section__checked-condition checked-condition">
 								<div class="marked-checkbox-img-container">
 									<img src="img/sprite.svg#icons--marked-checkbox-icon"
 										class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
 								</div>
-								<span class="checked-condition-span">залог</span>
+								<span class="checked-condition-span">${depositConditions}</span>
 							</div>
+
 						</div>
 					</section>
 
@@ -275,47 +267,47 @@ const renderApartmentDetailed = (findApartment) => {
 <div class="section__table-container">
 	<div class="section__table-row-1">
 		<span class="section__table-property">Квартира</span>
-		<span class="section__table-value">1-комнатная</span>
+		<span class="section__table-value">${apartmentType}</span>
 	</div>
 	<div class="section__table-row-2">
 		<span class="section__table-property">Максимум гостей</span>
-		<span class="section__table-value">4</span>
+		<span class="section__table-value">${guestsMax}</span>
 	</div>
 	<div class="section__table-row-1">
 		<span class="section__table-property">Односпальных мест</span>
-		<span class="section__table-value">2</span>
+		<span class="section__table-value">${singleBeds}</span>
 	</div>
 	<div class="section__table-row-2">
 		<span class="section__table-property">Двуспальных мест</span>
-		<span class="section__table-value">1</span>
+		<span class="section__table-value">${doubleBeds}</span>
 	</div>
 	<div class="section__table-row-1">
-		<span class="section__table-property">Этаж/Этажность</span>
-		<span class="section__table-value">9/9</span>
+		<span class="section__table-property">Этаж / Этажность</span>
+		<span class="section__table-value">${floor} / ${totalFloors}</span>
 	</div>
 	<div class="section__table-row-2">
 		<span class="section__table-property">Плащадь</span>
-		<span class="section__table-value">35 м<sup>2</sup></span>
+		<span class="section__table-value">${totalArea} м<sup>2</sup></span>
 	</div>
 	<div class="section__table-row-1">
 		<span class="section__table-property">Санузел</span>
-		<span class="section__table-value">совмещенный</span>
+		<span class="section__table-value">${bathroom}</span>
 	</div>
 	<div class="section__table-row-2">
 		<span class="section__table-property">Тип дома</span>
-		<span class="section__table-value">Монолитно-кирпичный</span>
+		<span class="section__table-value">${houseType}</span>
 	</div>
 	<div class="section__table-row-1">
 		<span class="section__table-property">Вид из окон</span>
-		<span class="section__table-value">во двор / на море</span>
+		<span class="section__table-value">${view}</span>
 	</div>
 	<div class="section__table-row-2">
-		<span class="section__table-property">Балкон/Лоджия</span>
-		<span class="section__table-value">Балкон</span>
+		<span class="section__table-property">Балкон / Лоджия</span>
+		<span class="section__table-value">${balconyType}</span>
 	</div>
 	<div class="section__table-row-1">
 		<span class="section__table-property">Парковка</span>
-		<span class="section__table-value">У дома</span>
+		<span class="section__table-value">${parking}</span>
 	</div>
 </div>
 </section>
@@ -408,6 +400,15 @@ const renderApartmentDetailed = (findApartment) => {
 			</div>
 			<span class="checked-condition-span">${iron}</span>
 		</div>
+
+		<div class="section__checked-condition checked-condition">
+		<div class="marked-checkbox-img-container">
+			<img src="img/sprite.svg#icons--marked-checkbox-icon"
+				class="svg-icons--marked-checkbox-icon-dims" alt="icons--marked-checkbox-icon">
+
+		</div>
+		<span class="checked-condition-span">${hairDryer}</span>
+	</div>
 
 	</div>
 </section>
@@ -679,16 +680,12 @@ const renderApartmentDetailed = (findApartment) => {
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLDescription);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComments);
 
-	// const noSmokingElement = document.querySelector('#no-smoking');
-	// if (!balconyType) noSmokingElement.classList.remove('none');
-
 	const checkedConditionSpanElements = document.querySelectorAll(
 		'.checked-condition .checked-condition-span',
 	);
 	checkedConditionSpanElements.forEach((element) => {
-		if (element.innerText.includes('false')) {
+		if (element.innerText.includes('нет')) {
 			element.closest('.checked-condition').classList.add('none');
 		}
 	});
-	// console.log(checkedConditionSpanElements);
 };

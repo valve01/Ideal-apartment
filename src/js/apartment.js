@@ -1,5 +1,5 @@
 let apartmentsData = [];
-const apartmentAdjacentHTML = document.querySelector('.container_apartment__AdjacentHTML');
+const apartmentAdjacentHTML = document.querySelector('.apartment__container');
 
 const getApartmentData = async () => {
 	try {
@@ -18,22 +18,75 @@ const getParameterFromURL = (parameter) => {
 };
 
 const findCurrentApartment = (apartmentsData) => {
-	const apartmentId = Number(getParameterFromURL('id'));
+	const apartmentId = getParameterFromURL('id');
 	const findApartment = apartmentsData.find((apartment) => {
-		// console.log(apartment.id == apartmentId);
-		return apartment.id == apartmentId;
+		return apartment.id === apartmentId;
 	});
-	console.log(findApartment);
 	renderApartmentDetailed(findApartment);
 };
 
 const renderApartmentDetailed = (findApartment) => {
-	const { street } = findApartment;
-	const apartmentHTML = `
-	<h1 class="apartment__adress">${street}</h1>
-	<div class="apartment__container">
-		<main class="apartment">
+	const {
+		city,
+		street,
+		photos,
+		price,
+		parameters,
+		appliances,
+		comfort,
+		kitchen,
+		additionally,
+		apartmentDescription,
+		avitoComments,
+	} = findApartment;
+	const { priceMin, priceForEachNext, prepay, deposit } = price;
+	const {
+		apartmentType,
+		rooms,
+		guestsMax,
+		singleBeds,
+		doubleBeds,
+		floors,
+		totalArea,
+		bathroom,
+		houseType,
+		view,
+		balconyType,
+		parking,
+	} = parameters;
+	const { floor, totalFloors } = floors;
+	const {
+		internet,
+		wiFi,
+		tv,
+		cabSatTV,
+		boiler,
+		fridge,
+		washer,
+		iron,
+		microwave,
+		conditioner,
+		dryer,
+		hairDryer,
+	} = appliances;
+	const { bedclothes, towels2, towels3, hygieneProducts, teaCoffeSugarSalt } = comfort;
+	const { teapot, electricStove, gasStove, electricOven, gasOven, cutlery, utensils, dishwasher } =
+		kitchen;
+	const {
+		elevator,
+		surveillanceCameras,
+		newBuilding,
+		intercom,
+		concierge,
+		securityAlarm,
+		closedArea,
+	} = additionally;
 
+	const apartmentHTML = `
+
+
+		<main class="apartment">
+		<h1 class="apartment__adress">г.${city} ул.${street}</h1>
 
 
 			<!-- Слайдер -->
@@ -42,7 +95,7 @@ const renderApartmentDetailed = (findApartment) => {
 				<div class="apartment__slider-main-container">
 
 
-					<img class="slider-main-img" src="img/apartments/Rechnaya-1g/(1).jpg" alt="apartment-mini-img">
+					<img class="slider-main-img" src="${photos}/(1).jpg" alt="apartment-mini-img">
 					<div class="apartment__slider-prev-btn">
 						<img src="img/sprite.svg#icons--slider-prev-btn-icon"
 							class="svg-icons--slider-prev-btn-icon-dims" alt="icons--slider-prev-btn-icon">
@@ -106,11 +159,11 @@ const renderApartmentDetailed = (findApartment) => {
 						<div class="section__table-container">
 							<div class="section__table-row-1">
 								<span class="section__table-property">Сутки (до 2х гостей)</span>
-								<span class="section__table-value">2500</span>
+								<span class="section__table-value">${priceMin}</span>
 							</div>
 							<div class="section__table-row-2">
 								<span class="section__table-property">За каждого следующего гостя</span>
-								<span class="section__table-value">1000</span>
+								<span class="section__table-value">${priceForEachNext}</span>
 							</div>
 							<div class="section__table-row-1">
 								<span class="section__table-property">Час</span>
@@ -616,10 +669,8 @@ const renderApartmentDetailed = (findApartment) => {
 			</section>
 		</main>
 
-		<aside class="aside-booking-form">
-			@@include('blocks/booking-form/booking-form.html')
-		</aside>
-	</div>
+
+
 		`;
 
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTML);

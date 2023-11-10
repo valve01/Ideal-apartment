@@ -1,11 +1,13 @@
 .main {
 }
 .apartment {
-	&__container {
+	&__inner {
 		display: grid;
 		grid-template-columns: 9fr 3fr;
 		gap: 30px;
 		margin-bottom: 20px;
+	}
+	&__container {
 	}
 	&__adress {
 		font-size: 40px;
@@ -253,5 +255,5 @@
 	margin-top: 15px;
 }
 .aside-booking-form {
+	margin-top: 109px;
 }
-

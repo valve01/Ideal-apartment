@@ -13,6 +13,7 @@ const cardsRender = async () => {
 const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
 		const { id, price, parameters, city, street, photos, apartmentDescription } = card;
+		// const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
 		const photoHref = `/apartment.html?id=${id}`;
 		const cardItem = `
 <div class="card">

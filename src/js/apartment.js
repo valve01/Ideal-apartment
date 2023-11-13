@@ -1,5 +1,5 @@
 import apartmentSlider from './modules/apartment-slider.js';
-
+// import miniImgHtmlRender from './modules/mini-img-html-render.js';
 let apartmentsData = [];
 const apartmentAdjacentHTML = document.querySelector('.apartment__container');
 
@@ -11,9 +11,7 @@ const getApartmentData = async () => {
 		}
 
 		findCurrentApartment(apartmentsData);
-
 	} catch {}
-
 };
 getApartmentData();
 
@@ -28,11 +26,12 @@ const findCurrentApartment = (apartmentsData) => {
 		return apartment.id === apartmentId;
 	});
 	renderApartmentDetailed(findApartment);
-	apartmentSlider(findApartment)
+	// miniImgHtmlRender();
+	apartmentSlider(findApartment);
 };
 
 const renderApartmentDetailed = (findApartment) => {
-	 const {
+	const {
 		city,
 		street,
 		photos,
@@ -93,63 +92,91 @@ const renderApartmentDetailed = (findApartment) => {
 	<h1 class="apartment__adress">г.${city} ул.${street}</h1>
 	`;
 
+
+
 	const apartmentHTMLSlider = `
 
-			<!-- Слайдер -->
+	<!-- Слайдер -->
 
-			<div class="apartment__slider">
-				<div class="apartment__slider-main-container">
+	<div class="apartment__slider">
+		<div class="apartment__slider-main-container">
 
 
 
-					<div class="apartment__slider-prev-btn">
-						<img src="img/sprite.svg#icons--slider-prev-btn-icon"
-							class="svg-icons--slider-prev-btn-icon-dims" alt="icons--slider-prev-btn-icon">
-					</div>
+			<div class="apartment__slider-prev-btn">
+				<img src="img/sprite.svg#icons--slider-prev-btn-icon"
+					class="svg-icons--slider-prev-btn-icon-dims" alt="icons--slider-prev-btn-icon">
+			</div>
 
-					<div class="apartment__slider-main-img">
-
-					</div>
-
-					<div class="apartment__slider-next-btn">
-						<img src="img/sprite.svg#icons--slider-next-btn-icon"
-							class="svg-icons--slider-next-btn-icon-dims" alt="icons--slider-next-btn-icon">
-					</div>
-
-					<div class="apartment__slider-full-screen-btn">
-						<img src="img/sprite.svg#icons--slider-fullscreen-btn-icon"
-							class="svg-icons--slider-fullscreen-btn-icon-dims" alt="icons--slider-fullscreen-btn-icon">
-					</div>
+			<div class="apartment__slider-main-img">
 
 			</div>
-				<div class="apartment__slider-mini-images-container">
-					<div class="slider-mini-img-container-1 slider-mini-img slider-mini-img-container--active">
-					</div>
-					<div class="slider-mini-img-container-2 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-3 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-4 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-5 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-6 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-7 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-8 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-9 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-10 slider-mini-img">
-					</div>
-					<div class="slider-mini-img-container-11 slider-mini-img">
-					</div>
-				</div>
+
+			<div class="apartment__slider-next-btn">
+				<img src="img/sprite.svg#icons--slider-next-btn-icon"
+					class="svg-icons--slider-next-btn-icon-dims" alt="icons--slider-next-btn-icon">
 			</div>
-			<div class="apartment__detailed-description-container">
-				<div class="apartment__detailed-description">
-		`;
+
+			<div class="apartment__slider-full-screen-btn">
+				<img src="img/sprite.svg#icons--slider-fullscreen-btn-icon"
+					class="svg-icons--slider-fullscreen-btn-icon-dims" alt="icons--slider-fullscreen-btn-icon">
+			</div>
+
+	</div>
+		<div class="apartment__slider-mini-images-container">
+
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+<div class="slider-mini-img none"></div>
+
+</div>
+	</div>
+	<div class="apartment__detailed-description-container">
+		<div class="apartment__detailed-description">
+`;
+	// let miniImg
+	// for (let i = 0; i < 40; i++) {
+	// 	miniImg += `<div class="slider-mini-img"></div>`;
+	// }
+
+
 	const apartmentHTMLLabels = `
 		<!-- Подробное описание квартиры -->
 
@@ -702,5 +729,3 @@ const renderApartmentDetailed = (findApartment) => {
 		}
 	});
 };
-
-

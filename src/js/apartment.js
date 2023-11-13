@@ -1,3 +1,5 @@
+import apartmentSlider from './modules/apartment-slider.js';
+
 let apartmentsData = [];
 const apartmentAdjacentHTML = document.querySelector('.apartment__container');
 
@@ -7,8 +9,11 @@ const getApartmentData = async () => {
 			const res = await fetch('https://64845cf9ee799e3216269459.mockapi.io/apartments');
 			apartmentsData = await res.json();
 		}
+
 		findCurrentApartment(apartmentsData);
+
 	} catch {}
+
 };
 getApartmentData();
 
@@ -23,10 +28,11 @@ const findCurrentApartment = (apartmentsData) => {
 		return apartment.id === apartmentId;
 	});
 	renderApartmentDetailed(findApartment);
+	apartmentSlider(findApartment)
 };
 
 const renderApartmentDetailed = (findApartment) => {
-	const {
+	 const {
 		city,
 		street,
 		photos,
@@ -94,43 +100,50 @@ const renderApartmentDetailed = (findApartment) => {
 			<div class="apartment__slider">
 				<div class="apartment__slider-main-container">
 
-					<img class="slider-main-img" src="${photos}/(1).jpg" alt="apartment-mini-img">
+
+
 					<div class="apartment__slider-prev-btn">
 						<img src="img/sprite.svg#icons--slider-prev-btn-icon"
 							class="svg-icons--slider-prev-btn-icon-dims" alt="icons--slider-prev-btn-icon">
 					</div>
-					<div class="apartment__slider-main-img"></div>
+
+					<div class="apartment__slider-main-img">
+
+					</div>
+
 					<div class="apartment__slider-next-btn">
 						<img src="img/sprite.svg#icons--slider-next-btn-icon"
 							class="svg-icons--slider-next-btn-icon-dims" alt="icons--slider-next-btn-icon">
 					</div>
+
 					<div class="apartment__slider-full-screen-btn">
 						<img src="img/sprite.svg#icons--slider-fullscreen-btn-icon"
 							class="svg-icons--slider-fullscreen-btn-icon-dims" alt="icons--slider-fullscreen-btn-icon">
 					</div>
-				</div>
+
+			</div>
 				<div class="apartment__slider-mini-images-container">
-					<div class="slider-mini-img-container-1 slider-mini-img-container--active">
+					<div class="slider-mini-img-container-1 slider-mini-img slider-mini-img-container--active">
 					</div>
-					<div class="slider-mini-img-container-2">
+					<div class="slider-mini-img-container-2 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-3">
+					<div class="slider-mini-img-container-3 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-4">
+					<div class="slider-mini-img-container-4 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-5">
+					<div class="slider-mini-img-container-5 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-6">
+					<div class="slider-mini-img-container-6 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-7">
+					<div class="slider-mini-img-container-7 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-8">
+					<div class="slider-mini-img-container-8 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-9">
+					<div class="slider-mini-img-container-9 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-10">
+					<div class="slider-mini-img-container-10 slider-mini-img">
 					</div>
-					<div class="slider-mini-img-container-11">
+					<div class="slider-mini-img-container-11 slider-mini-img">
 					</div>
 				</div>
 			</div>
@@ -689,3 +702,5 @@ const renderApartmentDetailed = (findApartment) => {
 		}
 	});
 };
+
+

@@ -133,52 +133,10 @@
 .slider-mini-img-container--active {
 	outline: 3px solid rgb(0, 255, 64);
 }
-.slider-mini-img-container-1 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(1).jpg');
-}
-.slider-mini-img-container-2 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(2).jpg');
-}
-.slider-mini-img-container-3 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(3).jpg');
-}
-.slider-mini-img-container-4 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(4).jpg');
-}
-.slider-mini-img-container-5 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(5).jpg');
-}
-.slider-mini-img-container-6 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(6).jpg');
-}
-.slider-mini-img-container-7 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(7).jpg');
-}
-.slider-mini-img-container-8 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(8).jpg');
-}
-.slider-mini-img-container-9 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(9).jpg');
-}
-.slider-mini-img-container-10 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(10).jpg');
-}
-.slider-mini-img-container-11 {
-	@extend %slider-mini-img-container-style;
-	background-image: url('../img/apartments/Rechnaya-1g/(11).jpg');
-}
+
 
 .slider-mini-img {
+	@extend %slider-mini-img-container-style;
 }
 .section {
 	&__container {

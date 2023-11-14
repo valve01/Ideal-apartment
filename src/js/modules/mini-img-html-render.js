@@ -10,15 +10,13 @@
 // export default miniImgHtmlRender;
 
 	// ========================Отображаем иконки слайдов ===================================================
-	let htmldecrSlide = "";
-	let decreasedSlides = document.createElement("div");
-	decreasedSlides.className = "decreasedSlides";
-	const apartmentSliderWrapper = document.querySelectorAll(
-		".apartmentSliderWrapper"
-	);
+	let miniImgHtml = "";
+	const miniImgEl = document.createElement("div");
+	miniImgEl.className = "slider-mini-img";
+	const apartmentSliderWrapper = document.querySelector(".apartment__slider-mini-images-container");
 	decrSlide.forEach((slide) => {
-		htmldecrSlide += `<div class="decreasedSlide"><img src="${slide.src}" onload = "this.closest('.decreasedSlide').style.display = 'flex'" onerror = "this.closest('.decreasedSlide').remove()"></div>
+		miniImgHtml += `<div class="decreasedSlide"><img src="${slide.src}" onload = "this.closest('.decreasedSlide').style.display = 'flex'" onerror = "this.closest('.decreasedSlide').remove()"></div>
 		`;
-		decreasedSlides.innerHTML = htmldecrSlide;
-		apartmentSliderWrapper[i].appendChild(decreasedSlides);
+		miniImgEl.innerHTML = miniImgHtml;
+		apartmentSliderWrapper[i].appendChild(miniImgEl);
 	});

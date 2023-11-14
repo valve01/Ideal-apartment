@@ -1,5 +1,5 @@
 import apartmentSlider from './modules/apartment-slider.js';
-// import miniImgHtmlRender from './modules/mini-img-html-render.js';
+
 let apartmentsData = [];
 const apartmentAdjacentHTML = document.querySelector('.apartment__container');
 
@@ -26,7 +26,6 @@ const findCurrentApartment = (apartmentsData) => {
 		return apartment.id === apartmentId;
 	});
 	renderApartmentDetailed(findApartment);
-	// miniImgHtmlRender();
 	apartmentSlider(findApartment);
 };
 
@@ -125,46 +124,46 @@ const renderApartmentDetailed = (findApartment) => {
 	</div>
 		<div class="apartment__slider-mini-images-container">
 
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
-<div class="slider-mini-img none"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
+<div class="slider-mini-img"></div>
 
 </div>
 	</div>

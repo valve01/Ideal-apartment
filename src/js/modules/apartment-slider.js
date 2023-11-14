@@ -2,23 +2,26 @@ const apartmentSlider = (findApartment) => {
 	const { photos } = findApartment;
 	const mainImgEl = document.querySelector('.apartment__slider-main-img');
 
+	// const photosVar = `/Ideal-apartment/${photos}`;
+	const photosVar=`${photos}`
+
 	const miniImgEls = document.querySelectorAll('.slider-mini-img');
-	mainImgEl.style.backgroundImage = `url('${photos}/(1).jpg')`;
+	mainImgEl.style.backgroundImage = `url('${photosVar}/(1).jpg')`;
 
 	const changeMainImg = (urlFromMiniImg) => {
 		mainImgEl.style.backgroundImage = urlFromMiniImg;
 	};
 
-	miniImgEls.forEach((miniImg, i) => {
-		const miniImgUrl = `${photos}/(${i + 1}).jpg`;
-		let miniImage = new Image();
-		miniImage.src = miniImgUrl;
-		miniImage.onload = function () {
-			miniImg.classList.remove('none');
-		};
+	miniImgEls.forEach((miniImgEl, i) => {
+		const miniImgUrl = `${photosVar}/(${i + 1}).jpg`;
 
-		miniImg.style.backgroundImage = `url('${miniImgUrl}')`;
-		miniImg.addEventListener('click', () => {
+		const miniImgLoad = new Image();
+		miniImgLoad.src = miniImgUrl;
+		miniImgLoad.onerror = () => {
+			miniImgEl.remove();
+		};
+		miniImgEl.style.backgroundImage = `url('${miniImgUrl}')`;
+		miniImgEl.addEventListener('click', () => {
 			changeMainImg(`url('${miniImgUrl}')`);
 		});
 	});

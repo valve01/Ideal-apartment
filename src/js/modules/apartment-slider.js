@@ -10,15 +10,16 @@ const apartmentSlider = (findApartment) => {
 	};
 
 	miniImgEls.forEach((miniImg, i) => {
-		const miniImgUrl = `url('${photos}/(${i + 1}).jpg')`;
-		// const miniImgUrl = `url('/Ideal-apartment/${photos}/(${i + 1}).jpg')`;
-		console.log(miniImgUrl);
-		if (miniImgUrl) {
+		const miniImgUrl = `${photos}/(${i + 1}).jpg`;
+		let miniImage = new Image();
+		miniImage.src = miniImgUrl;
+		miniImage.onload = function () {
 			miniImg.classList.remove('none');
-		}
-		miniImg.style.backgroundImage = miniImgUrl;
+		};
+
+		miniImg.style.backgroundImage = `url('${miniImgUrl}')`;
 		miniImg.addEventListener('click', () => {
-			changeMainImg(miniImgUrl);
+			changeMainImg(`url('${miniImgUrl}')`);
 		});
 	});
 };

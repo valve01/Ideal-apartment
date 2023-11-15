@@ -8,15 +8,64 @@ const apartmentSlider = (findApartment) => {
 	const miniImgEls = document.querySelectorAll('.slider-mini-img');
 	const prevBtnEl = document.querySelector('.apartment__slider-prev-btn');
 	const nextBtnEl = document.querySelector('.apartment__slider-next-btn');
-	const fullScreenBtn = document.querySelector('.apartment__slider-full-screen-btn');
+	// const fullScreenBtn = document.querySelector('.apartment__slider-full-screen-btn');
+	let currentSlide;
 
+	miniImgEls[0].classList.add('slider-mini-img-container--active');
+	const deliteOutline = () => {
+		for (let i = 0; i < miniImgEls.length; i++) {
+			miniImgEls[i].classList.remove('slider-mini-img-container--active');
+		}
+	};
+	const determinateMainSlide = () => {
+		currentSlide.classList.add('slider-mini-img-container--active');
+		mainImgEl.style.backgroundImage = currentSlide.style.backgroundImage;
+	};
+	prevBtnEl.addEventListener('click', (e) => {
+		turnPrevSlide(e);
+	});
 
-//	prevBtnEl.addEventListener('click', () => {});
+	const turnPrevSlide = (e) => {
+		const slideList = e.target
+			.closest('.apartment__slider')
+			.querySelector('.apartment__slider-mini-images-container').children;
+		deliteOutline();
+		for (let i = 0; i < slideList.length; i++) {
+			if (slideList[i].style.backgroundImage === mainImgEl.style.backgroundImage) {
+				currentSlide = slideList[i - 1];
+			}
+		}
+		if (currentSlide === slideList[-1]) {
+			currentSlide = slideList[slideList.length - 1];
+		}
+		determinateMainSlide();
+	};
 
+	nextBtnEl.addEventListener('click', (e) => {
+		turnNextSlide(e);
+	});
 
+	const turnNextSlide = (e) => {
+		const slideList = e.target
+			.closest('.apartment__slider')
+			.querySelector('.apartment__slider-mini-images-container').children;
+		deliteOutline();
+		for (let i = 0; i < slideList.length; i++) {
+			if (slideList[i].style.backgroundImage === mainImgEl.style.backgroundImage) {
+				currentSlide = slideList[i + 1];
+			}
+		}
+		if (currentSlide === slideList[slideList.length]) {
+			currentSlide = slideList[0];
+		}
+		determinateMainSlide();
+	};
+
+	// Переключатель по клику на минислайд
 	let mainImgFullUrl = `url('${photosVar}/(1).jpg')`;
 
 	mainImgEl.style.backgroundImage = mainImgFullUrl;
+
 	const changeMainImgFromMiniSlide = (urlFromMiniImg) => {
 		mainImgEl.style.backgroundImage = urlFromMiniImg;
 	};
@@ -33,7 +82,9 @@ const apartmentSlider = (findApartment) => {
 		miniImgEl.style.backgroundImage = `url('${miniImgUrl}')`;
 
 		miniImgEl.addEventListener('click', () => {
+			deliteOutline();
 			changeMainImgFromMiniSlide(`url('${miniImgUrl}')`);
+			miniImgEl.classList.add('slider-mini-img-container--active');
 		});
 	});
 };

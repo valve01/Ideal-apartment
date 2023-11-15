@@ -20,7 +20,7 @@
 		height: 470px;
 		display: flex;
 		position: relative;
-		background-color: rgba(159, 207, 231, 0.247) ;
+		background-color: rgba(159, 207, 231, 0.247);
 	}
 	&__slider-main-img {
 		background-image: url('../img/apartments/Rechnaya-1g/(1).jpg');
@@ -77,7 +77,6 @@
 		display: grid;
 		gap: 3px;
 		grid-template-columns: repeat(10, 1fr);
-		grid-template-rows: repeat(2, 1fr);
 	}
 	&__label-row-container {
 		font-size: 20px;

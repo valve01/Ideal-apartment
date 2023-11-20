@@ -76,8 +76,6 @@
 		margin-top: 5px;
 		display: grid;
 		gap: 3px;
-		// flex-wrap: wrap;
-		// justify-content: space-between;
 		grid-template-columns: repeat(10, 1fr);
 	}
 	&__label-row-container {
@@ -189,6 +187,7 @@
 .svg-icons--marked-checkbox-icon-dims {
 	width: 25px;
 	height: 25px;
+	margin: 4px;
 }
 .checked-condition-span {
 }
@@ -239,5 +238,30 @@
 	}
 	.separator {
 		margin: 15px 15px 15px 35px;
+	}
+	.section-title {
+		margin-top: 20px;
+		font-size: 24px;
+	}
+	.section__checked-condition {
+		font-size: $tablet-font-size-common;
+		margin-top: 4px;
+	}
+	.svg-icons--marked-checkbox-icon-dims {
+		width: 20px;
+		height: 20px;
+	}
+	.section__table-container {
+		font-size: $tablet-font-size-common;
+	}
+	.section-p {
+		font-size: $tablet-font-size-common;
+	}
+	.apartment__adress {
+		font-size: 30px;
+		padding: 15px 0 15px 0;
+	}
+	.apartment__inner {
+		gap:10px
 	}
 }

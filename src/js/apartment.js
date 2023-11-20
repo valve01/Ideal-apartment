@@ -1,4 +1,7 @@
 import apartmentSlider from './modules/apartment-slider.js';
+import mobileNav from './modules/mobile-nav.js';
+
+mobileNav();
 
 let apartmentsData = [];
 const apartmentAdjacentHTML = document.querySelector('.apartment__container');
@@ -305,7 +308,7 @@ const renderApartmentDetailed = (findApartment) => {
 <h2 class="section-title">Параметры</h2>
 <div class="section__table-container">
 	<div class="section__table-row-1">
-		<span class="section__table-property">Квартира</span>
+		<span class="section__table-property">Тип помещения</span>
 		<span class="section__table-value">${apartmentType}</span>
 	</div>
 	<div class="section__table-row-2">

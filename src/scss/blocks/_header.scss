@@ -92,7 +92,6 @@
 	background-color: #ffcc33;
 	border-radius: 10px;
 
-
 	&:hover {
 		transform: translate(0, -3px);
 		transition: translate 0.5s;
@@ -110,4 +109,48 @@
 		size: 16px;
 		weight: 600;
 	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+	.header__menu-list {
+		display: none;
+	}
+	.social-icons-container {
+		display: flex;
+		gap: 8px;
+		min-width: 80px;
+	}
+	.svg-icons {
+		&--whatsaap-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--telegram-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--avito-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--phone-icon-dims {
+			display: none;
+		}
+	}
+	.callback-btn {
+		border-radius: 6px;
+		&__text {
+			padding: 10px;
+			font: {
+				size: 14px;
+			}
+		}
+	}
+	.header__phone-container {
+		min-width: 0;
+		font: {
+			size: 14px;
+		}
+	}
+
 }

@@ -35,3 +35,11 @@
 	margin-top: 35px;
 	font-weight: 500;
 }
+
+$tablet-font-size-common: 14px;
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+	%--main-h2-title {
+		font-size: 24px;
+	}
+}

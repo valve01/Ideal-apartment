@@ -1,7 +1,5 @@
-
-.booking-form  {
-
-	&__sticky{
+.booking-form {
+	&__sticky {
 		top: 50px;
 		position: sticky;
 	}
@@ -96,6 +94,33 @@
 		&:active {
 			transform: translate(3px, 3px);
 			box-shadow: none;
+		}
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
+	.booking-form {
+		&__price {
+			font-size: 18px;
+			font-weight: 500;
+		}
+		&__price-span {
+			font-size: 12px;
+			font-weight: 500;
+		}
+		&__block-title {
+			font-size: $tablet-font-size-common;
+			padding: 5px;
+		}
+		&__input-container {
+			font-size: $tablet-font-size-common;
+		}
+		&__submit-btn {
+			margin: 25px 15px;
+			font-size: 14px;
+			padding: 10px 10px;
+		}
+		&__booking-form-container {
+			min-width: 180px;
 		}
 	}
 }

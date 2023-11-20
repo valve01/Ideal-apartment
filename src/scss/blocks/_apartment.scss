@@ -76,6 +76,8 @@
 		margin-top: 5px;
 		display: grid;
 		gap: 3px;
+		// flex-wrap: wrap;
+		// justify-content: space-between;
 		grid-template-columns: repeat(10, 1fr);
 	}
 	&__label-row-container {
@@ -120,7 +122,7 @@
 %slider-mini-img-container-style {
 	cursor: pointer;
 	height: 84px;
-	width: 100%;
+	// width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -224,4 +226,18 @@
 }
 .aside-booking-form {
 	margin-top: 109px;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+	.apartment__slider-mini-images-container {
+		grid-template-columns: repeat(8, 1fr);
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
+	.apartment__slider-mini-images-container {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.separator {
+		margin: 15px 15px 15px 35px;
+	}
 }

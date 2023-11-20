@@ -651,7 +651,7 @@ const renderApartmentDetailed = (findApartment) => {
 </section>
 <div class="separator"></div>
 </div>
-<div class="separator-vert"></div>
+
 </div>
 `;
 	const apartmentHTMLMap = `

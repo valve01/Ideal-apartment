@@ -9,3 +9,9 @@
 	margin: 20px 0 20px 0;
 	@extend %--shadow-main;
 }
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+	.map-main {
+width: 583px;
+	}
+}

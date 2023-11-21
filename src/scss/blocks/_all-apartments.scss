@@ -1,5 +1,7 @@
-.all-apartments-container{
-
+.all-apartments-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .all-apartments {
 	display: flex;

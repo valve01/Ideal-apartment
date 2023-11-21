@@ -234,7 +234,7 @@
 }
 @media screen and (min-width: 600px) and (max-width: 959px) {
 	.apartment__slider-mini-images-container {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 	}
 	.separator {
 		margin: 15px 15px 15px 35px;
@@ -262,6 +262,14 @@
 		padding: 15px 0 15px 0;
 	}
 	.apartment__inner {
-		gap:10px
+		gap:10px;
+		padding: 0 5px 0 5px;
+		
+	}
+
+	%slider-mini-img-container-style {
+
+		height: 64px;
+
 	}
 }

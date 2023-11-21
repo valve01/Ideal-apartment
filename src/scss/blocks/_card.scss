@@ -105,12 +105,11 @@
 		height: 100%;
 		width: 100%;
 		padding: 2px 10px;
-		&:hover{
+		&:hover {
 			font-weight: 500;
 		}
 	}
 	&__detailed-btn-link {
-
 		display: inline-flex;
 		margin: 6px 0;
 		justify-content: center;
@@ -155,5 +154,11 @@
 	font: {
 		size: 16px;
 		weight: 400;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+	.card {
+		scale: 0.6;
 	}
 }

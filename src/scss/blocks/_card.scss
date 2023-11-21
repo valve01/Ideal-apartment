@@ -157,7 +157,6 @@
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
 	.card {
-		
 		&__container {
 			margin-top: 10px;
 			margin-bottom: 20px;
@@ -172,7 +171,6 @@
 		}
 		&__photo-container {
 			width: 300px;
-
 		}
 		&__price {
 			border-radius: 3px;
@@ -186,10 +184,8 @@
 				weight: 500;
 			}
 		}
-		&__photo {
-		}
 		&__description {
-			max-width: 220px;
+			max-width: 240px;
 			padding: 4px 12px 4px 16px;
 			gap: 8px;
 		}
@@ -202,30 +198,18 @@
 				size: 16px;
 			}
 		}
-		&__bed-place-container {
-		}
 		&__bed-place-title {
 			display: none;
 		}
-		&__bed-place {
-		}
-		&__bed-place-number {
-		}
-		&__bed-place-icon {
-		}
 		&__facilities {
 			gap: 4px;
-		}
-		&__facilities-icon {
-		}
-		&__bottom-row {
 		}
 		&__detailed-btn {
 			padding: 6px 8px;
 			font-size: 14px;
 		}
 		&__detailed-btn-link {
-			margin: 6px 2px;
+			margin: 6px 0 6px 12px;
 			border-radius: 3px;
 		}
 	}

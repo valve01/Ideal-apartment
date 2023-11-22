@@ -17,3 +17,25 @@
 		}
 	}
 }
+
+@media screen and (max-width: 599px) {
+	.rules-block  { 
+
+		&__title {
+			@extend %--main-h2-title;
+			align-self: center;
+			text-align: center;
+		}
+		&__items {
+			padding: 30px 10px 0 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		&__item {
+			font: {
+				weight: 500;
+			}
+		}
+	}
+}

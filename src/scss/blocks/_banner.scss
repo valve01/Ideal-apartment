@@ -36,9 +36,9 @@
 	}
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 599px) and (min-width: 375px) {
 	.banner {
-		padding: 0 20px 0 20px;
+		padding: 0 20px 10px 20px;
 		justify-content: space-between;
 		gap: 20px;
 	}
@@ -47,5 +47,16 @@
 			size: 20px;
 			weight: 600;
 		}
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.banner {
+		padding: 0 20px 10px 20px;
+		justify-content: center;
+
+	}
+	.banner-text {
+display: none;
 	}
 }

@@ -43,7 +43,7 @@
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
-	.footer{
+	.footer {
 		padding: 20px;
 		&__item {
 			width: 50%;
@@ -60,8 +60,8 @@
 	}
 }
 
-@media screen and (max-width: 599px) {
-	.footer{
+@media screen and (max-width: 599px) and (min-width: 375px) {
+	.footer {
 		padding: 10px;
 		&__item {
 			width: 50%;
@@ -74,6 +74,33 @@
 		}
 		&__item-content {
 			line-height: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.contact-phones {
+		justify-content: center;
+	}
+	.footer {
+		padding: 10px;
+		&__item {
+			width: 100%;
+		}
+		&__items {
+			flex-wrap: wrap;
+		}
+		&__item-text-link {
+			line-height: 0px;
+		}
+		&__item-content {
+			line-height: 20px;
+		}
+		&__item-title {
+			text-align: center;
+		}
+		&__social-icons-container {
+			justify-content: center;
 		}
 	}
 }

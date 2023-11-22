@@ -154,7 +154,7 @@
 	}
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 599px) and (min-width: 375px) {
 	.header__menu-list {
 		display: none;
 	}
@@ -193,4 +193,50 @@
 	.phone-name {
 		display: none;
 	}
+}
+
+@media screen and (max-width: 374px) {
+	.header {
+		&__menu-list {
+			display: none;
+		}
+		&__first-row {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	.social-icons-container {
+		display: flex;
+		gap: 8px;
+		min-width: 80px;
+	}
+	.svg-icons {
+		&--whatsaap-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--telegram-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--avito-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--phone-icon-dims {
+			display: none;
+		}
+	}
+	.callback-btn {
+		display: none;
+	}
+
+	.header__phone-container {
+		min-width: 0;
+		font: {
+			size: 14px;
+		}
+	}
+
 }

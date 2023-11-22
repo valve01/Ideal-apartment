@@ -5,7 +5,6 @@
 .map__title {
 	align-self: center;
 	text-align: center;
-	font-size: 24px;
 }
 .yandex-map {
 	margin: 20px 0 20px 0;
@@ -16,14 +15,18 @@
 	.map-main {
 		width: 583px;
 	}
+	.map__title {
+		font-size: 24px;
+	}
 }
 @media screen and (max-width: 599px) {
 	.map-main {
 		height: 500px;
 	}
 	.yandex-map {
-		margin-left: -15px;
 		box-shadow: none;
-		width: calc(100% + 30px);
+	}
+	.map__title {
+		font-size: 24px;
 	}
 }

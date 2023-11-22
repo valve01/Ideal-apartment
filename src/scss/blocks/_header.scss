@@ -152,5 +152,45 @@
 			size: 14px;
 		}
 	}
+}
 
+@media screen and (max-width: 599px) {
+	.header__menu-list {
+		display: none;
+	}
+	.social-icons-container {
+		display: flex;
+		gap: 8px;
+		min-width: 80px;
+	}
+	.svg-icons {
+		&--whatsaap-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--telegram-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--avito-icon-dims {
+			width: 36px;
+			height: 36px;
+		}
+		&--phone-icon-dims {
+			display: none;
+		}
+	}
+	.callback-btn {
+		display: none;
+	}
+
+	.header__phone-container {
+		min-width: 0;
+		font: {
+			size: 12px;
+		}
+	}
+	.phone-name {
+		display: none;
+	}
 }

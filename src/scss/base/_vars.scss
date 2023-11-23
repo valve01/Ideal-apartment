@@ -44,7 +44,7 @@ $tablet-font-size-common: 14px;
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 375px) {
+@media screen and (max-width: 599px) and (min-width: 360px) {
 	%--main-h2-title {
 		font-size: 24px;
 		text-align: center;
@@ -54,7 +54,7 @@ $tablet-font-size-common: 14px;
 	}
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 359px) {
 	%--main-h2-title {
 		font-size: 24px;
 		text-align: center;

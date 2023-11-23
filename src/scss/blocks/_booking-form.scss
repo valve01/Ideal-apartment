@@ -124,3 +124,14 @@
 		}
 	}
 }
+
+@media screen and (max-width: 599px) and (min-width: 360px) {
+	.aside-booking-form {
+		display: none;
+	}
+}
+@media screen and (max-width: 359px) {
+	.aside-booking-form {
+		display: none;
+	}
+}

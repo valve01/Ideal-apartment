@@ -262,11 +262,121 @@
 		padding: 15px 0 15px 0;
 	}
 	.apartment__inner {
-		gap:10px;
-		padding: 0 5px 0 5px;
+		gap: 10px;
+		padding: 0 10px 0 10px;
 	}
 
 	%slider-mini-img-container-style {
 		height: 64px;
+	}
+}
+
+@media screen and (max-width: 599px) and (min-width: 360px) {
+	.apartment__inner {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		padding: 0 10px 0 10px;
+	}
+	.map {
+		margin-left: -10px;
+		margin-right: -10px;
+		&__container {
+		}
+	}
+	%slider-mini-img-container-style {
+		height: 64px;
+	}
+	.apartment__inner {
+		gap: 10px;
+		padding: 0 10px 0 10px;
+	}
+	.apartment__slider-mini-images-container {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	.separator {
+		margin: 15px 15px 15px 35px;
+	}
+	.section-title {
+		margin-top: 20px;
+		font-size: 24px;
+	}
+	.section__checked-condition {
+		font-size: $tablet-font-size-common;
+		margin-top: 4px;
+	}
+	.svg-icons--marked-checkbox-icon-dims {
+		width: 20px;
+		height: 20px;
+	}
+	.section__table-container {
+		font-size: $tablet-font-size-common;
+	}
+	.section-p {
+		font-size: $tablet-font-size-common;
+	}
+	.apartment__adress {
+		font-size: 30px;
+		padding: 15px 0 15px 0;
+	}
+	.apartment__slider {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+}
+
+@media screen and (max-width: 359px) {
+	.apartment__inner {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		padding: 0 10px 0 10px;
+	}
+	.map {
+		margin-left: -10px;
+		margin-right: -10px;
+		&__container {
+		}
+	}
+	%slider-mini-img-container-style {
+		height: 64px;
+	}
+	.apartment__inner {
+		gap: 10px;
+		padding: 0 10px 0 10px;
+	}
+	.apartment__slider-mini-images-container {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	.separator {
+		margin: 15px 15px 15px 35px;
+	}
+	.section-title {
+		margin-top: 20px;
+		font-size: 24px;
+		text-align: center;
+	}
+	.section__checked-condition {
+		width: 100%;
+	}
+	.section__checked-condition {
+		font-size: $tablet-font-size-common;
+		margin-top: 4px;
+	}
+	.svg-icons--marked-checkbox-icon-dims {
+		width: 20px;
+		height: 20px;
+	}
+	.section__table-container {
+		font-size: $tablet-font-size-common;
+	}
+	.section-p {
+		font-size: $tablet-font-size-common;
+	}
+	.apartment__adress {
+		font-size: 30px;
+		padding: 15px 0 15px 0;
+	}
+	.apartment__slider {
+		margin-left: -10px;
+		margin-right: -10px;
 	}
 }

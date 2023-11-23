@@ -36,21 +36,18 @@
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 375px) {
+@media screen and (max-width: 599px) and (min-width: 360px) {
 	.banner {
 		padding: 0 20px 10px 20px;
-		justify-content: space-between;
+		justify-content: center;
 		gap: 20px;
 	}
 	.banner-text {
-		font: {
-			size: 20px;
-			weight: 600;
-		}
+		display: none;
 	}
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 359px) {
 	.banner {
 		padding: 0 20px 10px 20px;
 		justify-content: center;

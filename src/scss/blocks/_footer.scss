@@ -60,7 +60,7 @@
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 375px) {
+@media screen and (max-width: 599px) and (min-width: 360px) {
 	.footer {
 		padding: 10px;
 		&__item {
@@ -78,7 +78,7 @@
 	}
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 359px) {
 	.contact-phones {
 		justify-content: center;
 	}

@@ -242,7 +242,7 @@
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 375px) {
+@media screen and (max-width: 599px) and (min-width: 360px) {
 	.card {
 		&__container {
 			flex-direction: column;
@@ -336,7 +336,7 @@
 	}
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 359px) {
 	.card {
 		&__container {
 			flex-direction: column;

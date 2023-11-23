@@ -90,7 +90,7 @@ const renderApartmentDetailed = (findApartment) => {
 	} = additionally;
 
 	const apartmentHTMLAdress = `
-	<main class="apartment">
+
 	<h1 class="apartment__adress">г.${city} ул.${street}</h1>
 	`;
 
@@ -705,7 +705,7 @@ const renderApartmentDetailed = (findApartment) => {
 			сделать правильный выбор.</p>
 	</div>
 </section>
-</main>
+
 `;
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdress);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLSlider);

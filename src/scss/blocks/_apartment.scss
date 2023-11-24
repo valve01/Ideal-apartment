@@ -6,6 +6,7 @@
 		grid-template-columns: 9fr 3fr;
 		gap: 30px;
 		margin-bottom: 20px;
+		// position: relative;
 	}
 	&__container {
 	}
@@ -233,6 +234,9 @@
 	}
 }
 @media screen and (min-width: 600px) and (max-width: 959px) {
+	.aside-booking-form {
+		margin-top: 67px;
+	}
 	.apartment__slider-mini-images-container {
 		grid-template-columns: repeat(5, 1fr);
 	}

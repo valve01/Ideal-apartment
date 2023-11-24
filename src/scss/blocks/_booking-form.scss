@@ -126,12 +126,52 @@
 }
 
 @media screen and (max-width: 599px) and (min-width: 360px) {
-	.aside-booking-form {
+	.aside-booking-form{
 		display: none;
+	}
+	.booking-form {
+		top: 0;
+
+		position: fixed;
+		// right: 0;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		z-index: 50;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s ease-in;
+	}
+	.booking-form--open{
+		right: 0;
 	}
 }
 @media screen and (max-width: 359px) {
-	.aside-booking-form {
+
+	.aside-booking-form{
 		display: none;
+	}
+	.booking-form {
+		top: 0;
+
+		position: fixed;
+		// right: 0;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		z-index: 50;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s ease-in;
+	}
+	.booking-form--open{
+		right: 0;
+	}
+	.aside-booking-form--show{
+		display: block;
 	}
 }

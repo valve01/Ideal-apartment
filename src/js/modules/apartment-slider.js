@@ -1,8 +1,8 @@
 const apartmentSlider = (findApartment) => {
 	const { photos } = findApartment;
 
-	const photosVar = `/Ideal-apartment/${photos}`;
-	// const photosVar = `${photos}`;
+	// const photosVar = `/Ideal-apartment/${photos}`;
+	const photosVar = `${photos}`;
 
 
 	const mainImgEl = document.querySelector('.apartment__slider-main-img');

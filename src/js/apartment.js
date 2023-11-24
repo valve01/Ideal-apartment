@@ -1,7 +1,8 @@
 import apartmentSlider from './modules/apartment-slider.js';
 import mobileNav from './modules/mobile-nav.js';
-
+import bookingForm from './modules/booking-form.js';
 mobileNav();
+
 
 let apartmentsData = [];
 const apartmentAdjacentHTML = document.querySelector('.apartment__container');
@@ -94,8 +95,6 @@ const renderApartmentDetailed = (findApartment) => {
 	<h1 class="apartment__adress">г.${city} ул.${street}</h1>
 	`;
 
-
-
 	const apartmentHTMLSlider = `
 
 	<!-- Слайдер -->
@@ -177,7 +176,6 @@ const renderApartmentDetailed = (findApartment) => {
 	// for (let i = 0; i < 40; i++) {
 	// 	miniImg += `<div class="slider-mini-img"></div>`;
 	// }
-
 
 	const apartmentHTMLLabels = `
 		<!-- Подробное описание квартиры -->

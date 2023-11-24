@@ -181,6 +181,9 @@
 	.booking-form--open {
 		right: 0;
 	}
+	.aside-booking-form--show {
+		display: block;
+	}
 }
 @media screen and (max-width: 359px) {
 	.show-booking-form-btn {

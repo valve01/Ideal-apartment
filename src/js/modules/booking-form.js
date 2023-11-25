@@ -13,14 +13,16 @@ console.log(guestsQuantityEl);
 
 // Logic
 const inputHandler = (e) => {
+	e.target.closest('.booking-form__input-wrapper').querySelector('.booking-form__input-container').classList.add('none')
+	console.log(e.target)
 	// bookingFormInput.forEach((input) => {});
-	if (e.target.querySelector('.booking-form__input')) {
-		e.target.querySelector('.booking-form__input').classList.remove('none');
-		e.target.querySelector('.booking-form__input-fake').classList.add('none');
-		e.target.querySelector('.booking-form__necessarily-star').classList.add('none');
-	}
+	// if (e.target.querySelector('.booking-form__input')) {
+	// 	e.target.querySelector('.booking-form__input').classList.remove('none');
+	// 	e.target.querySelector('.booking-form__input-fake').classList.add('none');
+	// 	e.target.querySelector('.booking-form__necessarily-star').classList.add('none');
+	// }
 
-	console.log(e.target.querySelector('.booking-form__input'));
+	// console.log(e.target.querySelector('.booking-form__input'));
 };
 
 bookingFormInputContainer.forEach((inputContainer) => {

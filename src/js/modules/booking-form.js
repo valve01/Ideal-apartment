@@ -6,23 +6,25 @@ const bookingFormContainer = document.querySelector('.booking-form__booking-form
 
 const bookingFormInputFakeEls = document.querySelectorAll('.booking-form__input-fake');
 const guestsQuantityEl = document.querySelector('#guests-quantity');
-const bookingFormInputContainer = document.querySelectorAll('.booking-form__input-container');
+const bookingFormInputContainer = document.querySelectorAll('.booking-form__input-fake-container');
 const bookingFormInput = document.querySelectorAll('.booking-form__input');
 
 console.log(guestsQuantityEl);
 
 // Logic
 const inputHandler = (e) => {
-	e.target.closest('.booking-form__input-wrapper').querySelector('.booking-form__input-container').classList.add('none')
-	console.log(e.target)
-	// bookingFormInput.forEach((input) => {});
-	// if (e.target.querySelector('.booking-form__input')) {
-	// 	e.target.querySelector('.booking-form__input').classList.remove('none');
-	// 	e.target.querySelector('.booking-form__input-fake').classList.add('none');
-	// 	e.target.querySelector('.booking-form__necessarily-star').classList.add('none');
-	// }
-
-	// console.log(e.target.querySelector('.booking-form__input'));
+	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
+	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
+	const input = inputWrapper.querySelector('.booking-form__input');
+	inputFakeContainer.classList.add('none');
+	input.classList.remove('none');
+	input.focus();
+	input.onblur = function () {
+		if (!this.value) {
+			input.classList.add('none');
+			inputFakeContainer.classList.remove('none');
+		}
+	};
 };
 
 bookingFormInputContainer.forEach((inputContainer) => {

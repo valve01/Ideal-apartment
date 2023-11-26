@@ -9,7 +9,7 @@ const guestsQuantityEl = document.querySelector('#guests-quantity');
 const bookingFormInputContainer = document.querySelectorAll('.booking-form__input-fake-container');
 const bookingFormInput = document.querySelectorAll('.booking-form__input');
 
-console.log(guestsQuantityEl);
+// console.log(guestsQuantityEl);
 
 // Logic
 const inputHandler = (e) => {

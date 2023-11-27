@@ -47,3 +47,13 @@ const closeForm = () => {
 showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));
 bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
 bodyEl.addEventListener('click', () => closeForm());
+
+const hideShowBookingFormBtnOnFooter = () => {
+	if (pageYOffset > 2700) {
+		showBookingFormBtnEl.classList.add('none');
+	} else {
+		if(!bookingFormEl.classList.contains('booking-form--open'))
+		showBookingFormBtnEl.classList.remove('none');
+	}
+};
+window.addEventListener('scroll', hideShowBookingFormBtnOnFooter);

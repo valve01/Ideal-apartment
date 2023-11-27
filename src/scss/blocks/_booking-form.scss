@@ -118,6 +118,7 @@ select.booking-form__input {
 	justify-content: center;
 }
 .show-booking-form-btn {
+	opacity: 0.8;
 	display: none;
 	position: fixed;
 	top: 90%;
@@ -170,6 +171,19 @@ select.booking-form__input {
 }
 
 @media screen and (max-width: 599px) and (min-width: 360px) {
+	.booking-form__block-title {
+		padding: 4px;
+	}
+	
+	.booking-form__booking-form-container{
+		top:30px
+	}
+	.booking-form__input-fake-container {
+		height: 30px;
+	}
+	.booking-form__input {
+		height: 30px;
+	}
 	.show-booking-form-btn {
 		display: flex;
 	}
@@ -178,8 +192,8 @@ select.booking-form__input {
 		display: none;
 	}
 	.booking-form {
-		top: 0;
-
+		top: 0px;
+		font-size: 14px;
 		position: fixed;
 		// right: 0;
 		right: -100%;
@@ -200,6 +214,15 @@ select.booking-form__input {
 	}
 }
 @media screen and (max-width: 359px) {
+	.booking-form__block-title {
+		padding: 4px;
+	}
+	.booking-form__input-fake-container {
+		height: 30px;
+	}
+	.booking-form__input {
+		height: 30px;
+	}
 	.show-booking-form-btn {
 		display: flex;
 	}
@@ -208,7 +231,7 @@ select.booking-form__input {
 	}
 	.booking-form {
 		top: 0;
-
+		font-size: 14px;
 		position: fixed;
 		// right: 0;
 		right: -100%;

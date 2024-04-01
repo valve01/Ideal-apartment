@@ -1,6 +1,9 @@
 import apartmentSlider from './modules/apartment-slider.js';
 import mobileNav from './modules/mobile-nav.js';
 import bookingForm from './modules/booking-form.js';
+
+
+
 mobileNav();
 
 

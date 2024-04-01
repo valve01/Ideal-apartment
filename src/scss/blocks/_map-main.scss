@@ -2,6 +2,26 @@
 	display: flex;
 	flex-direction: column;
 }
+.show-main-map-btn{
+	padding: 6px 20px;
+	display: inline-block;
+	margin: 10px 0;
+	justify-self: center;
+	align-self: center;
+	border-radius: 4px;
+	background: var(--color-main);
+	color: #fff;
+	@extend %--shadow-main;
+	&:hover {
+		color: var(--color-main);
+		background-color: var(--accent);
+		font-weight: 500;
+	}
+	&:active {
+		transform: translate(3px, 3px);
+		box-shadow: none;
+	}
+}
 .map__title {
 	align-self: center;
 	text-align: center;
@@ -21,7 +41,7 @@
 }
 @media screen and (max-width: 599px) {
 	.map-main {
-		height: 500px;
+		max-height: 500px;
 	}
 	.yandex-map {
 		box-shadow: none;

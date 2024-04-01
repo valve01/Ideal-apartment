@@ -15,15 +15,15 @@ const cardsCreate = (apartmentsData) => {
 		const { id, price, parameters, city, street, photos, apartmentDescription } = card;
 
 
-		const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
-		// const photoHref = `/apartment.html?id=${id}`;
+		// const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
+		const photoHref = `/apartment.html?id=${id}`;
 
 
 		const cardItem = `
 <div class="card">
 	<div class="card__container">
 
-		<a class="card__photo-container" href=${photoHref} target="_blank">
+		<a class="card__photo-container" href=${photoHref} >
 			<div class="card__photo-labels-container">
 				<div class="card__price">
 					<span class="price-number">${price.priceMin} р / </span>
@@ -65,7 +65,7 @@ const cardsCreate = (apartmentsData) => {
 					</div>
 
 				</div>
-				<a class="card__detailed-btn-link" href=${photoHref} target="_blank"><button class="card__detailed-btn">Подробнее</button></a>
+				<a class="card__detailed-btn-link" href=${photoHref}><button class="card__detailed-btn">Подробнее</button></a>
 			</div>
 
 		</div>

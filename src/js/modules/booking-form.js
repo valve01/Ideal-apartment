@@ -31,17 +31,18 @@ bookingFormInputContainer.forEach((inputContainer) => {
 	inputContainer.addEventListener('click', (e) => inputHandler(e));
 });
 
+// asideBookingFormEl.classList.add('aside-booking-form--show');
 // Show/hide
 const showForm = (e) => {
 	e.stopPropagation();
-	asideBookingFormEl.classList.add('aside-booking-form--show');
+	// asideBookingFormEl.classList.add('aside-booking-form--show');
 	bookingFormEl.classList.add('booking-form--open', 'shading');
 	showBookingFormBtnEl.classList.add('none');
 	document.body.classList.add('no-scroll');
 };
 const closeForm = () => {
 	
-	asideBookingFormEl.classList.remove('aside-booking-form--show');
+	// asideBookingFormEl.classList.remove('aside-booking-form--show');
 	bookingFormEl.classList.remove('booking-form--open', 'shading');
 	showBookingFormBtnEl.classList.remove('none');
 	document.body.classList.remove('no-scroll');

@@ -190,7 +190,8 @@ select.booking-form__input {
 	}
 
 	.aside-booking-form {
-		display: none;
+
+		// display: none;
 	}
 	.booking-form {
 		top: 0px;
@@ -206,12 +207,21 @@ select.booking-form__input {
 		align-items: center;
 		justify-content: center;
 		transition: all 0.2s ease-in;
+
+		&__booking-form-container {
+			min-width: 100vw;
+			height: 360px;
+			
+		}
+		&__input-wrapper {
+			width: 70%;
+		}
 	}
 	.booking-form--open {
 		right: 0;
 	}
 	.aside-booking-form--show {
-		display: block;
+		// display: block;
 	}
 }
 @media screen and (max-width: 359px) {
@@ -228,7 +238,7 @@ select.booking-form__input {
 		display: flex;
 	}
 	.aside-booking-form {
-		display: none;
+		// display: none;
 	}
 	.booking-form {
 		top: 0;
@@ -244,11 +254,20 @@ select.booking-form__input {
 		align-items: center;
 		justify-content: center;
 		transition: all 0.2s ease-in;
+
+		&__booking-form-container {
+			min-width: 100vw;
+			height: 360px;
+			
+		}
+		&__input-wrapper {
+			width: 94%;
+		}
 	}
 	.booking-form--open {
 		right: 0;
 	}
 	.aside-booking-form--show {
-		display: block;
+		// display: block;
 	}
 }

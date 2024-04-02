@@ -1,10 +1,13 @@
 import apartmentSlider from './modules/apartment-slider.js';
 import mobileNav from './modules/mobile-nav.js';
 import bookingForm from './modules/booking-form.js';
-
-
-
+import './modules/scroll-up.js';
+import './modules/show-map.js';
 mobileNav();
+
+// Сброс --active для меню
+const activeMenuItem = $('.header__menu-link.header__menu-link--active');
+activeMenuItem.removeClass('header__menu-link--active');
 
 
 let apartmentsData = [];
@@ -660,15 +663,16 @@ const renderApartmentDetailed = (findApartment) => {
 `;
 	const apartmentHTMLMap = `
 	
-<!-- Карта -->
+	<!--Карта -->
 
 <section class="section">
 	<h2 class="section-title">Карта</h2>
+<button class="show-map-btn">Показать карту</button>
 	<div class="map">
 		<div class="map__container">
-			<iframe
+			<iframe class="yandex-map none"
 				src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
-				width="100%" height="100%" frameborder="0"></iframe>
+				width="100%" height="400" frameborder="0"></iframe>
 		</div>
 	</div>
 </section>
@@ -721,7 +725,7 @@ const renderApartmentDetailed = (findApartment) => {
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLMap);
 	// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLInfrastructure);
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLDescription);
-	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComments);
+	// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComments);
 
 	const checkedConditionSpanElements = document.querySelectorAll(
 		'.checked-condition .checked-condition-span',
@@ -731,4 +735,5 @@ const renderApartmentDetailed = (findApartment) => {
 			element.closest('.checked-condition').classList.add('none');
 		}
 	});
+
 };

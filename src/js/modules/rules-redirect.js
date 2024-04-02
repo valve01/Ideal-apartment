@@ -11,7 +11,11 @@ rulesLink.on('click', function (e) {
 	scrollToRules();
 });
 
-if (document.referrer.includes('apartment')) {
-	// console.log(' содержит apartment');
+// if (document.referrer.includes('apartment')) {
+// 	// console.log(' содержит apartment');
+// 	scrollToRules();
+// }
+
+if (window.location.href.includes('rules')) {
 	scrollToRules();
 }

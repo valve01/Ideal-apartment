@@ -178,15 +178,12 @@ const renderApartmentDetailed = (findApartment) => {
 	<div class="apartment__detailed-description-container">
 		<div class="apartment__detailed-description">
 `;
-	// let miniImg
-	// for (let i = 0; i < 40; i++) {
-	// 	miniImg += `<div class="slider-mini-img"></div>`;
-	// }
+
 
 	const apartmentHTMLLabels = `
 		<!-- Подробное описание квартиры -->
 
-		<div class="apartment__label-row-container">
+		<div class="apartment__label-row-container" loading="lazy">
 			<div class="apartment__rooms-quantity">
 				<div class="apartment__rooms-number">${rooms}</div>
 				<span class="apartment__rooms-span">комнат</span>
@@ -204,7 +201,7 @@ const renderApartmentDetailed = (findApartment) => {
 		<!-- Стоимость -->
 
 		<h2 class="section-title">Стоимость проживания</h2>
-		<div class="section__table-container">
+		<div class="section__table-container" loading="lazy">
 			<div class="section__table-row-1">
 				<span class="section__table-property">Сутки (до 2х гостей)</span>
 				<span class="section__table-value">${priceMin}</span>
@@ -232,7 +229,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Условия заселения-->
 
-					<section class="section">
+					<section class="section" loading="lazy">
 						<h2 class="section-title">Условия заселения</h2>
 						<div class="section__container">
 
@@ -310,7 +307,7 @@ const renderApartmentDetailed = (findApartment) => {
 <!-- Параметры -->
 
 <h2 class="section-title">Параметры</h2>
-<div class="section__table-container">
+<div class="section__table-container" loading="lazy">
 	<div class="section__table-row-1">
 		<span class="section__table-property">Тип помещения</span>
 		<span class="section__table-value">${apartmentType}</span>
@@ -362,7 +359,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Техника -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Техника</h2>
 	<div class="section__container">
 
@@ -465,7 +462,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Кухня -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Кухня</h2>
 	<div class="section__container">
 
@@ -526,7 +523,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Удобства -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Удобства</h2>
 	<div class="section__container">
 		<div class="section__checked-condition checked-condition">
@@ -593,7 +590,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Дополнительно -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Дополнительно</h2>
 	<div class="section__container">
 		<div class="section__checked-condition checked-condition">
@@ -665,7 +662,7 @@ const renderApartmentDetailed = (findApartment) => {
 	
 	<!--Карта -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Карта</h2>
 <button class="show-map-btn">Показать карту</button>
 	<div class="map">
@@ -681,7 +678,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Инфрастуктура -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Инфраструктура рядом</h2>
 	<p class="section-p">зоопарк, парк аттракционов, прокат велосипедов, парковая зона, вокзал,
 		аэропорт,
@@ -694,7 +691,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Описание -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<h2 class="section-title">Описание</h2>
 	<p class="section-p">${apartmentDescription}</p>
 </section>
@@ -703,7 +700,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 <!-- Отзывы -->
 
-<section class="section">
+<section class="section" loading="lazy">
 	<div class="comment">
 		<h3 class="comment-title">Нет отзывов</h3>
 		<p class="comment-p">Оставьте отзыв об этой квартире, если останавливались в ней. Помогите другим

@@ -20,7 +20,7 @@ const cardsCreate = (apartmentsData) => {
 
 
 		const cardItem = `
-<div class="card">
+<div class="card" loading="lazy">
 	<div class="card__container">
 
 		<a class="card__photo-container" href=${photoHref} >
@@ -32,7 +32,7 @@ const cardsCreate = (apartmentsData) => {
 				<div class="card__rooms">${parameters.rooms} комн</div>
 			</div>
 			<div class="card__photo">
-				<img src="${photos}/(1).jpg" alt="card__photo">
+				<img src="${photos}/(1).jpg" alt="card__photo" loading="lazy">
 			</div>
 		</a>
 

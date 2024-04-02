@@ -53,7 +53,7 @@ bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
 bodyEl.addEventListener('click', () => closeForm());
 
 const hideShowBookingFormBtnOnFooter = () => {
-	if (pageYOffset > 2700) {
+	if (pageYOffset > 2500) {
 		showBookingFormBtnEl.classList.add('none');
 	} else {
 		if(!bookingFormEl.classList.contains('booking-form--open'))

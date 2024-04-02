@@ -7,13 +7,14 @@ function mobileNav() {
 	const openMenu = function () {
 		nav.classList.toggle('mobile-nav--open');
 		menuIcon.classList.toggle('nav-icon--active');
-		document.body.classList.toggle('no-scroll');
+		document.body.classList.toggle('not-scroll');
+
 	};
 
 	mobileMenuList.on('click', function () {
 		openMenu();
 	});
-	navBtn.onclick = function () {
+	navBtn.onclick = () => {
 		openMenu();
 	};
 }

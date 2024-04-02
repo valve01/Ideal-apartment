@@ -37,11 +37,14 @@ const showForm = (e) => {
 	asideBookingFormEl.classList.add('aside-booking-form--show');
 	bookingFormEl.classList.add('booking-form--open', 'shading');
 	showBookingFormBtnEl.classList.add('none');
+	document.body.classList.add('no-scroll');
 };
 const closeForm = () => {
+	
 	asideBookingFormEl.classList.remove('aside-booking-form--show');
 	bookingFormEl.classList.remove('booking-form--open', 'shading');
 	showBookingFormBtnEl.classList.remove('none');
+	document.body.classList.remove('no-scroll');
 };
 
 showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));

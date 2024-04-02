@@ -1,5 +1,5 @@
 const rulesLink = $(
-	".header__menu-link[data-cat='rules'], .footer__item-text-link[data-cat='rules']",
+	".header__menu-link[data-cat='rules'], .footer__item-text-link[data-cat='rules'], .mobile-nav__list a[data-cat='rules']",
 );
 const rulesBlock = document.querySelector('.rules-block');
 const scrollToRules = () => {

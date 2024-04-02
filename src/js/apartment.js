@@ -7,8 +7,10 @@ mobileNav();
 
 // Сброс --active для меню
 const activeMenuItem = $('.header__menu-link.header__menu-link--active');
+const activeMobileMenuItem =$('.mobile-nav__list a.mobile-nav-menu-link--active');
 activeMenuItem.removeClass('header__menu-link--active');
-
+activeMobileMenuItem.removeClass('mobile-nav-menu-link--active');
+// =======================
 
 let apartmentsData = [];
 const apartmentAdjacentHTML = document.querySelector('.apartment__container');

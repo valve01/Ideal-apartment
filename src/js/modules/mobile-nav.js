@@ -3,10 +3,18 @@ function mobileNav() {
 	const navBtn = document.querySelector('.mobile-nav-btn');
 	const nav = document.querySelector('.mobile-nav');
 	const menuIcon = document.querySelector('.nav-icon');
-	navBtn.onclick = function () {
+	const mobileMenuList = $('.mobile-nav__list a');
+	const openMenu = function () {
 		nav.classList.toggle('mobile-nav--open');
 		menuIcon.classList.toggle('nav-icon--active');
 		document.body.classList.toggle('no-scroll');
+	};
+
+	mobileMenuList.on('click', function () {
+		openMenu();
+	});
+	navBtn.onclick = function () {
+		openMenu();
 	};
 }
 export default mobileNav;

@@ -1,23 +1,49 @@
 // const asideBookingFormEl = document.querySelector('.aside-booking-form');
 // const bookingFormInputFakeEls = document.querySelectorAll('.booking-form__input-fake');
 // const guestsQuantityEl = document.querySelector('#guests-quantity');
-const bookingFormInput = $('.booking-form__input');
+
+// const bookingFormInput = $('.booking-form__input');
 // bookingFormInput.on('keydown', (e) => {
 // 	if (e.which === 13) {
 // 		bookingFormInput.blur()
 //     }
 // });
 
-for (let i = 0; i < bookingFormInput.length; i++) {
-	bookingFormInput.on('keydown', (e) => {
+// Логика перехода на следующий инпут 
+
+const bookingFormInput = document.querySelectorAll('.booking-form__input');
+
+bookingFormInput.forEach((input, i) => {
+	input.addEventListener('keydown', (e) => {
 		if (e.which === 13) {
 			console.log(bookingFormInput[i]);
 			console.log(bookingFormInput[i + 1]);
 			bookingFormInput[i].blur();
-			bookingFormInput[i + 1].focus();
+			var nextInput = bookingFormInput[i + 1];
+			bookingFormInput[i + 1];
+			nextInputHandler(nextInput);
 		}
 	});
-}
+});
+
+const handlerFunc = function (inputWrapper) {
+	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
+	const input = inputWrapper.querySelector('.booking-form__input');
+	inputFakeContainer.classList.add('none');
+	input.classList.remove('none');
+	input.focus();
+	input.onblur = function () {
+		if (!this.value) {
+			input.classList.add('none');
+			inputFakeContainer.classList.remove('none');
+		}
+	};
+};
+
+const nextInputHandler = (nextInput) => {
+	const inputWrapper = nextInput.closest('.booking-form__input-wrapper');
+	handlerFunc(inputWrapper)
+};
 
 // Клик по submit
 const submitBtn = $('.booking-form__submit-btn');
@@ -34,17 +60,7 @@ bookingFormInputContainer.forEach((inputContainer) => {
 
 const inputHandler = (e) => {
 	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
-	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
-	const input = inputWrapper.querySelector('.booking-form__input');
-	inputFakeContainer.classList.add('none');
-	input.classList.remove('none');
-	input.focus();
-	input.onblur = function () {
-		if (!this.value) {
-			input.classList.add('none');
-			inputFakeContainer.classList.remove('none');
-		}
-	};
+	handlerFunc(inputWrapper)
 };
 
 // Показ/Скрытие формы брони

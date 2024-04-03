@@ -1,17 +1,37 @@
-const asideBookingFormEl = document.querySelector('.aside-booking-form');
-const showBookingFormBtnEl = document.querySelector('.show-booking-form-btn');
-const bookingFormEl = document.querySelector('.booking-form');
-const bodyEl = document.querySelector('.body');
-const bookingFormContainer = document.querySelector('.booking-form__booking-form-container');
+// const asideBookingFormEl = document.querySelector('.aside-booking-form');
+// const bookingFormInputFakeEls = document.querySelectorAll('.booking-form__input-fake');
+// const guestsQuantityEl = document.querySelector('#guests-quantity');
+const bookingFormInput = $('.booking-form__input');
+// bookingFormInput.on('keydown', (e) => {
+// 	if (e.which === 13) {
+// 		bookingFormInput.blur()
+//     }
+// });
 
-const bookingFormInputFakeEls = document.querySelectorAll('.booking-form__input-fake');
-const guestsQuantityEl = document.querySelector('#guests-quantity');
+for (let i = 0; i < bookingFormInput.length; i++) {
+	bookingFormInput.on('keydown', (e) => {
+		if (e.which === 13) {
+			console.log(bookingFormInput[i]);
+			console.log(bookingFormInput[i + 1]);
+			bookingFormInput[i].blur();
+			bookingFormInput[i + 1].focus();
+		}
+	});
+}
+
+// Клик по submit
+const submitBtn = $('.booking-form__submit-btn');
+submitBtn.on('click', (e) => {
+	e.preventDefault();
+});
+
+// Логика клика по инпуту и уходу с него
+
 const bookingFormInputContainer = document.querySelectorAll('.booking-form__input-fake-container');
-const bookingFormInput = document.querySelectorAll('.booking-form__input');
+bookingFormInputContainer.forEach((inputContainer) => {
+	inputContainer.addEventListener('click', (e) => inputHandler(e));
+});
 
-// console.log(guestsQuantityEl);
-
-// Logic
 const inputHandler = (e) => {
 	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
 	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
@@ -27,37 +47,40 @@ const inputHandler = (e) => {
 	};
 };
 
-bookingFormInputContainer.forEach((inputContainer) => {
-	inputContainer.addEventListener('click', (e) => inputHandler(e));
-});
+// Показ/Скрытие формы брони
 
 // asideBookingFormEl.classList.add('aside-booking-form--show');
-// Show/hide
+const bookingFormContainer = document.querySelector('.booking-form__booking-form-container');
+const bookingFormEl = document.querySelector('.booking-form');
+const bodyEl = document.querySelector('.body');
+const showBookingFormBtnEl = document.querySelector('.show-booking-form-btn');
+
 const showForm = (e) => {
 	e.stopPropagation();
 	// asideBookingFormEl.classList.add('aside-booking-form--show');
 	bookingFormEl.classList.add('booking-form--open', 'shading');
 	showBookingFormBtnEl.classList.add('none');
-	document.body.classList.add('no-scroll');
+	bodyEl.classList.add('no-scroll');
 };
 const closeForm = () => {
-	
 	// asideBookingFormEl.classList.remove('aside-booking-form--show');
 	bookingFormEl.classList.remove('booking-form--open', 'shading');
 	showBookingFormBtnEl.classList.remove('none');
-	document.body.classList.remove('no-scroll');
+	bodyEl.classList.remove('no-scroll');
 };
 
 showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));
-bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
 bodyEl.addEventListener('click', () => closeForm());
+bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
+
+// Скрытие кнопки "Забронировать" при скроле сильно вниз
 
 const hideShowBookingFormBtnOnFooter = () => {
 	if (pageYOffset > 2500) {
 		showBookingFormBtnEl.classList.add('none');
 	} else {
-		if(!bookingFormEl.classList.contains('booking-form--open'))
-		showBookingFormBtnEl.classList.remove('none');
+		if (!bookingFormEl.classList.contains('booking-form--open'))
+			showBookingFormBtnEl.classList.remove('none');
 	}
 };
 window.addEventListener('scroll', hideShowBookingFormBtnOnFooter);

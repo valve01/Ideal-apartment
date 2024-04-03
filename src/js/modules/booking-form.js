@@ -9,22 +9,20 @@
 //     }
 // });
 
-// Логика перехода на следующий инпут 
+import AirDatepicker from 'air-datepicker';
+import 'air-datepicker/air-datepicker.css';
+
+// Календарь выбора даты
+let checkInDatePic = new AirDatepicker('#check-in-date', {
+	autoClose: true,
+});
+let departureDatePic = new AirDatepicker('#departure-date', {
+	autoClose: true,
+});
+
+// Логика перехода на следующий инпут
 
 const bookingFormInput = document.querySelectorAll('.booking-form__input');
-
-bookingFormInput.forEach((input, i) => {
-	input.addEventListener('keydown', (e) => {
-		if (e.which === 13) {
-			console.log(bookingFormInput[i]);
-			console.log(bookingFormInput[i + 1]);
-			bookingFormInput[i].blur();
-			var nextInput = bookingFormInput[i + 1];
-			bookingFormInput[i + 1];
-			nextInputHandler(nextInput);
-		}
-	});
-});
 
 const handlerFunc = function (inputWrapper) {
 	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
@@ -32,18 +30,34 @@ const handlerFunc = function (inputWrapper) {
 	inputFakeContainer.classList.add('none');
 	input.classList.remove('none');
 	input.focus();
+
 	input.onblur = function () {
-		if (!this.value) {
-			input.classList.add('none');
-			inputFakeContainer.classList.remove('none');
+		if (!checkInDatePic.visible && !departureDatePic.visible) {
+			setTimeout(function () {
+				if (!input.value) {
+					input.classList.add('none');
+					inputFakeContainer.classList.remove('none');
+				}
+			}, 150);
 		}
 	};
 };
 
 const nextInputHandler = (nextInput) => {
 	const inputWrapper = nextInput.closest('.booking-form__input-wrapper');
-	handlerFunc(inputWrapper)
+	handlerFunc(inputWrapper);
 };
+
+bookingFormInput.forEach((input, i) => {
+	input.addEventListener('keydown', (e) => {
+		if (e.which === 13) {
+			bookingFormInput[i].blur();
+			var nextInput = bookingFormInput[i + 1];
+			bookingFormInput[i + 1];
+			nextInputHandler(nextInput);
+		}
+	});
+});
 
 // Клик по submit
 const submitBtn = $('.booking-form__submit-btn');
@@ -60,7 +74,7 @@ bookingFormInputContainer.forEach((inputContainer) => {
 
 const inputHandler = (e) => {
 	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
-	handlerFunc(inputWrapper)
+	handlerFunc(inputWrapper);
 };
 
 // Показ/Скрытие формы брони

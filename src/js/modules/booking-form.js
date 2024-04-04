@@ -15,9 +15,19 @@ import 'air-datepicker/air-datepicker.css';
 // Календарь выбора даты
 let checkInDatePic = new AirDatepicker('#check-in-date', {
 	autoClose: true,
+	onSelect({date}) {
+        departureDatePic.update({
+            minDate: date
+        })
+    }
 });
 let departureDatePic = new AirDatepicker('#departure-date', {
 	autoClose: true,
+	onSelect({date}) {
+        checkInDatePic.update({
+            maxDate: date
+        })
+    }
 });
 
 // Логика перехода на следующий инпут

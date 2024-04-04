@@ -61,12 +61,16 @@ bookingFormInput.forEach((input, i) => {
 
 // Каждое изменение инпута делаем проверку на активацию кнопки submit
 bookingFormInput.forEach((input) => {
+	setInterval(function () {
+		if (input.value) {
+			myFunction();
+		}
+	}, 200);
+
 	input.addEventListener('input', () => {
-		myFunction()
+		myFunction();
 	});
 });
-
-
 
 // Клик по submit
 const submitBtn = $('.booking-form__submit-hide');
@@ -224,15 +228,15 @@ phoneInput.addEventListener('paste', phoneInputPaste);
 const goWtsapp = function (url) {
 	window.open(url, '_blank');
 };
-$('.booking-form__submit-hide').attr('disabled', 'disabled')
+
 // Проверка заполненности полей
 const myFunction = function () {
-
 	const checkInValue = $('#check-in-date').val();
 	const departureValue = $('#departure-date').val();
 	const guestsQuantityValue = $('#guests-quantity').val();
 	const telValue = $('#client-phone').val();
 
+	$('.booking-form__submit-hide').attr('disabled', 'disabled')
 
 	if (checkInValue && departureValue && guestsQuantityValue && telValue) {
 		$('.booking-form__submit-hide').removeAttr('disabled');
@@ -243,10 +247,9 @@ const myFunction = function () {
 			let messageText = `https://wa.me/79186096150?text=Здравствуйте,%20хочу%20забронировать%20жильё%20по%20адресу%20${adressValue}.%20C%20${checkInValue}%20по%20${departureValue}.%20Для%20${guestsQuantityValue}%20${human}.%20Телефон%20для%20связи:%20${telValue}%20${link}`;
 			goWtsapp(messageText);
 		});
-	}else{
-		$('.booking-form__submit-hide').attr('disabled', 'disabled');
+	} else {
+		// $('.booking-form__submit-hide').attr('disabled', 'disabled');
 	}
-}
-
+};
 
 // Составление текста заявки

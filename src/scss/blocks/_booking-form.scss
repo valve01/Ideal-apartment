@@ -87,7 +87,7 @@
 	&__empty-space {
 		height: 20px;
 	}
-	&__submit-btn {
+	 &__submit-hide {
 		cursor: pointer;
 		margin: 30px;
 		display: inline-flex;
@@ -105,6 +105,11 @@
 		&:hover {
 			color: var(--color-main);
 			background-color: var(--accent);
+		}
+
+		&:disabled{
+			opacity: 0.5;
+            cursor: not-allowed;
 		}
 	}
 }

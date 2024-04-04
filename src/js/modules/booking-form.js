@@ -14,20 +14,28 @@ import 'air-datepicker/air-datepicker.css';
 
 // Календарь выбора даты
 let checkInDatePic = new AirDatepicker('#check-in-date', {
+
 	autoClose: true,
-	onSelect({date}) {
-        departureDatePic.update({
-            minDate: date
-        })
-    }
+	onRenderCell: (date, cell) => {
+		return { classes: '-my-datepicker-' };
+	},
+
+	onSelect({ date }) {
+		departureDatePic.update({
+			minDate: date,
+		});
+	},
 });
 let departureDatePic = new AirDatepicker('#departure-date', {
 	autoClose: true,
-	onSelect({date}) {
-        checkInDatePic.update({
-            maxDate: date
-        })
-    }
+	onRenderCell: (date, cell) => {
+		return { classes: '-my-datepicker-' };
+	},
+	onSelect({ date }) {
+		checkInDatePic.update({
+			maxDate: date,
+		});
+	},
 });
 
 // Логика перехода на следующий инпут
@@ -246,7 +254,7 @@ const myFunction = function () {
 	const guestsQuantityValue = $('#guests-quantity').val();
 	const telValue = $('#client-phone').val();
 
-	$('.booking-form__submit-hide').attr('disabled', 'disabled')
+	$('.booking-form__submit-hide').attr('disabled', 'disabled');
 
 	if (checkInValue && departureValue && guestsQuantityValue && telValue) {
 		$('.booking-form__submit-hide').removeAttr('disabled');

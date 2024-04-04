@@ -1,3 +1,15 @@
+.-my-datepicker- {
+	--adp-cell-background-color-selected: var(--color-main);
+	--adp-cell-background-color-hover: var(--color-secondary);
+
+}
+
+.air-datepicker-body--day-names .air-datepicker-body--day-name{
+	font-weight: bold;
+	color: var(--color-main);
+	background: var(--accent);
+}
+
 .booking-form {
 	&__sticky {
 		top: 50px;
@@ -87,7 +99,7 @@
 	&__empty-space {
 		height: 20px;
 	}
-	 &__submit-hide {
+	&__submit-hide {
 		cursor: pointer;
 		margin: 30px;
 		display: inline-flex;
@@ -107,9 +119,9 @@
 			background-color: var(--accent);
 		}
 
-		&:disabled{
+		&:disabled {
 			opacity: 0.5;
-            cursor: not-allowed;
+			cursor: not-allowed;
 		}
 	}
 }
@@ -180,9 +192,9 @@ select.booking-form__input {
 	.booking-form__block-title {
 		padding: 4px;
 	}
-	
-	.booking-form__booking-form-container{
-		top:30px
+
+	.booking-form__booking-form-container {
+		top: 30px;
 	}
 	.booking-form__input-fake-container {
 		height: 30px;
@@ -195,7 +207,6 @@ select.booking-form__input {
 	}
 
 	.aside-booking-form {
-
 		// display: none;
 	}
 	.booking-form {
@@ -216,7 +227,6 @@ select.booking-form__input {
 		&__booking-form-container {
 			min-width: 100vw;
 			height: 360px;
-			
 		}
 		&__input-wrapper {
 			width: 70%;
@@ -263,7 +273,6 @@ select.booking-form__input {
 		&__booking-form-container {
 			min-width: 100vw;
 			height: 360px;
-			
 		}
 		&__input-wrapper {
 			width: 94%;

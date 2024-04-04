@@ -124,8 +124,9 @@ $('.booking-form__submit-btn').on('click', function () {
 	const telValue = $('#client-phone').val();
 	const adressValue = $('.apartment__adress').text();
 	let human = guestsQuantityValue == 1 ? 'человекa' : 'человек';
-	const link = document.location.href.toString();
-	console.log(link);
+	const link = document.location.href;
+	// const link = 'https://valve01.github.io/Ideal-apartment/apartment.html?id=1'
+
 	let messageText = `https://wa.me/79186096150?text=Здравствуйте,%20хочу%20забронировать%20жильё%20по%20адресу%20${adressValue}.%20C%20${checkInValue}%20по%20${departureValue}.%20Для%20${guestsQuantityValue}%20${human}.%20Телефон%20для%20связи:%20${telValue}%20${link}`;
 
 	$('.booking-form__submit-btn').attr('href', messageText);

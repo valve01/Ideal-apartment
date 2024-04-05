@@ -1,6 +1,10 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
-
+// ==========================================Отмена стандартного поведения при нажатии на кнопку submit========================================
+const submitBtn = $('.booking-form__submit-hide');
+submitBtn.on('click', (e) => {
+	e.preventDefault();
+});
 // ==================================================Календарь выбора даты=========================================================
 
 let checkInDatePic = new AirDatepicker('#check-in-date', {
@@ -66,78 +70,61 @@ window.addEventListener('scroll', hideShowBookingFormBtnOnFooter);
 // ============================================================Работа инпутов=======================================================================
 // =========================================================Логика перехода на следующий инпут======================================================
 // =================================================================================================================================================
-
+const bookingFormInputsContainer = document.querySelectorAll('.booking-form__input-fake-container');
 const bookingFormInputs = document.querySelectorAll('.booking-form__input');
-const jumpNextInput = function (inputWrapper) {
+const checkInInput = document.querySelector('#check-in-date');
+const departureInput = document.querySelector('#departure-date');
+const guestsQuantityInput = document.querySelector('#guests-quantity');
+const telInput = document.querySelector('#client-phone');
+
+// ==================================Слушаем родителей инпутов=====================================
+bookingFormInputsContainer.forEach((inputContainer) => {
+	inputContainer.addEventListener('click', (e) => inputOnClickHandler(e));
+});
+
+// При перехвате события от фейкового инпута на родителе - активируем реальный
+const inputOnClickHandler = (e) => {
+	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
+	activateInput(inputWrapper);
+};
+//===================Функция активатор/деактиватор инпутов=================
+const activateInput = function (inputWrapper) {
+	const deactivateInput = function () {
+		if (!checkInDatePic.visible && !departureDatePic.visible) {
+			setTimeout(function () {
+				if (!input.value) {
+					input.classList.add('none');
+					inputFakeContainer.classList.remove('none');
+				}
+			});
+		}
+	};
+
 	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
 	const input = inputWrapper.querySelector('.booking-form__input');
 	inputFakeContainer.classList.add('none');
 	input.classList.remove('none');
 	input.focus();
 	input.onblur = function () {
-		if (!checkInDatePic.visible && !departureDatePic.visible) {
-			setTimeout(function () {}, 1000);
-			setTimeout(function () {
-				if (!input.value) {
-					input.classList.add('none');
-					inputFakeContainer.classList.remove('none');
-					// console.log('инпут пустой')
-				}
-			});
-		}
+		deactivateInput();
 	};
 };
-
-const nextInputHandler = (nextInput) => {
-	const inputWrapper = nextInput.closest('.booking-form__input-wrapper');
-	jumpNextInput(inputWrapper);
-};
+// =====================================Прыгаем (активируем следующий) к следующему инпуту при нажатии на кнопку Enter==============================
 
 bookingFormInputs.forEach((input, i) => {
 	input.addEventListener('keydown', (e) => {
-		if (e.which === 13) {
+		if (e.code === 'Enter') {
 			bookingFormInputs[i].blur();
 			var nextInput = bookingFormInputs[i + 1];
-			nextInputHandler(nextInput);
+			jumpToNextInput(nextInput);
 		}
 	});
 });
-
-// Каждое изменение инпута делаем проверку на активацию кнопки submit
-bookingFormInputs.forEach((input) => {
-	// setInterval(function () {
-	// 	if (input.value) {
-	// 		inputsHandler();
-	// 	}
-	// }, 1000);
-	// input.addEventListener('input', () => {
-	// 	inputsHandler();
-	// });
-	// input.addEventListener('change', () => {
-	// 	inputsHandler();
-	// });
-	// input.addEventListener('select', () => {
-	// 	inputsHandler();
-	// });
-});
-
-// Клик по submit
-const submitBtn = $('.booking-form__submit-hide');
-submitBtn.on('click', (e) => {
-	e.preventDefault();
-});
-
-// Логика клика по инпуту и уходу с него
-
-const bookingFormInputsContainer = document.querySelectorAll('.booking-form__input-fake-container');
-bookingFormInputsContainer.forEach((inputContainer) => {
-	inputContainer.addEventListener('click', (e) => inputHandler(e));
-});
-
-const inputHandler = (e) => {
-	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
-	jumpNextInput(inputWrapper);
+const jumpToNextInput = (nextInput) => {
+	const inputWrapper = nextInput.closest('.booking-form__input-wrapper');
+	activateInput(inputWrapper);
 };
+
 
 // ==============================================Обнуление инпутов даты при ручном вводе===========================================
 // $('#check-in-date').on('change', function () {
@@ -161,7 +148,7 @@ const inputHandler = (e) => {
 // 	return input.value.replace(/\D/g, '');
 // };
 
-// const phoneInputHandler = function (e) {
+// const phoneInputOnClickHandler = function (e) {
 // 	let input = e.target;
 // 	let inputNumbersValue = getInputNumbersValue(input);
 // 	let formatedPhoneNumber = '';
@@ -224,7 +211,7 @@ const inputHandler = (e) => {
 // 	}
 // };
 
-// phoneInput.addEventListener('input', phoneInputHandler);
+// phoneInput.addEventListener('input', phoneInputOnClickHandler);
 // phoneInput.addEventListener('keydown', clearInput);
 // phoneInput.addEventListener('paste', phoneInputPaste);
 // =============================================================================================================================
@@ -241,7 +228,7 @@ const inputHandler = (e) => {
 // };
 
 // // Вставка телефона из localStorage
-const telInput = document.querySelector('#client-phone');
+
 // let localTel = localStorage.getItem('tel');
 // if (localTel) {
 // 	fillLocalStorage(localTel, telInput);
@@ -249,21 +236,21 @@ const telInput = document.querySelector('#client-phone');
 // let localUrl = localStorage.getItem('url');
 
 // // Вставка даты заселения из localStorage
-const checkInInput = document.querySelector('#check-in-date');
+
 // let localCheckIn = localStorage.getItem('checkIn');
 // if (localCheckIn && location.href == localUrl) {
 // 	fillLocalStorage(localCheckIn, checkInInput);
 // }
 
 // // Вставка даты выезда из localStorage
-const departureInput = document.querySelector('#departure-date');
+
 // let localDeparture = localStorage.getItem('departure');
 // if (localDeparture && location.href == localUrl) {
 // 	fillLocalStorage(localDeparture, departureInput);
 // }
 
 // // Вставка количества гостей из localStorage
-const guestsQuantityInput = document.querySelector('#guests-quantity');
+
 // let localGuests = localStorage.getItem('guests');
 // if (localGuests && location.href == localUrl) {
 // 	fillLocalStorage(localGuests, guestsQuantityInput);
@@ -279,6 +266,44 @@ const guestsQuantityInput = document.querySelector('#guests-quantity');
 
 // }
 // ==========================================================================================================================
+
+// =============================================Каждое изменение инпута делаем проверку на активацию кнопки submit==================================
+// bookingFormInputs.forEach((input) => {
+	// setInterval(function () {
+	// 	if (input.value) {
+	// 		inputsHandler();
+	// 	}
+	// }, 1000);
+	// input.addEventListener('input', () => {
+	// 	inputsHandler();
+	// });
+	// input.addEventListener('change', () => {
+	// 	inputsHandler();
+	// });
+	// input.addEventListener('select', () => {
+	// 	inputsHandler();
+	// });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =============================Слушаем каждый инпут на изменения, чтобы активировать кнопку submit вовремя=============================
+
+
+
+
 
 // Переход по ссылке при submit
 const goWtsapp = function (url, checkInValue, departureValue, guestsQuantityValue, telValue) {
@@ -313,8 +338,8 @@ const inputsHandler = function () {
 };
 
 inputsHandler();
-$('.booking-form__submit-hide').removeAttr('disabled');
-// Составление текста заявки
 
-// Сохранение в localStorage
-// Телефон
+
+
+// Временное включение кнопки submit для отладки
+// $('.booking-form__submit-hide').removeAttr('disabled');

@@ -1,18 +1,8 @@
-// const asideBookingFormEl = document.querySelector('.aside-booking-form');
-// const bookingFormInputFakeEls = document.querySelectorAll('.booking-form__input-fake');
-// const guestsQuantityEl = document.querySelector('#guests-quantity');
-
-// const bookingFormInput = $('.booking-form__input');
-// bookingFormInput.on('keydown', (e) => {
-// 	if (e.which === 13) {
-// 		bookingFormInput.blur()
-//     }
-// });
-
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
-// Календарь выбора даты
+// ==================================================Календарь выбора даты=========================================================
+
 let checkInDatePic = new AirDatepicker('#check-in-date', {
 	autoClose: true,
 	onRenderCell: (date, cell) => {
@@ -37,19 +27,59 @@ let departureDatePic = new AirDatepicker('#departure-date', {
 	},
 });
 
-// Логика перехода на следующий инпут
+// =============================================Показ/Скрытие формы брони===========================================================================
 
-const bookingFormInput = document.querySelectorAll('.booking-form__input');
+const bookingFormContainer = document.querySelector('.booking-form__booking-form-container');
+const bookingFormEl = document.querySelector('.booking-form');
+const bodyEl = document.querySelector('.body');
+const showBookingFormBtnEl = document.querySelector('.show-booking-form-btn');
 
-const handlerFunc = function (inputWrapper) {
+const showForm = (e) => {
+	e.stopPropagation();
+	bookingFormEl.classList.add('booking-form--open', 'shading');
+	showBookingFormBtnEl.classList.add('none');
+	bodyEl.classList.add('no-scroll');
+};
+const closeForm = () => {
+	bookingFormEl.classList.remove('booking-form--open', 'shading');
+	showBookingFormBtnEl.classList.remove('none');
+	bodyEl.classList.remove('no-scroll');
+};
+
+showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));
+bodyEl.addEventListener('click', () => closeForm());
+bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
+
+// =============================================Скрытие кнопки "Забронировать" при скроле сильно вниз===============================================
+
+const hideShowBookingFormBtnOnFooter = () => {
+	if (pageYOffset > 2500) {
+		showBookingFormBtnEl.classList.add('none');
+	} else {
+		if (!bookingFormEl.classList.contains('booking-form--open'))
+			showBookingFormBtnEl.classList.remove('none');
+	}
+};
+window.addEventListener('scroll', hideShowBookingFormBtnOnFooter);
+
+// =================================================================================================================================================
+// ============================================================Работа инпутов=======================================================================
+// =========================================================Логика перехода на следующий инпут======================================================
+// =================================================================================================================================================
+
+const bookingFormInputs = document.querySelectorAll('.booking-form__input');
+const jumpNextInput = function (inputWrapper) {
 	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
 	const input = inputWrapper.querySelector('.booking-form__input');
 	inputFakeContainer.classList.add('none');
 	input.classList.remove('none');
 	input.focus();
-
 	input.onblur = function () {
 		if (!checkInDatePic.visible && !departureDatePic.visible) {
+			console.log(0, input.value);
+			setTimeout(function () {
+				console.log(1, input.value);
+			}, 1);
 			setTimeout(function () {
 				if (!input.value) {
 					input.classList.add('none');
@@ -62,28 +92,26 @@ const handlerFunc = function (inputWrapper) {
 
 const nextInputHandler = (nextInput) => {
 	const inputWrapper = nextInput.closest('.booking-form__input-wrapper');
-	handlerFunc(inputWrapper);
+	jumpNextInput(inputWrapper);
 };
 
-bookingFormInput.forEach((input, i) => {
+bookingFormInputs.forEach((input, i) => {
 	input.addEventListener('keydown', (e) => {
 		if (e.which === 13) {
-			bookingFormInput[i].blur();
-			var nextInput = bookingFormInput[i + 1];
-			bookingFormInput[i + 1];
+			bookingFormInputs[i].blur();
+			var nextInput = bookingFormInputs[i + 1];
 			nextInputHandler(nextInput);
 		}
 	});
 });
 
 // Каждое изменение инпута делаем проверку на активацию кнопки submit
-bookingFormInput.forEach((input) => {
+bookingFormInputs.forEach((input) => {
 	// setInterval(function () {
 	// 	if (input.value) {
 	// 		inputsHandler();
 	// 	}
 	// }, 1000);
-
 	// input.addEventListener('input', () => {
 	// 	inputsHandler();
 	// });
@@ -103,157 +131,107 @@ submitBtn.on('click', (e) => {
 
 // Логика клика по инпуту и уходу с него
 
-const bookingFormInputContainer = document.querySelectorAll('.booking-form__input-fake-container');
-bookingFormInputContainer.forEach((inputContainer) => {
+const bookingFormInputsContainer = document.querySelectorAll('.booking-form__input-fake-container');
+bookingFormInputsContainer.forEach((inputContainer) => {
 	inputContainer.addEventListener('click', (e) => inputHandler(e));
 });
 
 const inputHandler = (e) => {
 	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
-	handlerFunc(inputWrapper);
+	jumpNextInput(inputWrapper);
 };
 
-// Показ/Скрытие формы брони
+// ==============================================Обнуление инпутов даты при ручном вводе===========================================
+// $('#check-in-date').on('change', function () {
+// 	let checkInValue = $('#check-in-date').val();
+// 	if (checkInValue) {
+// 		$('#check-in-date').val('');
+// 	}
+// });
 
-// asideBookingFormEl.classList.add('aside-booking-form--show');
-const bookingFormContainer = document.querySelector('.booking-form__booking-form-container');
-const bookingFormEl = document.querySelector('.booking-form');
-const bodyEl = document.querySelector('.body');
-const showBookingFormBtnEl = document.querySelector('.show-booking-form-btn');
+// $('#departure-date').on('change', function () {
+// 	let departureValue = $('#departure-date').val();
+// 	if (departureValue) {
+// 		$('#departure-date').val('');
+// 	}
+// });
 
-const showForm = (e) => {
-	e.stopPropagation();
-	// asideBookingFormEl.classList.add('aside-booking-form--show');
-	bookingFormEl.classList.add('booking-form--open', 'shading');
-	showBookingFormBtnEl.classList.add('none');
-	bodyEl.classList.add('no-scroll');
-};
-const closeForm = () => {
-	// asideBookingFormEl.classList.remove('aside-booking-form--show');
-	bookingFormEl.classList.remove('booking-form--open', 'shading');
-	showBookingFormBtnEl.classList.remove('none');
-	bodyEl.classList.remove('no-scroll');
-};
+//
+// =================================================Проверка номера телефона======================================================================
+// const phoneInput = document.querySelector('#client-phone');
+// let getInputNumbersValue = function (input) {
+// 	return input.value.replace(/\D/g, '');
+// };
 
-showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));
-bodyEl.addEventListener('click', () => closeForm());
-bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
+// const phoneInputHandler = function (e) {
+// 	let input = e.target;
+// 	let inputNumbersValue = getInputNumbersValue(input);
+// 	let formatedPhoneNumber = '';
+// 	let selectionStart = input.selectionStart;
 
-// Скрытие кнопки "Забронировать" при скроле сильно вниз
+// 	if (input.value.length !== selectionStart) {
+// 		if (e.data && /\D/g.test(e.data)) {
+// 			input.value = inputNumbersValue;
+// 		}
+// 		return;
+// 	}
 
-const hideShowBookingFormBtnOnFooter = () => {
-	if (pageYOffset > 2500) {
-		showBookingFormBtnEl.classList.add('none');
-	} else {
-		if (!bookingFormEl.classList.contains('booking-form--open'))
-			showBookingFormBtnEl.classList.remove('none');
-	}
-};
-window.addEventListener('scroll', hideShowBookingFormBtnOnFooter);
+// 	if (!inputNumbersValue) {
+// 		return (input.value = '');
+// 	}
 
-// Проверка введенных данных
+// 	if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+// 		if (inputNumbersValue[0] == '9') {
+// 			inputNumbersValue = '7' + inputNumbersValue;
+// 		}
 
-$('#check-in-date').on('change', function () {
-	let checkInValue = $('#check-in-date').val();
-	if (checkInValue) {
-		$('#check-in-date').val('');
+// 		let firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7';
 
-		// if (checkInValue && /^\d{0,2}.\d{0,2}.\d{0,2}{$/.test(checkInValue)) {
-		// 	$('#check-in-date').val(checkInValue);
-		// } else {
+// 		formatedPhoneNumber = firstSymbols + ' ';
+// 		if (inputNumbersValue.length >= 1) {
+// 			formatedPhoneNumber += '(' + inputNumbersValue.substring(1, 4);
+// 		}
+// 		if (inputNumbersValue.length >= 5) {
+// 			formatedPhoneNumber += ')' + ' ' + inputNumbersValue.substring(4, 7);
+// 		}
+// 		if (inputNumbersValue.length >= 8) {
+// 			formatedPhoneNumber += '-' + inputNumbersValue.substring(7, 9);
+// 		}
+// 		if (inputNumbersValue.length >= 10) {
+// 			formatedPhoneNumber += '-' + inputNumbersValue.substring(9, 11);
+// 		}
+// 	} else {
+// 		formatedPhoneNumber = '+' + inputNumbersValue.substring(0, 16);
+// 	}
+// 	input.value = formatedPhoneNumber;
+// };
 
-		// checkInValue = $('#check-in-date').val("");
-	}
-});
+// const clearInput = function (e) {
+// 	if (getInputNumbersValue(e.target).length == 1 && e.keyCode == 8) {
+// 		e.target.value = '';
+// 	}
+// };
 
-$('#departure-date').on('change', function () {
-	let departureValue = $('#departure-date').val();
-	if (departureValue) {
-		$('#departure-date').val('');
-	}
-});
+// const phoneInputPaste = function (e) {
+// 	const pasted = e.clipboardData || window.clipboardData;
+// 	const input = e.target;
+// 	let inputNumbersValue = getInputNumbersValue(input);
 
-// Проверка номера телефона
+// 	if (pasted) {
+// 		let pastedText = pasted.getData('Text');
 
-const phoneInput = document.querySelector('#client-phone');
-let getInputNumbersValue = function (input) {
-	return input.value.replace(/\D/g, '');
-};
+// 		if (/\D/g.test(pastedText)) {
+// 			input.value = inputNumbersValue;
+// 		}
+// 	}
+// };
 
-const phoneInputHandler = function (e) {
-	let input = e.target;
-	let inputNumbersValue = getInputNumbersValue(input);
-	let formatedPhoneNumber = '';
-	let selectionStart = input.selectionStart;
+// phoneInput.addEventListener('input', phoneInputHandler);
+// phoneInput.addEventListener('keydown', clearInput);
+// phoneInput.addEventListener('paste', phoneInputPaste);
+// =============================================================================================================================
 
-	if (input.value.length !== selectionStart) {
-		if (e.data && /\D/g.test(e.data)) {
-			input.value = inputNumbersValue;
-		}
-		return;
-	}
-
-	if (!inputNumbersValue) {
-		return (input.value = '');
-	}
-
-	if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
-		if (inputNumbersValue[0] == '9') {
-			inputNumbersValue = '7' + inputNumbersValue;
-		}
-
-		let firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7';
-
-		formatedPhoneNumber = firstSymbols + ' ';
-		if (inputNumbersValue.length >= 1) {
-			formatedPhoneNumber += '(' + inputNumbersValue.substring(1, 4);
-		}
-		if (inputNumbersValue.length >= 5) {
-			formatedPhoneNumber += ')' + ' ' + inputNumbersValue.substring(4, 7);
-		}
-		if (inputNumbersValue.length >= 8) {
-			formatedPhoneNumber += '-' + inputNumbersValue.substring(7, 9);
-		}
-		if (inputNumbersValue.length >= 10) {
-			formatedPhoneNumber += '-' + inputNumbersValue.substring(9, 11);
-		}
-	} else {
-		formatedPhoneNumber = '+' + inputNumbersValue.substring(0, 16);
-	}
-	input.value = formatedPhoneNumber;
-};
-
-const clearInput = function (e) {
-	if (getInputNumbersValue(e.target).length == 1 && e.keyCode == 8) {
-		e.target.value = '';
-	}
-};
-
-const phoneInputPaste = function (e) {
-	const pasted = e.clipboardData || window.clipboardData;
-	const input = e.target;
-	let inputNumbersValue = getInputNumbersValue(input);
-
-	if (pasted) {
-		let pastedText = pasted.getData('Text');
-
-		if (/\D/g.test(pastedText)) {
-			input.value = inputNumbersValue;
-		}
-	}
-};
-
-phoneInput.addEventListener('input', phoneInputHandler);
-phoneInput.addEventListener('keydown', clearInput);
-phoneInput.addEventListener('paste', phoneInputPaste);
-
-// Переход по ссылке при submit
-const goWtsapp = function (url, checkInValue, departureValue, guestsQuantityValue, telValue) {
-	console.log(checkInValue, departureValue, guestsQuantityValue, telValue);
-		window.open(url, '_blank');
-
-};
-
+// ===============================================localStorage==============================================================
 // // Функция заполнения полей из localStorage
 // const fillLocalStorage = function (val, thisInput) {
 // 	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
@@ -302,6 +280,13 @@ const guestsQuantityInput = document.querySelector('#guests-quantity');
 // 	localStorage.setItem('tel', telValue);
 
 // }
+// ==========================================================================================================================
+
+// Переход по ссылке при submit
+const goWtsapp = function (url, checkInValue, departureValue, guestsQuantityValue, telValue) {
+	console.log(checkInValue, departureValue, guestsQuantityValue, telValue);
+	window.open(url, '_blank');
+};
 
 // Проверка заполненности полей
 const inputsHandler = function () {
@@ -311,7 +296,7 @@ const inputsHandler = function () {
 	let telValue = telInput.value;
 
 	// storageData(checkInValue, departureValue, guestsQuantityValue, telValue)
-console.log(checkInValue, departureValue, guestsQuantityValue, telValue)
+	console.log(checkInValue, departureValue, guestsQuantityValue, telValue);
 	$('.booking-form__submit-hide').attr('disabled', 'disabled');
 
 	if (checkInValue && departureValue && guestsQuantityValue && telValue) {
@@ -329,7 +314,7 @@ console.log(checkInValue, departureValue, guestsQuantityValue, telValue)
 	}
 };
 
-inputsHandler()
+inputsHandler();
 $('.booking-form__submit-hide').removeAttr('disabled');
 // Составление текста заявки
 

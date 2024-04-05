@@ -9,6 +9,7 @@ submitBtn.on('click', (e) => {
 
 let checkInDatePic = new AirDatepicker('#check-in-date', {
 	autoClose: true,
+	// inline: true,
 	onRenderCell: (date, cell) => {
 		return { classes: '-my-datepicker-' };
 	},
@@ -92,7 +93,7 @@ const activateInput = function (inputWrapper) {
 	const deactivateInput = function () {
 		if (!checkInDatePic.visible && !departureDatePic.visible) {
 			setTimeout(function () {
-				if (!input.value) {
+				if (!input.value || input.value == 0) {
 					input.classList.add('none');
 					inputFakeContainer.classList.remove('none');
 				}
@@ -125,95 +126,94 @@ const jumpToNextInput = (nextInput) => {
 	activateInput(inputWrapper);
 };
 
-
 // ==============================================Обнуление инпутов даты при ручном вводе===========================================
-// $('#check-in-date').on('change', function () {
-// 	let checkInValue = $('#check-in-date').val();
-// 	if (checkInValue) {
-// 		$('#check-in-date').val('');
-// 	}
-// });
+$('#check-in-date').on('change', function () {
+	let checkInValue = $('#check-in-date').val();
+	if (checkInValue) {
+		$('#check-in-date').val('');
+	}
+});
 
-// $('#departure-date').on('change', function () {
-// 	let departureValue = $('#departure-date').val();
-// 	if (departureValue) {
-// 		$('#departure-date').val('');
-// 	}
-// });
+$('#departure-date').on('change', function () {
+	let departureValue = $('#departure-date').val();
+	if (departureValue) {
+		$('#departure-date').val('');
+	}
+});
 
 //
 // =================================================Проверка номера телефона======================================================================
-// const phoneInput = document.querySelector('#client-phone');
-// let getInputNumbersValue = function (input) {
-// 	return input.value.replace(/\D/g, '');
-// };
+const phoneInput = document.querySelector('#client-phone');
+let getInputNumbersValue = function (input) {
+	return input.value.replace(/\D/g, '');
+};
 
-// const phoneInputOnClickHandler = function (e) {
-// 	let input = e.target;
-// 	let inputNumbersValue = getInputNumbersValue(input);
-// 	let formatedPhoneNumber = '';
-// 	let selectionStart = input.selectionStart;
+const phoneInputOnClickHandler = function (e) {
+	let input = e.target;
+	let inputNumbersValue = getInputNumbersValue(input);
+	let formatedPhoneNumber = '';
+	let selectionStart = input.selectionStart;
 
-// 	if (input.value.length !== selectionStart) {
-// 		if (e.data && /\D/g.test(e.data)) {
-// 			input.value = inputNumbersValue;
-// 		}
-// 		return;
-// 	}
+	if (input.value.length !== selectionStart) {
+		if (e.data && /\D/g.test(e.data)) {
+			input.value = inputNumbersValue;
+		}
+		return;
+	}
 
-// 	if (!inputNumbersValue) {
-// 		return (input.value = '');
-// 	}
+	if (!inputNumbersValue) {
+		return (input.value = '');
+	}
 
-// 	if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
-// 		if (inputNumbersValue[0] == '9') {
-// 			inputNumbersValue = '7' + inputNumbersValue;
-// 		}
+	if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+		if (inputNumbersValue[0] == '9') {
+			inputNumbersValue = '7' + inputNumbersValue;
+		}
 
-// 		let firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7';
+		let firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7';
 
-// 		formatedPhoneNumber = firstSymbols + ' ';
-// 		if (inputNumbersValue.length >= 1) {
-// 			formatedPhoneNumber += '(' + inputNumbersValue.substring(1, 4);
-// 		}
-// 		if (inputNumbersValue.length >= 5) {
-// 			formatedPhoneNumber += ')' + ' ' + inputNumbersValue.substring(4, 7);
-// 		}
-// 		if (inputNumbersValue.length >= 8) {
-// 			formatedPhoneNumber += '-' + inputNumbersValue.substring(7, 9);
-// 		}
-// 		if (inputNumbersValue.length >= 10) {
-// 			formatedPhoneNumber += '-' + inputNumbersValue.substring(9, 11);
-// 		}
-// 	} else {
-// 		formatedPhoneNumber = '+' + inputNumbersValue.substring(0, 16);
-// 	}
-// 	input.value = formatedPhoneNumber;
-// };
+		formatedPhoneNumber = firstSymbols + ' ';
+		if (inputNumbersValue.length >= 1) {
+			formatedPhoneNumber += '(' + inputNumbersValue.substring(1, 4);
+		}
+		if (inputNumbersValue.length >= 5) {
+			formatedPhoneNumber += ')' + ' ' + inputNumbersValue.substring(4, 7);
+		}
+		if (inputNumbersValue.length >= 8) {
+			formatedPhoneNumber += '-' + inputNumbersValue.substring(7, 9);
+		}
+		if (inputNumbersValue.length >= 10) {
+			formatedPhoneNumber += '-' + inputNumbersValue.substring(9, 11);
+		}
+	} else {
+		formatedPhoneNumber = '+' + inputNumbersValue.substring(0, 16);
+	}
+	input.value = formatedPhoneNumber;
+};
 
-// const clearInput = function (e) {
-// 	if (getInputNumbersValue(e.target).length == 1 && e.keyCode == 8) {
-// 		e.target.value = '';
-// 	}
-// };
+const clearInput = function (e) {
+	if (getInputNumbersValue(e.target).length == 1 && e.keyCode == 8) {
+		e.target.value = '';
+	}
+};
 
-// const phoneInputPaste = function (e) {
-// 	const pasted = e.clipboardData || window.clipboardData;
-// 	const input = e.target;
-// 	let inputNumbersValue = getInputNumbersValue(input);
+const phoneInputPaste = function (e) {
+	const pasted = e.clipboardData || window.clipboardData;
+	const input = e.target;
+	let inputNumbersValue = getInputNumbersValue(input);
 
-// 	if (pasted) {
-// 		let pastedText = pasted.getData('Text');
+	if (pasted) {
+		let pastedText = pasted.getData('Text');
 
-// 		if (/\D/g.test(pastedText)) {
-// 			input.value = inputNumbersValue;
-// 		}
-// 	}
-// };
+		if (/\D/g.test(pastedText)) {
+			input.value = inputNumbersValue;
+		}
+	}
+};
 
-// phoneInput.addEventListener('input', phoneInputOnClickHandler);
-// phoneInput.addEventListener('keydown', clearInput);
-// phoneInput.addEventListener('paste', phoneInputPaste);
+phoneInput.addEventListener('input', phoneInputOnClickHandler);
+phoneInput.addEventListener('keydown', clearInput);
+phoneInput.addEventListener('paste', phoneInputPaste);
 // =============================================================================================================================
 
 // ===============================================localStorage==============================================================
@@ -266,80 +266,67 @@ const jumpToNextInput = (nextInput) => {
 
 // }
 // ==========================================================================================================================
+// =================================================Работа с кнопкой submit===================================================================
+let checkInValue = '';
+let departureValue = '';
+let guestsValue = '';
+let telValue = '';
+// ===============================Активация кнопки submit по готовности===================================================================
 
-// =============================================Каждое изменение инпута делаем проверку на активацию кнопки submit==================================
-// bookingFormInputs.forEach((input) => {
-	// setInterval(function () {
-	// 	if (input.value) {
-	// 		inputsHandler();
-	// 	}
-	// }, 1000);
-	// input.addEventListener('input', () => {
-	// 	inputsHandler();
-	// });
-	// input.addEventListener('change', () => {
-	// 	inputsHandler();
-	// });
-	// input.addEventListener('select', () => {
-	// 	inputsHandler();
-	// });
-// });
+const checkButton = (input, inputValue) => {
 
+	checkInValue = input.id == 'check-in-date' ? inputValue : checkInValue;
+	departureValue = input.id == 'departure-date' ? inputValue : departureValue;
+	guestsValue = input.id == 'guests-quantity' ? inputValue : guestsValue;
+	telValue = input.id == 'client-phone' ? inputValue : telValue;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =============================Слушаем каждый инпут на изменения, чтобы активировать кнопку submit вовремя=============================
-
-
-
-
-
-// Переход по ссылке при submit
-const goWtsapp = function (url, checkInValue, departureValue, guestsQuantityValue, telValue) {
-	console.log(checkInValue, departureValue, guestsQuantityValue, telValue);
-	window.open(url, '_blank');
-};
-
-// Проверка заполненности полей
-const inputsHandler = function () {
-	let checkInValue = checkInInput.value;
-	let departureValue = departureInput.value;
-	let guestsQuantityValue = guestsQuantityInput.value;
-	let telValue = telInput.value;
-
-	// storageData(checkInValue, departureValue, guestsQuantityValue, telValue)
-	console.log(checkInValue, departureValue, guestsQuantityValue, telValue);
-	$('.booking-form__submit-hide').attr('disabled', 'disabled');
-
-	if (checkInValue && departureValue && guestsQuantityValue && telValue) {
+	if (checkInValue && departureValue && guestsValue > 0 && telValue.length > 17) {
 		$('.booking-form__submit-hide').removeAttr('disabled');
-		$('.booking-form__submit-hide').on('click', function () {
-			const adressValue = $('.apartment__adress').text();
-			let human = guestsQuantityValue == 1 ? 'человекa' : 'человек';
-			// const link = document.location.href;
-			const link = 'link';
-			let messageText = `https://wa.me/79186096150?text=Здравствуйте,%20хочу%20забронировать%20жильё%20по%20адресу%20${adressValue}.%20C%20${checkInValue}%20по%20${departureValue}.%20Для%20${guestsQuantityValue}%20${human}.%20Телефон%20для%20связи:%20${telValue}%20${link}`;
-			goWtsapp(messageText, checkInValue, departureValue, guestsQuantityValue, telValue);
-		});
 	} else {
-		// $('.booking-form__submit-hide').attr('disabled', 'disabled');
+		$('.booking-form__submit-hide').attr('disabled', 'disabled');
 	}
 };
+// =============================Слушаем каждый инпут на изменения, чтобы активировать кнопку submit вовремя=============================
 
-inputsHandler();
+bookingFormInputs.forEach((input, i) => {
+	let inputValue = input.value;
 
+	// Обработка даты заселения и выезда
+	const dateInputHandler = function () {
+		input.addEventListener(
+			'blur',
+			() => {
+				setTimeout(function () {
+					inputValue = input.value;
+					checkButton(input, inputValue);
+				}, 200);
+			},
+			// { once: true },
+		);
+	};
+	i >= 0 && i < 2 ? dateInputHandler() : null;
 
+	// Обработка количества гостей и телефона
+	input.addEventListener('input', () => {
+		inputValue = input.value;
+		checkButton(input, inputValue);
+	});
+});
 
-// Временное включение кнопки submit для отладки
-// $('.booking-form__submit-hide').removeAttr('disabled');
+//  По submit составляем сообщение заказчику на вотс в виде url и прыгаем в Watsapp
+submitBtn.on('click', () => submitHandler());
+
+const submitHandler = function () {
+
+	const adressValue = $('.apartment__adress').text();
+	let human = guestsValue == 1 ? 'человекa' : 'человек';
+	const link = document.location.href;
+	// const link = 'link';
+	let messageText = `https://wa.me/79186096150?text=Здравствуйте,%20хочу%20забронировать%20жильё%20по%20адресу%20${adressValue}.%20C%20${checkInValue}%20по%20${departureValue}.%20Для%20${guestsValue}%20${human}.%20Телефон%20для%20связи:%20${telValue}%20${link}`;
+	goWhatsApp(messageText);
+};
+
+// Переход по ссылке при submit
+const goWhatsApp = function (url) {
+	window.open(url, '_blank');
+};

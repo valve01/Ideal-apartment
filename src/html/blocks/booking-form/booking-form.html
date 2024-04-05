@@ -41,10 +41,11 @@
 		<div class="booking-form__input-wrapper">
 
 			<div class="booking-form__input-fake-container">
-				<div class="booking-form__input-fake">1</div>
+				<div class="booking-form__input-fake">от 1 до 6</div>
 			</div>
 
 			<select name="guests-quantity" required id="guests-quantity" class="booking-form__input none">
+				<option value="0">0</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -89,7 +90,7 @@
 			href="https://wa.me/79186096150?text=Здравствуйте,%20я%20был%20на%20вашем%20сайте%20и%20хочу%20кое-что%20уточнить.%20"
 			target="_blank">
 		</a> -->
-		<button class="booking-form__submit-hide" disabled type="submit">Отправить заявку</button>
+		<button class="booking-form__submit-hide" id="apartSubmit" disabled type="submit">Отправить заявку</button>
 	</div>
 
 </form>

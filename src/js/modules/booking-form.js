@@ -76,16 +76,14 @@ const jumpNextInput = function (inputWrapper) {
 	input.focus();
 	input.onblur = function () {
 		if (!checkInDatePic.visible && !departureDatePic.visible) {
-			console.log(0, input.value);
-			setTimeout(function () {
-				console.log(1, input.value);
-			}, 1);
+			setTimeout(function () {}, 1000);
 			setTimeout(function () {
 				if (!input.value) {
 					input.classList.add('none');
 					inputFakeContainer.classList.remove('none');
+					// console.log('инпут пустой')
 				}
-			}, 150);
+			});
 		}
 	};
 };

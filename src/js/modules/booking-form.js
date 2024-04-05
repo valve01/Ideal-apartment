@@ -78,15 +78,21 @@ bookingFormInput.forEach((input, i) => {
 
 // Каждое изменение инпута делаем проверку на активацию кнопки submit
 bookingFormInput.forEach((input) => {
-	setInterval(function () {
-		if (input.value) {
-			inputsHandler();
-		}
-	}, 200);
+	// setInterval(function () {
+	// 	if (input.value) {
+	// 		inputsHandler();
+	// 	}
+	// }, 1000);
 
-	input.addEventListener('input', () => {
-		inputsHandler();
-	});
+	// input.addEventListener('input', () => {
+	// 	inputsHandler();
+	// });
+	// input.addEventListener('change', () => {
+	// 	inputsHandler();
+	// });
+	// input.addEventListener('select', () => {
+	// 	inputsHandler();
+	// });
 });
 
 // Клик по submit
@@ -242,68 +248,70 @@ phoneInput.addEventListener('keydown', clearInput);
 phoneInput.addEventListener('paste', phoneInputPaste);
 
 // Переход по ссылке при submit
-const goWtsapp = function (url) {
-	window.open(url, '_blank');
+const goWtsapp = function (url, checkInValue, departureValue, guestsQuantityValue, telValue) {
+	console.log(checkInValue, departureValue, guestsQuantityValue, telValue);
+		window.open(url, '_blank');
+
 };
 
-// Функция заполнения полей из localStorage
-const fillLocalStorage = function (val, thisInput) {
-	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
-	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
-	const input = inputWrapper.querySelector('.booking-form__input');
-	inputFakeContainer.classList.add('none');
-	input.classList.remove('none');
-	thisInput.value = val;
-};
+// // Функция заполнения полей из localStorage
+// const fillLocalStorage = function (val, thisInput) {
+// 	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
+// 	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
+// 	const input = inputWrapper.querySelector('.booking-form__input');
+// 	inputFakeContainer.classList.add('none');
+// 	input.classList.remove('none');
+// 	thisInput.value = val;
+// };
 
-// Вставка телефона из localStorage
+// // Вставка телефона из localStorage
 const telInput = document.querySelector('#client-phone');
-let localTel = localStorage.getItem('tel');
-if (localTel) {
-	fillLocalStorage(localTel, telInput);
-}
-let localUrl = localStorage.getItem('url');
+// let localTel = localStorage.getItem('tel');
+// if (localTel) {
+// 	fillLocalStorage(localTel, telInput);
+// }
+// let localUrl = localStorage.getItem('url');
 
-// Вставка даты заселения из localStorage
+// // Вставка даты заселения из localStorage
 const checkInInput = document.querySelector('#check-in-date');
-let localCheckIn = localStorage.getItem('checkIn');
-if (localCheckIn && location.href == localUrl) {
-	fillLocalStorage(localCheckIn, checkInInput);
-}
+// let localCheckIn = localStorage.getItem('checkIn');
+// if (localCheckIn && location.href == localUrl) {
+// 	fillLocalStorage(localCheckIn, checkInInput);
+// }
 
-// Вставка даты выезда из localStorage
+// // Вставка даты выезда из localStorage
 const departureInput = document.querySelector('#departure-date');
-let localDeparture = localStorage.getItem('departure');
-if (localDeparture && location.href == localUrl) {
-	fillLocalStorage(localDeparture, departureInput);
-}
+// let localDeparture = localStorage.getItem('departure');
+// if (localDeparture && location.href == localUrl) {
+// 	fillLocalStorage(localDeparture, departureInput);
+// }
 
-// Вставка количества гостей из localStorage
+// // Вставка количества гостей из localStorage
 const guestsQuantityInput = document.querySelector('#guests-quantity');
-let localGuests = localStorage.getItem('guests');
-if (localGuests && location.href == localUrl) {
-	fillLocalStorage(localGuests, guestsQuantityInput);
-}
+// let localGuests = localStorage.getItem('guests');
+// if (localGuests && location.href == localUrl) {
+// 	fillLocalStorage(localGuests, guestsQuantityInput);
+// }
 
-// Сохранение данных в localStorage
-const storageData = function (checkInValue,departureValue,guestsQuantityValue,telValue) {
-	localStorage.setItem('url', location.href);
-	localStorage.setItem('checkIn', checkInValue);
-	localStorage.setItem('departure', departureValue);
-	localStorage.setItem('guests', guestsQuantityValue);
-	localStorage.setItem('tel', telValue);
+// // Сохранение данных в localStorage
+// const storageData = function (checkInValue,departureValue,guestsQuantityValue,telValue) {
+// 	localStorage.setItem('url', location.href);
+// 	localStorage.setItem('checkIn', checkInValue);
+// 	localStorage.setItem('departure', departureValue);
+// 	localStorage.setItem('guests', guestsQuantityValue);
+// 	localStorage.setItem('tel', telValue);
 
-}
+// }
 
 // Проверка заполненности полей
 const inputsHandler = function () {
-	const checkInValue = checkInInput.value;
-	const departureValue = departureInput.value;
-	const guestsQuantityValue = guestsQuantityInput.value;
-	const telValue = telInput.value;
+	let checkInValue = checkInInput.value;
+	let departureValue = departureInput.value;
+	let guestsQuantityValue = guestsQuantityInput.value;
+	let telValue = telInput.value;
 
-	storageData(checkInValue, departureValue, guestsQuantityValue, telValue)
-
+	// storageData(checkInValue, departureValue, guestsQuantityValue, telValue)
+console.log(checkInValue, departureValue, guestsQuantityValue, telValue)
 	$('.booking-form__submit-hide').attr('disabled', 'disabled');
 
 	if (checkInValue && departureValue && guestsQuantityValue && telValue) {
@@ -314,13 +322,15 @@ const inputsHandler = function () {
 			// const link = document.location.href;
 			const link = 'link';
 			let messageText = `https://wa.me/79186096150?text=Здравствуйте,%20хочу%20забронировать%20жильё%20по%20адресу%20${adressValue}.%20C%20${checkInValue}%20по%20${departureValue}.%20Для%20${guestsQuantityValue}%20${human}.%20Телефон%20для%20связи:%20${telValue}%20${link}`;
-			goWtsapp(messageText);
+			goWtsapp(messageText, checkInValue, departureValue, guestsQuantityValue, telValue);
 		});
 	} else {
 		// $('.booking-form__submit-hide').attr('disabled', 'disabled');
 	}
 };
 
+inputsHandler()
+$('.booking-form__submit-hide').removeAttr('disabled');
 // Составление текста заявки
 
 // Сохранение в localStorage

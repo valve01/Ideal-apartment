@@ -14,7 +14,6 @@ import 'air-datepicker/air-datepicker.css';
 
 // Календарь выбора даты
 let checkInDatePic = new AirDatepicker('#check-in-date', {
-
 	autoClose: true,
 	onRenderCell: (date, cell) => {
 		return { classes: '-my-datepicker-' };
@@ -81,12 +80,12 @@ bookingFormInput.forEach((input, i) => {
 bookingFormInput.forEach((input) => {
 	setInterval(function () {
 		if (input.value) {
-			myFunction();
+			inputsHandler();
 		}
 	}, 200);
 
 	input.addEventListener('input', () => {
-		myFunction();
+		inputsHandler();
 	});
 });
 
@@ -247,12 +246,63 @@ const goWtsapp = function (url) {
 	window.open(url, '_blank');
 };
 
+// Функция заполнения полей из localStorage
+const fillLocalStorage = function (val, thisInput) {
+	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
+	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
+	const input = inputWrapper.querySelector('.booking-form__input');
+	inputFakeContainer.classList.add('none');
+	input.classList.remove('none');
+	thisInput.value = val;
+};
+
+// Вставка телефона из localStorage
+const telInput = document.querySelector('#client-phone');
+let localTel = localStorage.getItem('tel');
+if (localTel) {
+	fillLocalStorage(localTel, telInput);
+}
+let localUrl = localStorage.getItem('url');
+
+// Вставка даты заселения из localStorage
+const checkInInput = document.querySelector('#check-in-date');
+let localCheckIn = localStorage.getItem('checkIn');
+if (localCheckIn && location.href == localUrl) {
+	fillLocalStorage(localCheckIn, checkInInput);
+}
+
+// Вставка даты выезда из localStorage
+const departureInput = document.querySelector('#departure-date');
+let localDeparture = localStorage.getItem('departure');
+if (localDeparture && location.href == localUrl) {
+	fillLocalStorage(localDeparture, departureInput);
+}
+
+// Вставка количества гостей из localStorage
+const guestsQuantityInput = document.querySelector('#guests-quantity');
+let localGuests = localStorage.getItem('guests');
+if (localGuests && location.href == localUrl) {
+	fillLocalStorage(localGuests, guestsQuantityInput);
+}
+
+// Сохранение данных в localStorage
+const storageData = function (checkInValue,departureValue,guestsQuantityValue,telValue) {
+	localStorage.setItem('url', location.href);
+	localStorage.setItem('checkIn', checkInValue);
+	localStorage.setItem('departure', departureValue);
+	localStorage.setItem('guests', guestsQuantityValue);
+	localStorage.setItem('tel', telValue);
+
+}
+
 // Проверка заполненности полей
-const myFunction = function () {
-	const checkInValue = $('#check-in-date').val();
-	const departureValue = $('#departure-date').val();
-	const guestsQuantityValue = $('#guests-quantity').val();
-	const telValue = $('#client-phone').val();
+const inputsHandler = function () {
+	const checkInValue = checkInInput.value;
+	const departureValue = departureInput.value;
+	const guestsQuantityValue = guestsQuantityInput.value;
+	const telValue = telInput.value;
+
+	storageData(checkInValue, departureValue, guestsQuantityValue, telValue)
 
 	$('.booking-form__submit-hide').attr('disabled', 'disabled');
 
@@ -261,7 +311,8 @@ const myFunction = function () {
 		$('.booking-form__submit-hide').on('click', function () {
 			const adressValue = $('.apartment__adress').text();
 			let human = guestsQuantityValue == 1 ? 'человекa' : 'человек';
-			const link = document.location.href;
+			// const link = document.location.href;
+			const link = 'link';
 			let messageText = `https://wa.me/79186096150?text=Здравствуйте,%20хочу%20забронировать%20жильё%20по%20адресу%20${adressValue}.%20C%20${checkInValue}%20по%20${departureValue}.%20Для%20${guestsQuantityValue}%20${human}.%20Телефон%20для%20связи:%20${telValue}%20${link}`;
 			goWtsapp(messageText);
 		});
@@ -271,3 +322,6 @@ const myFunction = function () {
 };
 
 // Составление текста заявки
+
+// Сохранение в localStorage
+// Телефон

@@ -269,17 +269,19 @@ phoneInput.addEventListener('paste', phoneInputPaste);
 // =============================================Как вытащить значение переменной из функции на любой уровень=========================
 // function makeCounter() {
 // 	let count = 0;
-  
-// 	return function() {
-// 	  return count++; // есть доступ к внешней переменной "count"
-// 	};
-//   }
-  
-//   let counter = makeCounter();
 
-//   alert( counter() ); // 0
-//   alert( counter() ); // 1
-//   alert( counter() ); // 2
+// 	return function () {
+// 		return count++; // есть доступ к внешней переменной "count"
+// 	};
+// }
+
+// let counter = makeCounter();
+
+// console.log(counter()); // 0
+// console.log(counter()); // 1
+// console.log(counter()); // 2
+
+
 
 
 // =================================================Работа с кнопкой submit===================================================================
@@ -290,7 +292,6 @@ let telValue = '';
 // ===============================Активация кнопки submit по готовности===================================================================
 
 const checkButton = (input, inputValue) => {
-
 	checkInValue = input.id == 'check-in-date' ? inputValue : checkInValue;
 	departureValue = input.id == 'departure-date' ? inputValue : departureValue;
 	guestsValue = input.id == 'guests-quantity' ? inputValue : guestsValue;
@@ -333,7 +334,6 @@ bookingFormInputs.forEach((input, i) => {
 submitBtn.on('click', () => submitHandler());
 
 const submitHandler = function () {
-
 	const adressValue = $('.apartment__adress').text();
 	let human = guestsValue == 1 ? 'человекa' : 'человек';
 	const link = document.location.href;

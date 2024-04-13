@@ -217,54 +217,54 @@ phoneInput.addEventListener('paste', phoneInputPaste);
 // =============================================================================================================================
 
 // ===============================================localStorage==============================================================
-// // Функция заполнения полей из localStorage
-// const fillLocalStorage = function (val, thisInput) {
-// 	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
-// 	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
-// 	const input = inputWrapper.querySelector('.booking-form__input');
-// 	inputFakeContainer.classList.add('none');
-// 	input.classList.remove('none');
-// 	thisInput.value = val;
-// };
+// Функция заполнения полей из localStorage
+const fillLocalStorage = function (val, thisInput) {
+	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
+	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
+	const input = inputWrapper.querySelector('.booking-form__input');
+	inputFakeContainer.classList.add('none');
+	input.classList.remove('none');
+	thisInput.value = val;
+};
 
-// // Вставка телефона из localStorage
+// Вставка телефона из localStorage
 
-// let localTel = localStorage.getItem('tel');
-// if (localTel) {
-// 	fillLocalStorage(localTel, telInput);
-// }
-// let localUrl = localStorage.getItem('url');
+let localTel = localStorage.getItem('tel');
+if (localTel) {
+	fillLocalStorage(localTel, telInput);
+}
+let localUrl = localStorage.getItem('url');
 
-// // Вставка даты заселения из localStorage
+// Вставка даты заселения из localStorage
 
-// let localCheckIn = localStorage.getItem('checkIn');
-// if (localCheckIn && location.href == localUrl) {
-// 	fillLocalStorage(localCheckIn, checkInInput);
-// }
+let localCheckIn = localStorage.getItem('checkIn');
+if (localCheckIn && location.href == localUrl) {
+	fillLocalStorage(localCheckIn, checkInInput);
+}
 
-// // Вставка даты выезда из localStorage
+// Вставка даты выезда из localStorage
 
-// let localDeparture = localStorage.getItem('departure');
-// if (localDeparture && location.href == localUrl) {
-// 	fillLocalStorage(localDeparture, departureInput);
-// }
+let localDeparture = localStorage.getItem('departure');
+if (localDeparture && location.href == localUrl) {
+	fillLocalStorage(localDeparture, departureInput);
+}
 
-// // Вставка количества гостей из localStorage
+// Вставка количества гостей из localStorage
 
-// let localGuests = localStorage.getItem('guests');
-// if (localGuests && location.href == localUrl) {
-// 	fillLocalStorage(localGuests, guestsQuantityInput);
-// }
+let localGuests = localStorage.getItem('guests');
+if (localGuests && location.href == localUrl) {
+	fillLocalStorage(localGuests, guestsQuantityInput);
+}
 
-// // Сохранение данных в localStorage
-// const storageData = function (checkInValue,departureValue,guestsQuantityValue,telValue) {
-// 	localStorage.setItem('url', location.href);
-// 	localStorage.setItem('checkIn', checkInValue);
-// 	localStorage.setItem('departure', departureValue);
-// 	localStorage.setItem('guests', guestsQuantityValue);
-// 	localStorage.setItem('tel', telValue);
-
-// }
+// Сохранение данных в localStorage
+const storageData = function (checkInValue, departureValue, guestsQuantityValue, telValue) {
+	localStorage.setItem('url', location.href);
+	localStorage.setItem('checkIn', checkInValue);
+	localStorage.setItem('departure', departureValue);
+	localStorage.setItem('guests', guestsQuantityValue);
+	localStorage.setItem('tel', telValue);
+};
+storageData(checkInValue, departureValue, guestsQuantityValue, telValue);
 // =================================================================================================================================================
 // =============================================Как вытащить значение переменной из функции на любой уровень=========================
 // function makeCounter() {
@@ -281,9 +281,6 @@ phoneInput.addEventListener('paste', phoneInputPaste);
 // console.log(counter()); // 1
 // console.log(counter()); // 2
 
-
-
-
 // =================================================Работа с кнопкой submit===================================================================
 let checkInValue = '';
 let departureValue = '';
@@ -296,7 +293,7 @@ const checkButton = (input, inputValue) => {
 	departureValue = input.id == 'departure-date' ? inputValue : departureValue;
 	guestsValue = input.id == 'guests-quantity' ? inputValue : guestsValue;
 	telValue = input.id == 'client-phone' ? inputValue : telValue;
-
+// Либо сюда storage Data поместить, либо скопировать присвоение что выше в storage Data
 	if (checkInValue && departureValue && guestsValue > 0 && telValue.length > 17) {
 		$('.booking-form__submit-hide').removeAttr('disabled');
 	} else {
@@ -316,6 +313,7 @@ bookingFormInputs.forEach((input, i) => {
 				setTimeout(function () {
 					inputValue = input.value;
 					checkButton(input, inputValue);
+					storageData(input, inputValue);
 				}, 200);
 			},
 			// { once: true },
@@ -327,6 +325,7 @@ bookingFormInputs.forEach((input, i) => {
 	input.addEventListener('input', () => {
 		inputValue = input.value;
 		checkButton(input, inputValue);
+		storageData(input, inputValue);
 	});
 });
 

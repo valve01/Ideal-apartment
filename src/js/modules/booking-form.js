@@ -1,5 +1,21 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
+
+// =============================================Как вытащить значение переменной из функции на любой уровень=========================
+// function makeCounter() {
+// 	let count = 0;
+
+// 	return function () {
+// 		return count++; // есть доступ к внешней переменной "count"
+// 	};
+// }
+
+// let counter = makeCounter();
+
+// console.log(counter()); // 0
+// console.log(counter()); // 1
+// console.log(counter()); // 2
+
 // ==========================================Отмена стандартного поведения при нажатии на кнопку submit========================================
 const submitBtn = $('.booking-form__submit-hide');
 submitBtn.on('click', (e) => {
@@ -78,6 +94,8 @@ const departureInput = document.querySelector('#departure-date');
 const guestsQuantityInput = document.querySelector('#guests-quantity');
 const telInput = document.querySelector('#client-phone');
 
+telInput.addEventListener('click', console.log(telInput.value));
+
 // ==================================Слушаем родителей инпутов=====================================
 bookingFormInputsContainer.forEach((inputContainer) => {
 	inputContainer.addEventListener('click', (e) => inputOnClickHandler(e));
@@ -88,16 +106,17 @@ const inputOnClickHandler = (e) => {
 	const inputWrapper = e.target.closest('.booking-form__input-wrapper');
 	activateInput(inputWrapper);
 };
+
 //===================Функция активатор/деактиватор инпутов=================
 const activateInput = function (inputWrapper) {
 	const deactivateInput = function () {
 		if (!checkInDatePic.visible && !departureDatePic.visible) {
 			setTimeout(function () {
-				if (!input.value || input.value == 0) {
+				if (!input.value || input.value == 0 || input.value == '') {
 					input.classList.add('none');
 					inputFakeContainer.classList.remove('none');
 				}
-			});
+			}, 100);
 		}
 	};
 
@@ -106,9 +125,9 @@ const activateInput = function (inputWrapper) {
 	inputFakeContainer.classList.add('none');
 	input.classList.remove('none');
 	input.focus();
-	input.onblur = function () {
+	input.addEventListener('blur', function () {
 		deactivateInput();
-	};
+	});
 };
 // =====================================Прыгаем (активируем следующий) к следующему инпуту при нажатии на кнопку Enter==============================
 
@@ -194,6 +213,8 @@ const phoneInputOnClickHandler = function (e) {
 const clearInput = function (e) {
 	if (getInputNumbersValue(e.target).length == 1 && e.keyCode == 8) {
 		e.target.value = '';
+		localStorage.setItem('tel', '');
+		inputOnClickHandler(e)
 	}
 };
 
@@ -217,75 +238,12 @@ phoneInput.addEventListener('paste', phoneInputPaste);
 // =============================================================================================================================
 
 // ===============================================localStorage==============================================================
-// Функция заполнения полей из localStorage
-const fillLocalStorage = function (val, thisInput) {
-	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
-	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
-	const input = inputWrapper.querySelector('.booking-form__input');
-	inputFakeContainer.classList.add('none');
-	input.classList.remove('none');
-	thisInput.value = val;
-};
 
-// Вставка телефона из localStorage
-
-let localTel = localStorage.getItem('tel');
-if (localTel) {
-	fillLocalStorage(localTel, telInput);
-}
-let localUrl = localStorage.getItem('url');
-
-// Вставка даты заселения из localStorage
-
-let localCheckIn = localStorage.getItem('checkIn');
-if (localCheckIn && location.href == localUrl) {
-	fillLocalStorage(localCheckIn, checkInInput);
-}
-
-// Вставка даты выезда из localStorage
-
-let localDeparture = localStorage.getItem('departure');
-if (localDeparture && location.href == localUrl) {
-	fillLocalStorage(localDeparture, departureInput);
-}
-
-// Вставка количества гостей из localStorage
-
-let localGuests = localStorage.getItem('guests');
-if (localGuests && location.href == localUrl) {
-	fillLocalStorage(localGuests, guestsQuantityInput);
-}
-
-// Сохранение данных в localStorage
-const storageData = function (checkInValue, departureValue, guestsQuantityValue, telValue) {
-	localStorage.setItem('url', location.href);
-	localStorage.setItem('checkIn', checkInValue);
-	localStorage.setItem('departure', departureValue);
-	localStorage.setItem('guests', guestsQuantityValue);
-	localStorage.setItem('tel', telValue);
-};
-storageData(checkInValue, departureValue, guestsQuantityValue, telValue);
-// =================================================================================================================================================
-// =============================================Как вытащить значение переменной из функции на любой уровень=========================
-// function makeCounter() {
-// 	let count = 0;
-
-// 	return function () {
-// 		return count++; // есть доступ к внешней переменной "count"
-// 	};
-// }
-
-// let counter = makeCounter();
-
-// console.log(counter()); // 0
-// console.log(counter()); // 1
-// console.log(counter()); // 2
-
-// =================================================Работа с кнопкой submit===================================================================
 let checkInValue = '';
 let departureValue = '';
 let guestsValue = '';
 let telValue = '';
+
 // ===============================Активация кнопки submit по готовности===================================================================
 
 const checkButton = (input, inputValue) => {
@@ -293,13 +251,66 @@ const checkButton = (input, inputValue) => {
 	departureValue = input.id == 'departure-date' ? inputValue : departureValue;
 	guestsValue = input.id == 'guests-quantity' ? inputValue : guestsValue;
 	telValue = input.id == 'client-phone' ? inputValue : telValue;
-// Либо сюда storage Data поместить, либо скопировать присвоение что выше в storage Data
 	if (checkInValue && departureValue && guestsValue > 0 && telValue.length > 17) {
 		$('.booking-form__submit-hide').removeAttr('disabled');
 	} else {
 		$('.booking-form__submit-hide').attr('disabled', 'disabled');
 	}
 };
+
+// Функция заполнения полей из localStorage
+const fillFromLocalStorage = function (val, thisInput) {
+	const inputWrapper = thisInput.closest('.booking-form__input-wrapper');
+	const inputFakeContainer = inputWrapper.querySelector('.booking-form__input-fake-container');
+	const input = inputWrapper.querySelector('.booking-form__input');
+	inputFakeContainer.classList.add('none');
+	input.classList.remove('none');
+	thisInput.value = val;
+	checkButton(thisInput, val);
+};
+
+let localUrl = localStorage.getItem('url');
+
+let localCheckIn = localStorage.getItem('checkIn');
+let localDeparture = localStorage.getItem('departure');
+let localGuests = localStorage.getItem('guests');
+let localTel = localStorage.getItem('tel');
+
+// Вставка даты заселения из localStorage
+if (localCheckIn && location.href == localUrl) {
+	fillFromLocalStorage(localCheckIn, checkInInput);
+}
+// Вставка даты выезда из localStorage
+if (localDeparture && location.href == localUrl) {
+	fillFromLocalStorage(localDeparture, departureInput);
+}
+// Вставка количества гостей из localStorage
+if (localGuests && location.href == localUrl) {
+	fillFromLocalStorage(localGuests, guestsQuantityInput);
+}
+// Вставка телефона из localStorage
+if (localTel && location.href == localUrl) {
+	fillFromLocalStorage(localTel, telInput);
+}
+
+// Сохранение данных в localStorage
+const storageData = function (input, inputValue) {
+	checkInValue = input.id == 'check-in-date' ? inputValue : checkInValue;
+	departureValue = input.id == 'departure-date' ? inputValue : departureValue;
+	guestsValue = input.id == 'guests-quantity' ? inputValue : guestsValue;
+	telValue = input.id == 'client-phone' ? inputValue : telValue;
+
+	localStorage.setItem('url', location.href);
+	localStorage.setItem('checkIn', checkInValue);
+	localStorage.setItem('departure', departureValue);
+	localStorage.setItem('guests', guestsValue);
+	localStorage.setItem('tel', telValue);
+};
+
+// =================================================================================================================================================
+
+// =================================================Работа с кнопкой submit===================================================================
+
 // =============================Слушаем каждый инпут на изменения, чтобы активировать кнопку submit вовремя=============================
 
 bookingFormInputs.forEach((input, i) => {
@@ -312,8 +323,9 @@ bookingFormInputs.forEach((input, i) => {
 			() => {
 				setTimeout(function () {
 					inputValue = input.value;
-					checkButton(input, inputValue);
+
 					storageData(input, inputValue);
+					checkButton(input, inputValue);
 				}, 200);
 			},
 			// { once: true },
@@ -324,8 +336,9 @@ bookingFormInputs.forEach((input, i) => {
 	// Обработка количества гостей и телефона
 	input.addEventListener('input', () => {
 		inputValue = input.value;
-		checkButton(input, inputValue);
+
 		storageData(input, inputValue);
+		checkButton(input, inputValue);
 	});
 });
 

@@ -55,6 +55,7 @@ const bookingFormEl = document.querySelector('.booking-form');
 const bodyEl = document.querySelector('.body');
 const showBookingFormBtnEl = document.querySelector('.show-booking-form-btn');
 
+
 const showForm = (e) => {
 	e.stopPropagation();
 	bookingFormEl.classList.add('booking-form--open', 'shading');
@@ -70,6 +71,8 @@ const closeForm = () => {
 showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));
 bodyEl.addEventListener('click', () => closeForm());
 bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
+// ДЛЯ КАЛЕНДАРИКА
+// bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
 
 // =============================================Скрытие кнопки "Забронировать" при скроле сильно вниз===============================================
 
@@ -146,19 +149,19 @@ const jumpToNextInput = (nextInput) => {
 };
 
 // ==============================================Обнуление инпутов даты при ручном вводе===========================================
-$('#check-in-date').on('change', function () {
-	let checkInValue = $('#check-in-date').val();
-	if (checkInValue) {
-		$('#check-in-date').val('');
-	}
-});
+// $('#check-in-date').on('change', function () {
+// 	let checkInValue = $('#check-in-date').val();
+// 	if (checkInValue) {
+// 		$('#check-in-date').val('');
+// 	}
+// });
 
-$('#departure-date').on('change', function () {
-	let departureValue = $('#departure-date').val();
-	if (departureValue) {
-		$('#departure-date').val('');
-	}
-});
+// $('#departure-date').on('change', function () {
+// 	let departureValue = $('#departure-date').val();
+// 	if (departureValue) {
+// 		$('#departure-date').val('');
+// 	}
+// });
 
 //
 // =================================================Проверка номера телефона======================================================================

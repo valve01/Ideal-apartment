@@ -54,7 +54,7 @@ const bookingFormContainer = document.querySelector('.booking-form__booking-form
 const bookingFormEl = document.querySelector('.booking-form');
 const bodyEl = document.querySelector('.body');
 const showBookingFormBtnEl = document.querySelector('.show-booking-form-btn');
-
+const calendarEl=document.querySelector('.air-datepicker-global-container')
 
 const showForm = (e) => {
 	e.stopPropagation();
@@ -72,7 +72,7 @@ showBookingFormBtnEl.addEventListener('click', (e) => showForm(e));
 bodyEl.addEventListener('click', () => closeForm());
 bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
 // ДЛЯ КАЛЕНДАРИКА
-// bookingFormContainer.addEventListener('click', (e) => e.stopPropagation());
+calendarEl.addEventListener('click', (e) => e.stopPropagation());
 
 // =============================================Скрытие кнопки "Забронировать" при скроле сильно вниз===============================================
 

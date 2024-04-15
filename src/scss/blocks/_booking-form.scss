@@ -50,7 +50,8 @@
 		color: var(--color-main);
 	}
 	&__price {
-		font-size: 24px;
+		font-size: 20px;
+
 	}
 	&__price-span {
 		font-size: 16px;
@@ -161,7 +162,7 @@ select.booking-form__input {
 @media screen and (min-width: 600px) and (max-width: 959px) {
 	.booking-form {
 		&__price {
-			font-size: 18px;
+			font-size: 14px;
 			font-weight: 500;
 		}
 		&__price-span {

@@ -199,30 +199,46 @@ const renderApartmentDetailed = (findApartment) => {
 
 			<div class="separator"></div>
 		`;
+
+// Верезанная часть с ценой. Вставить после 
+// .section__table-container
+// 
+// <div class="section__table-row-1">
+// 		<span class="section__table-property">Сутки (до 2х гостей)</span>
+// 		<span class="section__table-value">${priceMin}</span>
+// </div>
+// <div class="section__table-row-2">
+// 		<span class="section__table-property">За каждого следующего гостя</span>
+// 		<span class="section__table-value">${priceForEachNext}</span>
+// </div>
+// <div class="section__table-row-1">
+// 		<span class="section__table-property">Предоплата</span>
+// 		<span class="section__table-value">${prepay}%</span>
+// </div>
+// <div class="section__table-row-2">
+// 		<span class="section__table-property"> </span>
+// 		<span class="section__table-value"> </span>
+// </div>
+
+// вместо залога от 1000р
+// <span class="section__table-value">${deposit}</span>
+
 	const apartmentHTMLPrices = `
 		<!-- Стоимость -->
 
 		<h2 class="section-title">Стоимость проживания</h2>
 		<div class="section__table-container" loading="lazy">
-			<div class="section__table-row-1">
-				<span class="section__table-property">Сутки (до 2х гостей)</span>
-				<span class="section__table-value">${priceMin}</span>
-			</div>
-			<div class="section__table-row-2">
-				<span class="section__table-property">За каждого следующего гостя</span>
-				<span class="section__table-value">${priceForEachNext}</span>
-			</div>
-			<div class="section__table-row-1">
-				<span class="section__table-property">Предоплата</span>
-				<span class="section__table-value">${prepay}%</span>
-			</div>
-			<div class="section__table-row-2">
+		<div class="section__table-row-1">
+				<span class="section__table-property">Стоимость проживания завивисит от срока и количества проживающих</span>
+				<span class="section__table-value">Свяжитесь с нами для уточнения</span>
+		</div>
+		<div class="section__table-row-2">
 				<span class="section__table-property"> </span>
 				<span class="section__table-value"> </span>
-			</div>
+		</div>
 			<div class="section__table-row-1">
 				<span class="section__table-property">Залог</span>
-				<span class="section__table-value">${deposit}</span>
+				<span class="section__table-value">от 1000р</span>
 			</div>
 		</div>
 	</section>

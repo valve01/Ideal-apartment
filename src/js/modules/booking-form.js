@@ -254,7 +254,7 @@ const checkButton = (input, inputValue) => {
 	departureValue = input.id == 'departure-date' ? inputValue : departureValue;
 	guestsValue = input.id == 'guests-quantity' ? inputValue : guestsValue;
 	telValue = input.id == 'client-phone' ? inputValue : telValue;
-	if (checkInValue && departureValue && guestsValue > 0 && telValue.length > 17) {
+	if (checkInValue && departureValue && guestsValue > 0 && telValue.length > 16) {
 		$('.booking-form__submit-hide').removeAttr('disabled');
 	} else {
 		$('.booking-form__submit-hide').attr('disabled', 'disabled');

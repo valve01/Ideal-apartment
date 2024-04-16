@@ -45,6 +45,7 @@ const renderApartmentDetailed = (findApartment) => {
 	const {
 		city,
 		street,
+		mapUrl,
 		photos,
 		price,
 		conditions,
@@ -676,6 +677,9 @@ const renderApartmentDetailed = (findApartment) => {
 
 </div>
 `;
+
+// src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
+
 	const apartmentHTMLMap = `
 	
 	<!--Карта -->
@@ -686,7 +690,7 @@ const renderApartmentDetailed = (findApartment) => {
 	<div class="map">
 		<div class="map__container">
 			<iframe class="yandex-map none"
-				src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
+				src=${mapUrl}
 				width="100%" height="400" frameborder="0"></iframe>
 		</div>
 	</div>

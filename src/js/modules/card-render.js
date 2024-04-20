@@ -15,8 +15,8 @@ const cardsCreate = (apartmentsData) => {
 		const { id, price, parameters, city, street, photos, apartmentDescription } = card;
 
 
-		const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
-		// const photoHref = `/apartment.html?id=${id}`;
+		// const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
+		const photoHref = `/apartment.html?id=${id}`;
 
 
 		const cardItem = `

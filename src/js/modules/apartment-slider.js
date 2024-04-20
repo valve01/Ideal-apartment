@@ -1,7 +1,9 @@
 const apartmentSlider = (findApartment) => {
 	const { photos } = findApartment;
 
+	// Сделать проверку, если начало на localhost, то вернуть ${photos}, иначе /Ideal-apartment/${photos}
 	// const photosVar = `/Ideal-apartment/${photos}`;
+
 	const photosVar = `${photos}`;
 
 

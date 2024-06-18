@@ -2,9 +2,9 @@ const apartmentSlider = (findApartment) => {
 	const { photos } = findApartment;
 
 	// Сделать проверку, если начало на localhost, то вернуть ${photos}, иначе /Ideal-apartment/${photos}
-	// const photosVar = `/Ideal-apartment/${photos}`;
 
-	const photosVar = `${photos}`;
+	const photosVar = `/Ideal-apartment/${photos}`;
+	// const photosVar = `${photos}`;
 
 	const mainImgEl = document.querySelector('.apartment__slider-main-img');
 	const miniImgEls = document.querySelectorAll('.slider-mini-img');

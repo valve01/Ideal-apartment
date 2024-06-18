@@ -42,13 +42,12 @@ const apartmentSlider = (findApartment) => {
 			determinateMainSlide();
 		});
 	};
-	// ${photosVar}/(${i + 1}).jpg
+
 	//Рендерим минислайды
 	miniImgEls.forEach((miniImgEl, i) => {
 		const miniImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
 		const miniImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 		const miniImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
-		// const miniImgUrl = `${photosVar}/(${i + 1}).jpg`;
 		const miniImgLoad = new Image();
 		if (miniImgUrlAvif) {
 			miniImgLoad.src = miniImgUrlAvif;
@@ -56,13 +55,10 @@ const apartmentSlider = (findApartment) => {
 			miniImgLoad.src = miniImgUrlWebp;
 		} else if (miniImgUrlJpg) {
 			miniImgLoad.src = miniImgUrlJpg;
-		} 
+		}
 		miniImgLoad.onerror = () => {
 			miniImgEl.remove();
 		};
-		// miniImgLoad.src = miniImgUrl;
-
-		// url('${miniImgUrl}')
 		miniImgEl.style.backgroundImage = `
 			image-set(
 				url("${miniImgUrlAvif}") type("image/avif"),
@@ -72,30 +68,7 @@ const apartmentSlider = (findApartment) => {
 		`;
 		chooseThisSlide(miniImgEl);
 	});
-	// =========================================
-	// ${photosVar}/(${i + 1}).jpg
-	//Рендерим минислайды
-
-	// miniImgEls.forEach((miniImgEl, i) => {
-	// 	const miniImgUrl = `
-	// 			url("${photosVar}/(${i + 1}).jpg"),
-	// 	`;
-	// 	const miniImgLoad = new Image();
-	// 	miniImgLoad.src = miniImgUrl;
-	// 	miniImgLoad.onerror = () => {
-	// 		miniImgEl.remove();
-	// 	};
-	// 	// url('${miniImgUrl}')
-	// 	miniImgEl.style.backgroundImage = `
-	// 		image-set(
-	// 			url("${miniImgUrl}.avif") type("image/avif"),
-	// 			url("${miniImgUrl}.webp") type("image/webp"),
-	// 			url("${miniImgUrl}.jpg") type("image/jpeg")
-	// 		)
-	// 	`;
-	// 	chooseThisSlide(miniImgEl);
-	// });
-
+	
 	// =====================================
 	prevBtnEl.addEventListener('click', (e) => {
 		turnPrevSlide(e);

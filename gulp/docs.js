@@ -3,7 +3,7 @@ const fs = require('fs');
 const clean = require('gulp-clean');
 const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
-// const server = require('gulp-server-livereload');
+const server = require('gulp-server-livereload');
 const ghPages = require('gulp-gh-pages');
 
 //HTML
@@ -106,14 +106,14 @@ function scssDocs() {
 function imagesDocs() {
 	return (
 		src('./src/img/**/*.{png,jpg,jpeg}')
-			// .pipe(changed('./docs/img/'))
-			// .pipe(avif())
+			.pipe(changed('./docs/img/'))
+			.pipe(avif())
 			.pipe(dest('./docs/img/'))
 			// Два раза обращаемся к /img/
-			// .pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
-			// .pipe(changed('./docs/img/'))
-			// .pipe(webp())
-			// .pipe(dest('./docs/img/'))
+			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
+			.pipe(changed('./docs/img/'))
+			.pipe(webp())
+			.pipe(dest('./docs/img/'))
 			// Третий раза обращаемся к /img/
 			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg', './src/img/logo.svg']))
 			.pipe(changed('./docs/img/'))
@@ -181,14 +181,14 @@ function jsDocs() {
 
 // =========================================================== Server ============================================================
 
-// function startServerDocs() {
-// 	return src('./docs/').pipe(
-// 		server({
-// 			livereload: true,
-// 			open: true,
-// 		}),
-// 	);
-// }
+function startServerDocs() {
+	return src('./docs/').pipe(
+		server({
+			livereload: true,
+			open: true,
+		}),
+	);
+}
 
 // =========================================================================================================================
 
@@ -204,6 +204,6 @@ exports.spriteDocs = spriteDocs;
 exports.fontsDocs = fontsDocs;
 exports.copyFilesDocs = copyFilesDocs;
 exports.jsDocs = jsDocs;
-// exports.startServerDocs = startServerDocs;
+exports.startServerDocs = startServerDocs;
 exports.deployGhP = deployGhP;
 exports.cleanPublish = cleanPublish;

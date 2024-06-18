@@ -6,7 +6,6 @@ const apartmentSlider = (findApartment) => {
 
 	const photosVar = `${photos}`;
 
-
 	const mainImgEl = document.querySelector('.apartment__slider-main-img');
 	const miniImgEls = document.querySelectorAll('.slider-mini-img');
 	const prevBtnEl = document.querySelector('.apartment__slider-prev-btn');
@@ -14,7 +13,15 @@ const apartmentSlider = (findApartment) => {
 	// const fullScreenBtn = document.querySelector('.apartment__slider-full-screen-btn');
 	let currentSlide;
 
-	mainImgEl.style.backgroundImage = `url('${photosVar}/(1).jpg')`;
+	mainImgEl.style.backgroundImage = `
+	image-set(
+		url("${photosVar}/(1).avif") type("image/avif"),
+		url("${photosVar}/(1).webp") type("image/webp"),
+		url("${photosVar}/(1).jpg") type("image/jpeg")
+	)
+		`;
+	// url('${photosVar}/(1).jpg')`;
+	// //////////////////////////////////////////////////////////////////////
 	miniImgEls[0].classList.add('slider-mini-img-container--active');
 
 	const deliteOutline = () => {
@@ -35,19 +42,61 @@ const apartmentSlider = (findApartment) => {
 			determinateMainSlide();
 		});
 	};
-
+	// ${photosVar}/(${i + 1}).jpg
 	//Рендерим минислайды
 	miniImgEls.forEach((miniImgEl, i) => {
-		const miniImgUrl = `${photosVar}/(${i + 1}).jpg`;
+		const miniImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
+		const miniImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
+		const miniImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
+		// const miniImgUrl = `${photosVar}/(${i + 1}).jpg`;
 		const miniImgLoad = new Image();
-		miniImgLoad.src = miniImgUrl;
+		if (miniImgUrlAvif) {
+			miniImgLoad.src = miniImgUrlAvif;
+		} else if (miniImgUrlWebp) {
+			miniImgLoad.src = miniImgUrlWebp;
+		} else if (miniImgUrlJpg) {
+			miniImgLoad.src = miniImgUrlJpg;
+		} 
 		miniImgLoad.onerror = () => {
 			miniImgEl.remove();
 		};
-		miniImgEl.style.backgroundImage = `url('${miniImgUrl}')`;
+		// miniImgLoad.src = miniImgUrl;
+
+		// url('${miniImgUrl}')
+		miniImgEl.style.backgroundImage = `
+			image-set(
+				url("${miniImgUrlAvif}") type("image/avif"),
+				url("${miniImgUrlWebp}") type("image/webp"),
+				url("${miniImgUrlJpg}") type("image/jpeg")
+			)
+		`;
 		chooseThisSlide(miniImgEl);
 	});
+	// =========================================
+	// ${photosVar}/(${i + 1}).jpg
+	//Рендерим минислайды
 
+	// miniImgEls.forEach((miniImgEl, i) => {
+	// 	const miniImgUrl = `
+	// 			url("${photosVar}/(${i + 1}).jpg"),
+	// 	`;
+	// 	const miniImgLoad = new Image();
+	// 	miniImgLoad.src = miniImgUrl;
+	// 	miniImgLoad.onerror = () => {
+	// 		miniImgEl.remove();
+	// 	};
+	// 	// url('${miniImgUrl}')
+	// 	miniImgEl.style.backgroundImage = `
+	// 		image-set(
+	// 			url("${miniImgUrl}.avif") type("image/avif"),
+	// 			url("${miniImgUrl}.webp") type("image/webp"),
+	// 			url("${miniImgUrl}.jpg") type("image/jpeg")
+	// 		)
+	// 	`;
+	// 	chooseThisSlide(miniImgEl);
+	// });
+
+	// =====================================
 	prevBtnEl.addEventListener('click', (e) => {
 		turnPrevSlide(e);
 	});

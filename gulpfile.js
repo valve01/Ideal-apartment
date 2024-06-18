@@ -29,7 +29,7 @@ const {
 	fontsDocs,
 	copyFilesDocs,
 	jsDocs,
-	// startServerDocs,
+	startServerDocs,
 	spriteDocs,
 	deployGhP,
 	cleanPublish,
@@ -38,6 +38,6 @@ const {
 exports.docs = series(
 	parallel(cleanDocs, cleanPublish),
 	parallel(htmlIncludeDocs, scssDocs, imagesDocs, spriteDocs, fontsDocs, copyFilesDocs, jsDocs),
-	// parallel(startServerDocs),
+	parallel(startServerDocs),
 );
 exports.deployGhP = deployGhP;

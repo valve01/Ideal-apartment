@@ -19,6 +19,7 @@ const cardsCreate = (apartmentsData) => {
 		const photoHref = `/apartment.html?id=${id}`;
 
 
+
 		const cardItem = `
 <div class="card" loading="lazy">
 	<div class="card__container">
@@ -32,7 +33,13 @@ const cardsCreate = (apartmentsData) => {
 				<div class="card__rooms">${parameters.rooms} комн</div>
 			</div>
 			<div class="card__photo">
-				<img src="${photos}/(1).jpg" alt="card__photo" loading="lazy">
+				
+				<picture>
+					<source type="image/avif" srcset="${photos}/(1).avif">
+					<source type="image/webp" srcset="${photos}/(1).webp">
+					<img src="${photos}/(1).jpg" alt="card__photo" loading="lazy">
+				</picture>
+				
 			</div>
 		</a>
 

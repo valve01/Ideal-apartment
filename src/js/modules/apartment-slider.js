@@ -13,15 +13,16 @@ const apartmentSlider = (findApartment) => {
 	// const fullScreenBtn = document.querySelector('.apartment__slider-full-screen-btn');
 	let currentSlide;
 
-	mainImgEl.style.backgroundImage = `
-	image-set(
-		url("${photosVar}/(1).avif") type("image/avif"),
-		url("${photosVar}/(1).webp") type("image/webp"),
-		url("${photosVar}/(1).jpg") type("image/jpeg")
-	)
-		`;
-	// url('${photosVar}/(1).jpg')`;
-	// //////////////////////////////////////////////////////////////////////
+	mainImgEl.style.backgroundImage = 
+	// `
+	// image-set(
+	// 	url("${photosVar}/(1).avif") type("image/avif"),
+	// 	url("${photosVar}/(1).webp") type("image/webp"),
+	// 	url("${photosVar}/(1).jpg") type("image/jpeg")
+	// )
+	// 	`;
+	`url('${photosVar}/(1).jpg')`;
+
 	miniImgEls[0].classList.add('slider-mini-img-container--active');
 
 	const deliteOutline = () => {
@@ -45,27 +46,33 @@ const apartmentSlider = (findApartment) => {
 
 	//Рендерим минислайды
 	miniImgEls.forEach((miniImgEl, i) => {
-		const miniImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
-		const miniImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
+		// const miniImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
+		// const miniImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 		const miniImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 		const miniImgLoad = new Image();
-		if (miniImgUrlAvif) {
-			miniImgLoad.src = miniImgUrlAvif;
-		} else if (miniImgUrlWebp) {
-			miniImgLoad.src = miniImgUrlWebp;
-		} else if (miniImgUrlJpg) {
+		// if (miniImgUrlAvif) {
+		// 	miniImgLoad.src = miniImgUrlAvif;
+		// } else if (miniImgUrlWebp) {
+		// 	miniImgLoad.src = miniImgUrlWebp;
+		// } else if (miniImgUrlJpg) {
+		// 	miniImgLoad.src = miniImgUrlJpg;
+		// }
+		if (miniImgUrlJpg) {
 			miniImgLoad.src = miniImgUrlJpg;
 		}
+		
 		miniImgLoad.onerror = () => {
 			miniImgEl.remove();
 		};
-		miniImgEl.style.backgroundImage = `
-			image-set(
-				url("${miniImgUrlAvif}") type("image/avif"),
-				url("${miniImgUrlWebp}") type("image/webp"),
-				url("${miniImgUrlJpg}") type("image/jpeg")
-			)
-		`;
+		miniImgEl.style.backgroundImage = 
+		// `
+		// 	image-set(
+		// 		url("${miniImgUrlAvif}") type("image/avif"),
+		// 		url("${miniImgUrlWebp}") type("image/webp"),
+		// 		url("${miniImgUrlJpg}") type("image/jpeg")
+		// 	)
+		// `;
+		`url("${miniImgUrlJpg}")`
 		chooseThisSlide(miniImgEl);
 	});
 	

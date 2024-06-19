@@ -14,11 +14,8 @@ const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
 		const { id, price, parameters, city, street, photos, apartmentDescription } = card;
 
-
 		// const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
 		const photoHref = `/apartment.html?id=${id}`;
-
-
 
 		const cardItem = `
 <div class="card" loading="lazy">
@@ -35,8 +32,8 @@ const cardsCreate = (apartmentsData) => {
 			<div class="card__photo">
 				
 				<picture>
-					<source type="image/avif" srcset="${photos}/(1).avif">
-					<source type="image/webp" srcset="${photos}/(1).webp">
+					<source type=image/avif srcset="${photos}/(1).avif">
+					<source type=image/webp srcset="${photos}/(1).webp">
 					<img src="${photos}/(1).jpg" alt="card__photo" loading="lazy">
 				</picture>
 				

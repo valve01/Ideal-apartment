@@ -115,76 +115,124 @@ const renderApartmentDetailed = (findApartment) => {
 
 
 
-				<!-- Slider main container -->
+		<!-- Slider main container -->
 		<div class="swiper">
 
   			<!-- Additional required wrapper -->
-  		<div class="swiper-wrapper">
+  			<div class="swiper-wrapper">
 
-    		<!-- Slides -->
-		<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-    	<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-		<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-    	<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-		<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-    	<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-		<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-    	<div class="swiper-slide slider-mini-img">Slide 1</div>
-		<div class="swiper-slide slider-mini-img">Slide 2</div>
-		<div class="swiper-slide slider-mini-img">Slide 3</div>
-		<div class="swiper-slide slider-mini-img">Slide 4</div>
-		<div class="swiper-slide slider-mini-img">Slide 5</div>
-		
-    
-  		</div>
-		
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+    			<!-- Slides -->
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+    			<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+    			<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+    			<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+    			<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
+				<div class="swiper-slide slider-main-img"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  			</div>
 
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+  			<!-- If we need navigation buttons -->
+  			<div class="swiper-button-prev"></div>
+  			<div class="swiper-button-next"></div>
+
   
-</div>
+		</div>
+
+		<!-- Минислайды -->
+
+		<div class="thumbs-swiper">
+			
+  			<!-- Additional required wrapper -->
+  			<div class="swiper-wrapper">
+
+    			<!-- Slides -->
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+    			<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+    			<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+    			<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+    			<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+				<div class="swiper-slide slider-mini-img"></div>
+
+  			</div>
+		</div>
 
 	</div>
+
+		<div class="apartment__detailed-description-container">
+		<div class="apartment__detailed-description">
 `;
 
 	const apartmentHTMLLabels = `
 		<!-- Подробное описание квартиры -->
-	<div class="apartment__detailed-description-container">
-		<div class="apartment__detailed-description">
+
 
 		<div class="apartment__label-row-container" loading="lazy">
 			<div class="apartment__rooms-quantity">

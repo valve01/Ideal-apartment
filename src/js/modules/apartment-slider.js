@@ -9,6 +9,7 @@ const apartmentSlider = (findApartment) => {
 	const photosVar = `${photos}`;
 
 	// const mainImgEl = document.querySelector('.apartment__slider-main-img');
+	const mainImgEls = document.querySelectorAll('.slider-main-img');
 	const miniImgEls = document.querySelectorAll('.slider-mini-img');
 	// const prevBtnEl = document.querySelector('.apartment__slider-prev-btn');
 	// const nextBtnEl = document.querySelector('.apartment__slider-next-btn');
@@ -45,6 +46,38 @@ const apartmentSlider = (findApartment) => {
 			// determinateMainSlide();
 		// });
 	// };
+
+	// Рендерим главный слайдер
+	mainImgEls.forEach((mainImgEl, i) => {
+		// const miniImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
+		// const miniImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
+		const miniImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
+		const miniImgLoad = new Image();
+		// if (miniImgUrlAvif) {
+		// 	miniImgLoad.src = miniImgUrlAvif;
+		// } else if (miniImgUrlWebp) {
+		// 	miniImgLoad.src = miniImgUrlWebp;
+		// } else if (miniImgUrlJpg) {
+		// 	miniImgLoad.src = miniImgUrlJpg;
+		// }
+		if (miniImgUrlJpg) {
+			miniImgLoad.src = miniImgUrlJpg;
+		}
+		
+		miniImgLoad.onerror = () => {
+			mainImgEl.remove();
+		};
+		mainImgEl.style.backgroundImage = 
+		// `
+		// 	image-set(
+		// 		url("${miniImgUrlAvif}") type("image/avif"),
+		// 		url("${miniImgUrlWebp}") type("image/webp"),
+		// 		url("${miniImgUrlJpg}") type("image/jpeg")
+		// 	)
+		// `;
+		`url("${miniImgUrlJpg}")`
+		// chooseThisSlide(miniImgEl);
+	});
 
 	//Рендерим минислайды
 	miniImgEls.forEach((miniImgEl, i) => {

@@ -6,16 +6,28 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
-
 const apartmentSliderSwiper = () => {
+	const thumbsSwiper = new Swiper('.thumbs-swiper', {
+		// Optional parameters
+		// direction: 'horizontal',
+		slidesPerView: 10,
+		spaceBetween: 3,
+	});
+
 	const swiper = new Swiper('.swiper', {
 		// Optional parameters
 		// direction: 'vertical',
-		controller:{
-			control:'any',
-			by:'slide'
+
+		controller: {
+			// inverse: true,
+			by: 'slide',
+			control: '.swiper-container-thumbs',
 		},
+		thumbs: {
+			swiper: thumbsSwiper,
+			slideThumbActiveClass: 'swiper-slide-thumb-active',
+		},
+
 		loop: true,
 		modules: [Navigation, Pagination],
 

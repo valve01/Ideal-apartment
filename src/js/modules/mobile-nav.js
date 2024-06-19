@@ -18,4 +18,4 @@ function mobileNav() {
 		openMenu();
 	};
 }
-export default mobileNav;
+mobileNav()

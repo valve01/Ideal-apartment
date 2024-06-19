@@ -3,6 +3,7 @@ const config = {
 	entry: {
 		index: './src/js/index.js',
 		apartment: './src/js/apartment.js',
+		policy:'./src/js/policy.js'
 	},
 	output: {
 		filename: '[name].bundle.js',

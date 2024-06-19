@@ -1,9 +1,9 @@
 import apartmentSlider from './modules/apartment-slider.js';
-import mobileNav from './modules/mobile-nav.js';
+import './modules/mobile-nav';
 import './modules/booking-form.js';
 import './modules/scroll-up.js';
 import './modules/show-map.js';
-mobileNav();
+
 
 // Сброс --active для меню
 const activeMenuItem = $('.header__menu-link.header__menu-link--active');

@@ -1,13 +1,13 @@
 import apartmentSlider from './modules/apartment-slider.js';
+import apartmentSliderSwiper from './modules/apartment-slider-swiper.js';
 import './modules/mobile-nav';
 import './modules/booking-form.js';
 import './modules/scroll-up.js';
 import './modules/show-map.js';
 
-
 // Сброс --active для меню
 const activeMenuItem = $('.header__menu-link.header__menu-link--active');
-const activeMobileMenuItem =$('.mobile-nav__list a.mobile-nav-menu-link--active');
+const activeMobileMenuItem = $('.mobile-nav__list a.mobile-nav-menu-link--active');
 activeMenuItem.removeClass('header__menu-link--active');
 activeMobileMenuItem.removeClass('mobile-nav-menu-link--active');
 // =======================
@@ -39,6 +39,7 @@ const findCurrentApartment = (apartmentsData) => {
 	});
 	renderApartmentDetailed(findApartment);
 	apartmentSlider(findApartment);
+	apartmentSliderSwiper();
 };
 
 const renderApartmentDetailed = (findApartment) => {
@@ -109,82 +110,81 @@ const renderApartmentDetailed = (findApartment) => {
 	<!-- Слайдер -->
 
 	<div class="apartment__slider">
-		<div class="apartment__slider-main-container">
 
 
 
-			<div class="apartment__slider-prev-btn">
-				<img src="img/sprite.svg#icons--slider-prev-btn-icon"
-					class="svg-icons--slider-prev-btn-icon-dims" alt="icons--slider-prev-btn-icon">
-			</div>
 
-			<div class="apartment__slider-main-img">
 
-			</div>
+				<!-- Slider main container -->
+		<div class="swiper">
 
-			<div class="apartment__slider-next-btn">
-				<img src="img/sprite.svg#icons--slider-next-btn-icon"
-					class="svg-icons--slider-next-btn-icon-dims" alt="icons--slider-next-btn-icon">
-			</div>
+  			<!-- Additional required wrapper -->
+  		<div class="swiper-wrapper">
 
-			<div class="apartment__slider-full-screen-btn">
-				<img src="img/sprite.svg#icons--slider-fullscreen-btn-icon"
-					class="svg-icons--slider-fullscreen-btn-icon-dims" alt="icons--slider-fullscreen-btn-icon">
-			</div>
+    		<!-- Slides -->
+		<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+    	<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+		<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+    	<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+		<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+    	<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+		<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+    	<div class="swiper-slide slider-mini-img">Slide 1</div>
+		<div class="swiper-slide slider-mini-img">Slide 2</div>
+		<div class="swiper-slide slider-mini-img">Slide 3</div>
+		<div class="swiper-slide slider-mini-img">Slide 4</div>
+		<div class="swiper-slide slider-mini-img">Slide 5</div>
+		
+    
+  		</div>
+		
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
 
-	</div>
-		<div class="apartment__slider-mini-images-container">
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-<div class="slider-mini-img"></div>
-
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+  
 </div>
-	</div>
-	<div class="apartment__detailed-description-container">
-		<div class="apartment__detailed-description">
-`;
 
+	</div>
+`;
 
 	const apartmentHTMLLabels = `
 		<!-- Подробное описание квартиры -->
+	<div class="apartment__detailed-description-container">
+		<div class="apartment__detailed-description">
 
 		<div class="apartment__label-row-container" loading="lazy">
 			<div class="apartment__rooms-quantity">
@@ -201,28 +201,28 @@ const renderApartmentDetailed = (findApartment) => {
 			<div class="separator"></div>
 		`;
 
-// Верезанная часть с ценой. Вставить после 
-// .section__table-container
-// 
-// <div class="section__table-row-1">
-// 		<span class="section__table-property">Сутки (до 2х гостей)</span>
-// 		<span class="section__table-value">${priceMin}</span>
-// </div>
-// <div class="section__table-row-2">
-// 		<span class="section__table-property">За каждого следующего гостя</span>
-// 		<span class="section__table-value">${priceForEachNext}</span>
-// </div>
-// <div class="section__table-row-1">
-// 		<span class="section__table-property">Предоплата</span>
-// 		<span class="section__table-value">${prepay}%</span>
-// </div>
-// <div class="section__table-row-2">
-// 		<span class="section__table-property"> </span>
-// 		<span class="section__table-value"> </span>
-// </div>
+	// Верезанная часть с ценой. Вставить после
+	// .section__table-container
+	//
+	// <div class="section__table-row-1">
+	// 		<span class="section__table-property">Сутки (до 2х гостей)</span>
+	// 		<span class="section__table-value">${priceMin}</span>
+	// </div>
+	// <div class="section__table-row-2">
+	// 		<span class="section__table-property">За каждого следующего гостя</span>
+	// 		<span class="section__table-value">${priceForEachNext}</span>
+	// </div>
+	// <div class="section__table-row-1">
+	// 		<span class="section__table-property">Предоплата</span>
+	// 		<span class="section__table-value">${prepay}%</span>
+	// </div>
+	// <div class="section__table-row-2">
+	// 		<span class="section__table-property"> </span>
+	// 		<span class="section__table-value"> </span>
+	// </div>
 
-// вместо залога от 1000р
-// <span class="section__table-value">${deposit}</span>
+	// вместо залога от 1000р
+	// <span class="section__table-value">${deposit}</span>
 
 	const apartmentHTMLPrices = `
 		<!-- Стоимость -->
@@ -678,7 +678,7 @@ const renderApartmentDetailed = (findApartment) => {
 </div>
 `;
 
-// src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
+	// src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
 
 	const apartmentHTMLMap = `
 	
@@ -754,5 +754,4 @@ const renderApartmentDetailed = (findApartment) => {
 			element.closest('.checked-condition').classList.add('none');
 		}
 	});
-
 };

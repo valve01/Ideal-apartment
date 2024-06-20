@@ -1,5 +1,3 @@
-
-
 const apartmentSlider = (findApartment) => {
 	const { photos } = findApartment;
 
@@ -16,7 +14,7 @@ const apartmentSlider = (findApartment) => {
 	// const fullScreenBtn = document.querySelector('.apartment__slider-full-screen-btn');
 	// let currentSlide;
 
-	// mainImgEl.style.backgroundImage = 
+	// mainImgEl.style.backgroundImage =
 	// `
 	// image-set(
 	// 	url("${photosVar}/(1).avif") type("image/avif"),
@@ -40,11 +38,11 @@ const apartmentSlider = (findApartment) => {
 
 	// Переключатель по клику на минислайд
 	// const chooseThisSlide = (miniImgEl) => {
-		// miniImgEl.addEventListener('click', () => {
-			// deliteOutline();
-			// currentSlide = miniImgEl;
-			// determinateMainSlide();
-		// });
+	// miniImgEl.addEventListener('click', () => {
+	// deliteOutline();
+	// currentSlide = miniImgEl;
+	// determinateMainSlide();
+	// });
 	// };
 
 	// Рендерим главный слайдер
@@ -63,20 +61,22 @@ const apartmentSlider = (findApartment) => {
 		if (miniImgUrlJpg) {
 			miniImgLoad.src = miniImgUrlJpg;
 		}
-		
+
 		miniImgLoad.onerror = () => {
 			mainImgEl.remove();
 		};
-		mainImgEl.style.backgroundImage = 
-		// `
-		// 	image-set(
-		// 		url("${miniImgUrlAvif}") type("image/avif"),
-		// 		url("${miniImgUrlWebp}") type("image/webp"),
-		// 		url("${miniImgUrlJpg}") type("image/jpeg")
-		// 	)
-		// `;
-		`url("${miniImgUrlJpg}")`
-		// chooseThisSlide(miniImgEl);
+		miniImgLoad.onload = () => {
+			mainImgEl.style.backgroundImage =
+				// `
+				// 	image-set(
+				// 		url("${miniImgUrlAvif}") type("image/avif"),
+				// 		url("${miniImgUrlWebp}") type("image/webp"),
+				// 		url("${miniImgUrlJpg}") type("image/jpeg")
+				// 	)
+				// `;
+				`url("${miniImgUrlJpg}")`;
+			// chooseThisSlide(miniImgEl);
+		};
 	});
 
 	//Рендерим минислайды
@@ -95,22 +95,22 @@ const apartmentSlider = (findApartment) => {
 		if (miniImgUrlJpg) {
 			miniImgLoad.src = miniImgUrlJpg;
 		}
-		
+
 		miniImgLoad.onerror = () => {
 			miniImgEl.remove();
 		};
-		miniImgEl.style.backgroundImage = 
-		// `
-		// 	image-set(
-		// 		url("${miniImgUrlAvif}") type("image/avif"),
-		// 		url("${miniImgUrlWebp}") type("image/webp"),
-		// 		url("${miniImgUrlJpg}") type("image/jpeg")
-		// 	)
-		// `;
-		`url("${miniImgUrlJpg}")`
+		miniImgEl.style.backgroundImage =
+			// `
+			// 	image-set(
+			// 		url("${miniImgUrlAvif}") type("image/avif"),
+			// 		url("${miniImgUrlWebp}") type("image/webp"),
+			// 		url("${miniImgUrlJpg}") type("image/jpeg")
+			// 	)
+			// `;
+			`url("${miniImgUrlJpg}")`;
 		// chooseThisSlide(miniImgEl);
 	});
-	
+
 	// =====================================
 	// prevBtnEl.addEventListener('click', (e) => {
 	// 	turnPrevSlide(e);

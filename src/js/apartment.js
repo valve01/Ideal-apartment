@@ -1,4 +1,5 @@
 import apartmentSlider from './modules/apartment-slider.js';
+import apartmentSliderRender from './modules/slider-render.js';
 import apartmentSliderSwiper from './modules/apartment-slider-swiper.js';
 import './modules/mobile-nav';
 import './modules/booking-form.js';
@@ -38,8 +39,9 @@ const findCurrentApartment = (apartmentsData) => {
 		return apartment.id === apartmentId;
 	});
 	renderApartmentDetailed(findApartment);
-	apartmentSlider(findApartment);
-	apartmentSliderSwiper();
+	// apartmentSlider(findApartment);
+
+	apartmentSliderRender(findApartment);
 };
 
 const renderApartmentDetailed = (findApartment) => {
@@ -122,46 +124,9 @@ const renderApartmentDetailed = (findApartment) => {
   			<div class="swiper-wrapper">
 
     			<!-- Slides -->
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-    			<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-    			<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-    			<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-    			<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
-				<div class="swiper-slide slider-main-img"></div>
+				
+
+
 
   			</div>
 
@@ -180,46 +145,6 @@ const renderApartmentDetailed = (findApartment) => {
   			<div class="swiper-wrapper">
 
     			<!-- Slides -->
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-    			<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-    			<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-    			<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-    			<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
-				<div class="swiper-slide slider-mini-img"></div>
 
   			</div>
 		</div>
@@ -228,7 +153,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 		<div class="apartment__detailed-description-container">
 		<div class="apartment__detailed-description">
-`;
+	`;
 
 	const apartmentHTMLLabels = `
 		<!-- Подробное описание квартиры -->
@@ -803,3 +728,8 @@ const renderApartmentDetailed = (findApartment) => {
 		}
 	});
 };
+setTimeout(() => {
+	apartmentSliderSwiper();
+}, 2000);
+
+

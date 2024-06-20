@@ -20,6 +20,7 @@ const apartmentSliderSwiper = () => {
 		slidesPerView: 10,
 		spaceBetween: 3,
 		// loop: true,
+		// watchSlidesProgress:true,
 		controller: {
 			// inverse: true,
 			// by: 'slide',

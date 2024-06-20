@@ -142,7 +142,7 @@ const renderApartmentDetailed = (findApartment) => {
 		<div class="thumbs-swiper">
 			
   			<!-- Additional required wrapper -->
-  			<div class="swiper-wrapper">
+  			<div class="swiper-wrapper apartment__slider-mini-images-container">
 
     			<!-- Slides -->
 
@@ -151,8 +151,7 @@ const renderApartmentDetailed = (findApartment) => {
 
 	</div>
 
-		<div class="apartment__detailed-description-container">
-		<div class="apartment__detailed-description">
+
 	`;
 
 	const apartmentHTMLLabels = `
@@ -702,6 +701,7 @@ const renderApartmentDetailed = (findApartment) => {
 			сделать правильный выбор.</p>
 	</div>
 </section>
+
 
 `;
 	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdress);

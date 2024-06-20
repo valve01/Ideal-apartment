@@ -17,8 +17,12 @@ const apartmentSliderSwiper = () => {
 		// Optional parameters
 		// direction: 'horizontal',
 
-		slidesPerView: 10,
+		slidesPerView: 6,
 		spaceBetween: 3,
+		
+        // watchSlidesVisibility: true,
+        // watchSlidesProgress: true,
+        // breakpoints: {
 		// loop: true,
 		// watchSlidesProgress:true,
 		controller: {

@@ -1,3 +1,5 @@
+import apartmentSliderSwiper from './apartment-slider-swiper.js';
+
 const apartmentSliderRender = (findApartment) => {
 	const { photos } = findApartment;
 
@@ -41,6 +43,7 @@ const apartmentSliderRender = (findApartment) => {
 			mainSlideEl.classList.add('swiper-slide');
 			mainSlideEl.classList.add('slider-main-img');
 			mainSliderWrapper.append(mainSlideEl);
+			apartmentSliderSwiper();
 		};
 	}
 
@@ -76,8 +79,11 @@ const apartmentSliderRender = (findApartment) => {
 			thumbSlideEl.classList.add('swiper-slide');
 			thumbSlideEl.classList.add('slider-mini-img');
 			thumbsSliderWrapper.append(thumbSlideEl);
+			apartmentSliderSwiper();
 		};
+		
 	}
+	
 };
 
 export default apartmentSliderRender;

@@ -8,109 +8,108 @@ import './modules/show-map.js';
 
 // Сброс --active для меню
 
+const activeMenuItem = $('.header__menu-link.header__menu-link--active');
+const activeMobileMenuItem = $('.mobile-nav__list a.mobile-nav-menu-link--active');
+activeMenuItem.removeClass('header__menu-link--active');
+activeMobileMenuItem.removeClass('mobile-nav-menu-link--active');
+// =======================
 
-		const activeMenuItem = $('.header__menu-link.header__menu-link--active');
-		const activeMobileMenuItem = $('.mobile-nav__list a.mobile-nav-menu-link--active');
-		activeMenuItem.removeClass('header__menu-link--active');
-		activeMobileMenuItem.removeClass('mobile-nav-menu-link--active');
-		// =======================
+let apartmentsData = [];
+const apartmentAdjacentHTML = document.querySelector('.apartment__container');
 
-		let apartmentsData = [];
-		const apartmentAdjacentHTML = document.querySelector('.apartment__container');
+const getApartmentData = async () => {
+	try {
+		if (!apartmentsData.length) {
+			const res = await fetch('https://64845cf9ee799e3216269459.mockapi.io/apartments');
+			apartmentsData = await res.json();
+		}
 
-		const getApartmentData = async () => {
-			try {
-				if (!apartmentsData.length) {
-					const res = await fetch('https://64845cf9ee799e3216269459.mockapi.io/apartments');
-					apartmentsData = await res.json();
-				}
+		findCurrentApartment(apartmentsData);
+	} catch {}
+};
+getApartmentData();
 
-				findCurrentApartment(apartmentsData);
-			} catch {}
-		};
-		getApartmentData();
+const getParameterFromURL = (parameter) => {
+	const urlParams = new URLSearchParams(window.location.search);
+	return urlParams.get(parameter);
+};
 
-		const getParameterFromURL = (parameter) => {
-			const urlParams = new URLSearchParams(window.location.search);
-			return urlParams.get(parameter);
-		};
+const findCurrentApartment = (apartmentsData) => {
+	const apartmentId = getParameterFromURL('id');
+	const findApartment = apartmentsData.find((apartment) => {
+		return apartment.id === apartmentId;
+	});
+	renderApartmentDetailed(findApartment);
 
-		const findCurrentApartment = (apartmentsData) => {
-			const apartmentId = getParameterFromURL('id');
-			const findApartment = apartmentsData.find((apartment) => {
-				return apartment.id === apartmentId;
-			});
-			renderApartmentDetailed(findApartment);
+	// // apartmentSlider(findApartment);
 
-			// // apartmentSlider(findApartment);
+	apartmentSliderRender(findApartment);
+};
 
-			apartmentSliderRender(findApartment);
-		};
+const renderApartmentDetailed = (findApartment) => {
+	const {
+		city,
+		street,
+		mapUrl,
+		photos,
+		price,
+		conditions,
+		parameters,
+		appliances,
+		comfort,
+		kitchen,
+		additionally,
+		apartmentDescription,
+		avitoComments,
+	} = findApartment;
+	const { priceMin, priceForEachNext, prepay, deposit } = price;
 
-		const renderApartmentDetailed = (findApartment) => {
-			const {
-				city,
-				street,
-				mapUrl,
-				photos,
-				price,
-				conditions,
-				parameters,
-				appliances,
-				comfort,
-				kitchen,
-				additionally,
-				apartmentDescription,
-				avitoComments,
-			} = findApartment;
-			const { priceMin, priceForEachNext, prepay, deposit } = price;
+	const {
+		settlementHour,
+		documentsRequire,
+		smoking,
+		checkInTime,
+		party,
+		pets,
+		prepayConditions,
+		depositConditions,
+	} = conditions;
+	const {
+		apartmentType,
+		rooms,
+		guestsMax,
+		singleBeds,
+		doubleBeds,
+		floors,
+		totalArea,
+		bathroom,
+		houseType,
+		view,
+		balconyType,
+		parking,
+	} = parameters;
+	const { floor, totalFloors } = floors;
+	const { internet, wiFi, tv, boiler, fridge, washer, iron, microwave, conditioner, hairDryer } =
+		appliances;
+	const { bedclothes, towels, dryer, hygieneProducts, teaCoffeSugarSalt, bathrobe, slippers } =
+		comfort;
+	const { teapot, stove, oven, cutlery, utensils, dishwasher } = kitchen;
+	const {
+		elevator,
+		surveillanceCameras,
+		newBuilding,
+		intercom,
+		concierge,
+		securityAlarm,
+		closedArea,
+	} = additionally;
 
-			const {
-				settlementHour,
-				documentsRequire,
-				smoking,
-				checkInTime,
-				party,
-				pets,
-				prepayConditions,
-				depositConditions,
-			} = conditions;
-			const {
-				apartmentType,
-				rooms,
-				guestsMax,
-				singleBeds,
-				doubleBeds,
-				floors,
-				totalArea,
-				bathroom,
-				houseType,
-				view,
-				balconyType,
-				parking,
-			} = parameters;
-			const { floor, totalFloors } = floors;
-			const { internet, wiFi, tv, boiler, fridge, washer, iron, microwave, conditioner, hairDryer } =
-				appliances;
-			const { bedclothes, towels, dryer, hygieneProducts, teaCoffeSugarSalt, bathrobe, slippers } =
-				comfort;
-			const { teapot, stove, oven, cutlery, utensils, dishwasher } = kitchen;
-			const {
-				elevator,
-				surveillanceCameras,
-				newBuilding,
-				intercom,
-				concierge,
-				securityAlarm,
-				closedArea,
-			} = additionally;
-
-			const apartmentHTMLAdress = `
+	const apartmentHTMLAdress = `
 		
 			<h1 class="apartment__adress">г.${city} ул.${street}</h1>
 			`;
 
-			const apartmentHTMLSlider = `
+	const apartmentHTMLSlider = `
 		
 			<!-- Слайдер -->
 		
@@ -157,7 +156,7 @@ import './modules/show-map.js';
 		
 			`;
 
-			const apartmentHTMLLabels = `
+	const apartmentHTMLLabels = `
 				<!-- Подробное описание квартиры -->
 		
 		
@@ -176,30 +175,30 @@ import './modules/show-map.js';
 					<div class="separator"></div>
 				`;
 
-			// Верезанная часть с ценой. Вставить после
-			// .section__table-container
-			//
-			// <div class="section__table-row-1">
-			// 		<span class="section__table-property">Сутки (до 2х гостей)</span>
-			// 		<span class="section__table-value">${priceMin}</span>
-			// </div>
-			// <div class="section__table-row-2">
-			// 		<span class="section__table-property">За каждого следующего гостя</span>
-			// 		<span class="section__table-value">${priceForEachNext}</span>
-			// </div>
-			// <div class="section__table-row-1">
-			// 		<span class="section__table-property">Предоплата</span>
-			// 		<span class="section__table-value">${prepay}%</span>
-			// </div>
-			// <div class="section__table-row-2">
-			// 		<span class="section__table-property"> </span>
-			// 		<span class="section__table-value"> </span>
-			// </div>
+	// Верезанная часть с ценой. Вставить после
+	// .section__table-container
+	//
+	// <div class="section__table-row-1">
+	// 		<span class="section__table-property">Сутки (до 2х гостей)</span>
+	// 		<span class="section__table-value">${priceMin}</span>
+	// </div>
+	// <div class="section__table-row-2">
+	// 		<span class="section__table-property">За каждого следующего гостя</span>
+	// 		<span class="section__table-value">${priceForEachNext}</span>
+	// </div>
+	// <div class="section__table-row-1">
+	// 		<span class="section__table-property">Предоплата</span>
+	// 		<span class="section__table-value">${prepay}%</span>
+	// </div>
+	// <div class="section__table-row-2">
+	// 		<span class="section__table-property"> </span>
+	// 		<span class="section__table-value"> </span>
+	// </div>
 
-			// вместо залога от 1000р
-			// <span class="section__table-value">${deposit}</span>
+	// вместо залога от 1000р
+	// <span class="section__table-value">${deposit}</span>
 
-			const apartmentHTMLPrices = `
+	const apartmentHTMLPrices = `
 				<!-- Стоимость -->
 		
 				<h2 class="section-title">Стоимость проживания</h2>
@@ -219,7 +218,7 @@ import './modules/show-map.js';
 				</div>
 			</section>
 				`;
-			const apartmentHTMLConditions = `
+	const apartmentHTMLConditions = `
 		
 		<!-- Условия заселения-->
 		
@@ -296,7 +295,7 @@ import './modules/show-map.js';
 		
 							<div class="separator"></div>
 		`;
-			const apartmentHTMLParameters = `
+	const apartmentHTMLParameters = `
 		
 		<!-- Параметры -->
 		
@@ -349,7 +348,7 @@ import './modules/show-map.js';
 		</div>
 		</section>
 		`;
-			const apartmentHTMLAppliances = `
+	const apartmentHTMLAppliances = `
 		
 		<!-- Техника -->
 		
@@ -452,7 +451,7 @@ import './modules/show-map.js';
 		
 		<div class="separator"></div>
 		`;
-			const apartmentHTMLKitchen = `
+	const apartmentHTMLKitchen = `
 		
 		<!-- Кухня -->
 		
@@ -513,7 +512,7 @@ import './modules/show-map.js';
 		
 		<div class="separator"></div>
 		`;
-			const apartmentHTMLComfort = `
+	const apartmentHTMLComfort = `
 		
 		<!-- Удобства -->
 		
@@ -580,7 +579,7 @@ import './modules/show-map.js';
 		
 		<div class="separator"></div>
 		`;
-			const apartmentHTMLAdditionaly = `
+	const apartmentHTMLAdditionaly = `
 		
 		<!-- Дополнительно -->
 		
@@ -653,9 +652,9 @@ import './modules/show-map.js';
 		</div>
 		`;
 
-			// src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
+	// src="https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor"
 
-			const apartmentHTMLMap = `
+	const apartmentHTMLMap = `
 			
 			<!--Карта -->
 		
@@ -671,7 +670,7 @@ import './modules/show-map.js';
 			</div>
 		</section>
 		`;
-			const apartmentHTMLInfrastructure = `
+	const apartmentHTMLInfrastructure = `
 		
 		<!-- Инфрастуктура -->
 		
@@ -684,7 +683,7 @@ import './modules/show-map.js';
 		</section>
 		<div class="separator"></div>
 		`;
-			const apartmentHTMLDescription = `
+	const apartmentHTMLDescription = `
 		
 		<!-- Описание -->
 		
@@ -693,7 +692,7 @@ import './modules/show-map.js';
 			<p class="section-p">${apartmentDescription}</p>
 		</section>
 		`;
-			const apartmentHTMLComments = `
+	const apartmentHTMLComments = `
 		
 		<!-- Отзывы -->
 		
@@ -707,39 +706,76 @@ import './modules/show-map.js';
 		
 		
 		`;
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdress);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLSlider);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLLabels);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLPrices);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLConditions);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLParameters);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAppliances);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLKitchen);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComfort);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdditionaly);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLMap);
-			// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLInfrastructure);
-			apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLDescription);
-			// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComments);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdress);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLSlider);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLLabels);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLPrices);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLConditions);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLParameters);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAppliances);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLKitchen);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComfort);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLAdditionaly);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLMap);
+	// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLInfrastructure);
+	apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLDescription);
+	// apartmentAdjacentHTML.insertAdjacentHTML('beforeend', apartmentHTMLComments);
 
-			const checkedConditionSpanElements = document.querySelectorAll(
-				'.checked-condition .checked-condition-span',
-			);
-			checkedConditionSpanElements.forEach((element) => {
-				if (element.innerText.includes('нет')) {
-					element.closest('.checked-condition').classList.add('none');
-				}
-			});
-		};
+	const checkedConditionSpanElements = document.querySelectorAll(
+		'.checked-condition .checked-condition-span',
+	);
+	checkedConditionSpanElements.forEach((element) => {
+		if (element.innerText.includes('нет')) {
+			element.closest('.checked-condition').classList.add('none');
+		}
+	});
+};
 
-		// setTimeout(() => {
-		// 	apartmentSliderSwiper();
-		// }, 2000);
+// setTimeout(() => {
+// 	apartmentSliderSwiper();
+// }, 2000);
+
+// ========================== Подождать выполнение функции. Организация Асинхронного кода =======================================================
+const secondF = () => console.log('second');
+const firstF = () => console.log('first');
+
+const callLis = async () => {
+
+	setTimeout(secondF, 1000);
+
+	let thenable = await {
+		then(resolve) {
+			setTimeout(() => resolve(firstF()), 3000);
+		},
+	}; 
+
+	setTimeout(secondF, 1000);
+};
+callLis();
 
 
+// ========================================== Подождать выполнение функции. Организация Асинхронного кода. Еще один пример ==========================
+// const summarize = (num1, num2) => num1 + num2;
+// const divide = (num1, num2) => num1 / num2;
 
+// let x = 2;
+// let y = 6;
+// let z = 10;
 
+// const calcAsync = async() => {
 
+//   x = summarize(x, x); // (1шаг) 2 + 2 = 4
+//   console.log('(1шаг)', x);
 
+//   x = await {
+//     then(resolve) {
+//       setTimeout(() => resolve(summarize(x, y)), 1000)
+//     }
+//   }; // (2шаг) ??? должно получится 4 + 6 = 10
+//   console.log('(2шаг)', x);
 
+//   x = divide(x, z); // (3шаг) ??? должно получится 10/10 = 1
+//   console.log('(3шаг)', x);
+// }
 
+// calcAsync();

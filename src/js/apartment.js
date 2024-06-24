@@ -735,23 +735,32 @@ const renderApartmentDetailed = (findApartment) => {
 // 	apartmentSliderSwiper();
 // }, 2000);
 
+
+
+// ==============================================================================================================================
+// ==================Дальше идет учебный код, не имеющий отношения к данному проекту=============================================
+// ==============================================================================================================================
+
+
+
+
 // ========================== Подождать выполнение функции. Организация Асинхронного кода =======================================================
-const secondF = () => console.log('second');
-const firstF = () => console.log('first');
+// const secondF = () => console.log('second');
+// const firstF = () => console.log('first');
 
-const callLis = async () => {
+// const callLis = async () => {
 
-	setTimeout(secondF, 1000);
+// 	setTimeout(secondF, 1000);
 
-	let thenable = await {
-		then(resolve) {
-			setTimeout(() => resolve(firstF()), 3000);
-		},
-	}; 
+// 	let thenable = await {
+// 		then(resolve) {
+// 			setTimeout(() => resolve(firstF()), 3000);
+// 		},
+// 	}; 
 
-	setTimeout(secondF, 1000);
-};
-callLis();
+// 	setTimeout(secondF, 1000);
+// };
+// callLis();
 
 
 // ========================================== Подождать выполнение функции. Организация Асинхронного кода. Еще один пример ==========================

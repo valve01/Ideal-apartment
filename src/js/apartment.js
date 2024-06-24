@@ -779,3 +779,30 @@ callLis();
 // }
 
 // calcAsync();
+
+// ==========================Подождать выполнение функции. Организация Асинхронного кода. Третий пример (на промисах)==============================
+
+// const summarize = (num1, num2) => num1 + num2;
+// const divide = (num1, num2) => num1 / num2;
+
+// let x = 2;
+// let y = 6;
+// let z = 10;
+
+// const calcAsync = async() => {
+//   x = summarize(x, x);
+  
+//   console.log(1, x);
+  
+//   x = await new Promise((resolve, reject) => {
+//     setTimeout(() => resolve(summarize(x, y)));
+//   });
+  
+//   console.log(2, x);
+  
+//   x = divide(x, z);
+  
+//   console.log(3, x);
+// }
+
+// calcAsync();

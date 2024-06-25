@@ -1,5 +1,5 @@
 import apartmentSliderSwiper from './apartment-slider-swiper.js';
-
+// import baguetteBox from 'baguettebox.js';
 const apartmentSliderRender = (findApartment) => {
 	const { photos } = findApartment;
 
@@ -44,6 +44,7 @@ const apartmentSliderRender = (findApartment) => {
 			mainSlideEl.classList.add('slider-main-img');
 			mainSliderWrapper.append(mainSlideEl);
 			apartmentSliderSwiper();
+			// baguetteBox.run('.swiper .swiper-wrapper');
 		};
 	}
 
@@ -80,6 +81,7 @@ const apartmentSliderRender = (findApartment) => {
 			thumbSlideEl.classList.add('slider-mini-img');
 			thumbsSliderWrapper.append(thumbSlideEl);
 			apartmentSliderSwiper();
+			// baguetteBox.run('.thumbs-swiper .swiper-wrapper');
 		};
 		
 	}

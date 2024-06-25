@@ -41,6 +41,7 @@
 	},
 	"dependencies": {
 		"air-datepicker": "^3.5.0",
+		"baguettebox.js": "^1.11.1",
 		"gulp-gh-pages": "^0.5.4"
 	},
 	"browserslist": [

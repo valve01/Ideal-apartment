@@ -17,12 +17,12 @@ const apartmentSliderSwiper = () => {
 		// Optional parameters
 		// direction: 'horizontal',
 
-		slidesPerView: 6,
+		// slidesPerView: 10,
 		spaceBetween: 3,
-		
-        // watchSlidesVisibility: true,
-        // watchSlidesProgress: true,
-        // breakpoints: {
+
+		// watchSlidesVisibility: true,
+		// watchSlidesProgress: true,
+		// breakpoints: {
 		// loop: true,
 		// watchSlidesProgress:true,
 		controller: {
@@ -31,7 +31,23 @@ const apartmentSliderSwiper = () => {
 			// control: '.thumbs-swiper',
 			// control:'.swiper'
 		},
-
+		breakpoints: {
+			0: {
+				slidesPerView: 6,
+			},
+			500: {
+				slidesPerView: 8,
+			},
+			600: {
+				slidesPerView: 6,
+			},
+			960: {
+				slidesPerView: 8,
+			},
+			1100: {
+				slidesPerView: 10,
+			},
+		},
 	});
 
 	const swiper = new Swiper('.swiper', {
@@ -56,10 +72,7 @@ const apartmentSliderSwiper = () => {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-
-
 	});
-
 };
 
 export default apartmentSliderSwiper;

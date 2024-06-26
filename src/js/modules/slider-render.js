@@ -36,10 +36,10 @@ const apartmentSliderRender = (findApartment) => {
 		}
 		mainImgLoad.onerror = () => {
 			mainImgLoad.remove();
-			if(i==39){
-				mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
-			}
-			apartmentSliderSwiper();
+			// if(i==39){
+			// 	mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
+			// }
+			// apartmentSliderSwiper();
 		};
 		const mainSlideEl = `
 		 <a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')"></a>
@@ -48,9 +48,9 @@ const apartmentSliderRender = (findApartment) => {
 
 			mainSliderWrapper.insertAdjacentHTML('beforeend',mainSlideEl)
 
-			if(i==39){
-				mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
-			}
+			// if(i==39){
+			// 	mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
+			// }
 			apartmentSliderSwiper();
 
 			

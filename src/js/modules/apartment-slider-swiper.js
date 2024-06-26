@@ -1,12 +1,13 @@
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
-import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs,FreeMode,Autoplay } from 'swiper/modules';
 // // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
-
+import 'swiper/css/free-mode';
+import 'swiper/css/autoplay';
 // import Swiper bundle with all modules installed
 // import Swiper from 'swiper/bundle';
 
@@ -17,27 +18,25 @@ const apartmentSliderSwiper = () => {
 	var thumbsSwiper = new Swiper('.thumbs-swiper', {
 		// Optional parameters
 		// direction: 'horizontal',
-
+		// watchSlidesProgress:true,
+		freeMode: true,
 		// slidesPerView: 10,
 		spaceBetween: 3,
-
+		// grid: {
+			
+		// 	rows: 4,
+		//   },
 		// watchSlidesVisibility: true,
 		// watchSlidesProgress: true,
 		// breakpoints: {
 		// loop: true,
 		// watchSlidesProgress:true,
-		controller: {
-			// inverse: true,
-			// by: 'slide',
-			// control: '.thumbs-swiper',
-			// control:'.swiper'
-		},
-		thumbs: {
-			swiper: swiper,
-			// slideThumbActiveClass: 'swiper-slide-thumb-active',
-			multipleActiveThumbs:false
-		},
-		modules: [Navigation, Pagination, Thumbs],
+
+		// autoplay: {
+		// 	delay: 5000,
+		// 	disableOnInteraction:true,
+		//   },
+		modules: [Navigation, Pagination, Thumbs,FreeMode,Autoplay],
 		breakpoints: {
 			0: {
 				slidesPerView: 6,
@@ -58,17 +57,15 @@ const apartmentSliderSwiper = () => {
 	});
 
 	var swiper = new Swiper('.swiper', {
-		// Optional parameters
-		// direction: 'vertical',
+
 		// loop: true,
-		modules: [Navigation, Pagination, Thumbs],
+		modules: [Navigation, Pagination, Thumbs,FreeMode,Autoplay],
 		thumbs: {
 			swiper: thumbsSwiper,
 			// slideThumbActiveClass: 'swiper-slide-thumb-active',
 			multipleActiveThumbs:false
 		},
 
-		// modules: [Navigation, Pagination],
 
 		// If we need pagination
 		pagination: {

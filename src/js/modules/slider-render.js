@@ -13,10 +13,10 @@ const apartmentSliderRender = (findApartment) => {
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
 
-	const navigationSwiperHtml=`
+	const navigationSwiperHtml = `
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
-	`
+	`;
 
 	// Рендерим главный слайдер
 	for (let i = 0; i < 40; i++) {
@@ -36,30 +36,26 @@ const apartmentSliderRender = (findApartment) => {
 		}
 		mainImgLoad.onerror = () => {
 			mainImgLoad.remove();
-			// if(i==39){
-			// 	mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
-			// }
-			// apartmentSliderSwiper();
+			if (i == 39) {
+				mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
+				apartmentSliderSwiper();
+				baguetteBox.run('.swiper .swiper-wrapper');
+			}
 		};
 		const mainSlideEl = `
 		 <a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')"></a>
 		`;
 		mainImgLoad.onload = () => {
+			mainSliderWrapper.insertAdjacentHTML('beforeend', mainSlideEl);
 
-			mainSliderWrapper.insertAdjacentHTML('beforeend',mainSlideEl)
+			if (i == 39) {
+				mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
+				apartmentSliderSwiper();
+				baguetteBox.run('.swiper .swiper-wrapper');
+			}
 
-			// if(i==39){
-			// 	mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
-			// }
-			apartmentSliderSwiper();
-
-			
-			baguetteBox.run('.swiper .swiper-wrapper');
 			
 		};
-		
-
-
 	}
 
 	// Рендерим минислайды
@@ -80,6 +76,9 @@ const apartmentSliderRender = (findApartment) => {
 		}
 		miniImgLoad.onerror = () => {
 			miniImgLoad.remove();
+			if (i == 39) {
+				apartmentSliderSwiper();
+			}
 		};
 		miniImgLoad.onload = () => {
 			const thumbSlideEl = document.createElement('div');
@@ -94,7 +93,10 @@ const apartmentSliderRender = (findApartment) => {
 			thumbSlideEl.classList.add('swiper-slide');
 			thumbSlideEl.classList.add('slider-mini-img');
 			thumbsSliderWrapper.append(thumbSlideEl);
-			apartmentSliderSwiper();
+			if (i == 39) {
+				apartmentSliderSwiper();
+			}
+		
 			// baguetteBox.run('.thumbs-swiper .swiper-wrapper');
 		};
 	}

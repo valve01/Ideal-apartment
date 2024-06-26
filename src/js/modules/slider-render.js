@@ -8,9 +8,15 @@ const apartmentSliderRender = (findApartment) => {
 
 	// const photosVar = `/Ideal-apartment/${photos}`;
 	const photosVar = `${photos}`;
+	const mainSlider = document.querySelector('.swiper');
 
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
+
+	const navigationSwiperHtml=`
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	`
 
 	// Рендерим главный слайдер
 	for (let i = 0; i < 40; i++) {
@@ -30,37 +36,30 @@ const apartmentSliderRender = (findApartment) => {
 		}
 		mainImgLoad.onerror = () => {
 			mainImgLoad.remove();
+			if(i==39){
+				mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
+			}
+			apartmentSliderSwiper();
 		};
 		const mainSlideEl = `
-		 <a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')">
-			
-		</a>
+		 <a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')"></a>
 		`;
 		mainImgLoad.onload = () => {
-			// const mainSlideEl = document.createElement('div');
-
-
-			// mainSlideEl.style.backgroundImage = `url("${mainImgUrlJpg}")`;
-
-			// `
-			// 	image-set(
-			// 		url("${mainImgUrlAvif}") type("image/avif"),
-			// 		url("${mainImgUrlWebp}") type("image/webp"),
-			// 		url("${mainImgUrlJpg}") type("image/jpeg")
-			// 	)
-			// `;
-
-
-			// mainSlideEl.classList.add('swiper-slide');
-			// mainSlideEl.classList.add('slider-main-img');
-			// mainSliderWrapper.append(mainSlideEl);
 
 			mainSliderWrapper.insertAdjacentHTML('beforeend',mainSlideEl)
+
+			if(i==39){
+				mainSlider.insertAdjacentHTML('beforeend',navigationSwiperHtml)
+			}
 			apartmentSliderSwiper();
+
 			
 			baguetteBox.run('.swiper .swiper-wrapper');
 			
 		};
+		
+
+
 	}
 
 	// Рендерим минислайды

@@ -3,8 +3,8 @@ const apartmentSlider = (findApartment) => {
 
 	// Сделать проверку, если начало на localhost, то вернуть ${photos}, иначе /Ideal-apartment/${photos}
 
-	// const photosVar = `/Ideal-apartment/${photos}`;
-	const photosVar = `${photos}`;
+	const photosVar = `/Ideal-apartment/${photos}`;
+	// const photosVar = `${photos}`;
 
 	// const mainImgEl = document.querySelector('.apartment__slider-main-img');
 	const mainImgEls = document.querySelectorAll('.slider-main-img');

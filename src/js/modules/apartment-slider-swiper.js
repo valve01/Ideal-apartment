@@ -1,19 +1,20 @@
 // core version + navigation, pagination modules:
-// import Swiper from 'swiper';
-// import { Navigation, Pagination } from 'swiper/modules';
+import Swiper from 'swiper';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 // // import Swiper and modules styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
 
 // import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
+// import Swiper from 'swiper/bundle';
 
 // import styles bundle
-import 'swiper/css/bundle';
+// import 'swiper/css/bundle';
 
 const apartmentSliderSwiper = () => {
-	const thumbsSwiper = new Swiper('.thumbs-swiper', {
+	var thumbsSwiper = new Swiper('.thumbs-swiper', {
 		// Optional parameters
 		// direction: 'horizontal',
 
@@ -31,6 +32,12 @@ const apartmentSliderSwiper = () => {
 			// control: '.thumbs-swiper',
 			// control:'.swiper'
 		},
+		thumbs: {
+			swiper: swiper,
+			// slideThumbActiveClass: 'swiper-slide-thumb-active',
+			multipleActiveThumbs:false
+		},
+		modules: [Navigation, Pagination, Thumbs],
 		breakpoints: {
 			0: {
 				slidesPerView: 6,
@@ -50,14 +57,15 @@ const apartmentSliderSwiper = () => {
 		},
 	});
 
-	const swiper = new Swiper('.swiper', {
+	var swiper = new Swiper('.swiper', {
 		// Optional parameters
 		// direction: 'vertical',
 		// loop: true,
-
+		modules: [Navigation, Pagination, Thumbs],
 		thumbs: {
 			swiper: thumbsSwiper,
-			slideThumbActiveClass: 'swiper-slide-thumb-active',
+			// slideThumbActiveClass: 'swiper-slide-thumb-active',
+			multipleActiveThumbs:false
 		},
 
 		// modules: [Navigation, Pagination],

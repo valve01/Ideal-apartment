@@ -1,5 +1,6 @@
 import apartmentSliderSwiper from './apartment-slider-swiper.js';
-// import baguetteBox from 'baguettebox.js';
+
+import baguetteBox from 'baguettebox.js';
 const apartmentSliderRender = (findApartment) => {
 	const { photos } = findApartment;
 
@@ -30,9 +31,17 @@ const apartmentSliderRender = (findApartment) => {
 		mainImgLoad.onerror = () => {
 			mainImgLoad.remove();
 		};
+		const mainSlideEl = `
+		 <a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')">
+			
+		</a>
+		`;
 		mainImgLoad.onload = () => {
-			const mainSlideEl = document.createElement('div');
-			mainSlideEl.style.backgroundImage = `url("${mainImgUrlJpg}")`;
+			// const mainSlideEl = document.createElement('div');
+
+
+			// mainSlideEl.style.backgroundImage = `url("${mainImgUrlJpg}")`;
+
 			// `
 			// 	image-set(
 			// 		url("${mainImgUrlAvif}") type("image/avif"),
@@ -40,11 +49,17 @@ const apartmentSliderRender = (findApartment) => {
 			// 		url("${mainImgUrlJpg}") type("image/jpeg")
 			// 	)
 			// `;
-			mainSlideEl.classList.add('swiper-slide');
-			mainSlideEl.classList.add('slider-main-img');
-			mainSliderWrapper.append(mainSlideEl);
+
+
+			// mainSlideEl.classList.add('swiper-slide');
+			// mainSlideEl.classList.add('slider-main-img');
+			// mainSliderWrapper.append(mainSlideEl);
+
+			mainSliderWrapper.insertAdjacentHTML('beforeend',mainSlideEl)
 			apartmentSliderSwiper();
-			// baguetteBox.run('.swiper .swiper-wrapper');
+			
+			baguetteBox.run('.swiper .swiper-wrapper');
+			
 		};
 	}
 
@@ -83,9 +98,7 @@ const apartmentSliderRender = (findApartment) => {
 			apartmentSliderSwiper();
 			// baguetteBox.run('.thumbs-swiper .swiper-wrapper');
 		};
-		
 	}
-	
 };
 
 export default apartmentSliderRender;

@@ -234,17 +234,17 @@
 }
 
 @media screen and (min-width: 960px) and (max-width: 1199px) {
-	.apartment__slider-mini-images-container {
-		grid-template-columns: repeat(8, 1fr);
-	}
+	// .apartment__slider-mini-images-container {
+	// 	grid-template-columns: repeat(8, 1fr);
+	// }
 }
 @media screen and (min-width: 600px) and (max-width: 959px) {
 	.aside-booking-form {
 		margin-top: 67px;
 	}
-	.apartment__slider-mini-images-container {
-		grid-template-columns: repeat(5, 1fr);
-	}
+	// .apartment__slider-mini-images-container {
+	// 	grid-template-columns: repeat(5, 1fr);
+	// }
 	.separator {
 		margin: 15px 15px 15px 35px;
 	}
@@ -299,9 +299,9 @@
 		gap: 10px;
 		padding: 0 10px 0 10px;
 	}
-	.apartment__slider-mini-images-container {
-		grid-template-columns: repeat(5, 1fr);
-	}
+	// .apartment__slider-mini-images-container {
+	// 	grid-template-columns: repeat(5, 1fr);
+	// }
 	.separator {
 		margin: 15px 15px 15px 35px;
 	}
@@ -352,9 +352,9 @@
 		gap: 10px;
 		padding: 0 10px 0 10px;
 	}
-	.apartment__slider-mini-images-container {
-		grid-template-columns: repeat(5, 1fr);
-	}
+	// .apartment__slider-mini-images-container {
+	// 	grid-template-columns: repeat(5, 1fr);
+	// }
 	.separator {
 		margin: 15px 15px 15px 35px;
 	}

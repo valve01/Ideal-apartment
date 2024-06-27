@@ -19,3 +19,4 @@ rulesLink.on('click', function (e) {
 if (window.location.href.includes('rules')) {
 	scrollToRules();
 }
+

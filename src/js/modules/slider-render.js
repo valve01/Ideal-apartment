@@ -1,5 +1,4 @@
 import apartmentSliderSwiper from './apartment-slider-swiper.js';
-
 import baguetteBox from 'baguettebox.js';
 const apartmentSliderRender = (findApartment) => {
 	const { photos } = findApartment;
@@ -9,10 +8,8 @@ const apartmentSliderRender = (findApartment) => {
 	// const photosVar = `/Ideal-apartment/${photos}`;
 	const photosVar = `${photos}`;
 	const mainSlider = document.querySelector('.swiper');
-
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
-
 	const navigationSwiperHtml = `
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
@@ -23,6 +20,11 @@ const apartmentSliderRender = (findApartment) => {
 		// const mainImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
 		// const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 		const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
+		const initMainSwiper = ()=>{
+			mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
+			apartmentSliderSwiper();
+			baguetteBox.run('.swiper .swiper-wrapper');
+		}
 		const mainImgLoad = new Image();
 		// if (mainImgUrlAvif) {
 		// 	mainImgLoad.src = mainImgUrlAvif;
@@ -37,27 +39,20 @@ const apartmentSliderRender = (findApartment) => {
 		mainImgLoad.onerror = () => {
 			mainImgLoad.remove();
 			if (i == 39) {
-				mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
-				apartmentSliderSwiper();
-				baguetteBox.run('.swiper .swiper-wrapper');
+				initMainSwiper()
 			}
 		};
-		const mainSlideEl = `
-		 <a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')"></a>
-		`;
 		mainImgLoad.onload = () => {
+			const mainSlideEl = `
+			<a  href="${mainImgUrlJpg}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlJpg}')"></a>
+		   `;
 			mainSliderWrapper.insertAdjacentHTML('beforeend', mainSlideEl);
-
 			if (i == 39) {
-				mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
-				apartmentSliderSwiper();
-				baguetteBox.run('.swiper .swiper-wrapper');
+				initMainSwiper()
 			}
-
-			
 		};
 	}
-
+	
 	// Рендерим минислайды
 	for (let i = 0; i < 40; i++) {
 		// const miniImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
@@ -90,14 +85,11 @@ const apartmentSliderRender = (findApartment) => {
 			// 		url("${miniImgUrlJpg}") type("image/jpeg")
 			// 	)
 			// `;
-			thumbSlideEl.classList.add('swiper-slide');
-			thumbSlideEl.classList.add('slider-mini-img');
+			thumbSlideEl.classList.add('swiper-slide','slider-mini-img');
 			thumbsSliderWrapper.append(thumbSlideEl);
 			if (i == 39) {
 				apartmentSliderSwiper();
 			}
-		
-			// baguetteBox.run('.thumbs-swiper .swiper-wrapper');
 		};
 	}
 };

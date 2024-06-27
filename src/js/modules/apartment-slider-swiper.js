@@ -1,7 +1,6 @@
-// core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
-// // import Swiper and modules styles
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
@@ -13,7 +12,8 @@ import 'swiper/css/thumbs';
 // import 'swiper/css/bundle';
 
 const apartmentSliderSwiper = () => {
-	var thumbsSwiper = new Swiper('.thumbs-swiper', {
+
+	const thumbsSwiper = new Swiper('.thumbs-swiper', {
 		spaceBetween: 3,
 		breakpoints: {
 			0: {
@@ -34,9 +34,41 @@ const apartmentSliderSwiper = () => {
 		},
 	});
 
-	var swiper = new Swiper('.swiper', {
+	const swiper = new Swiper('.swiper', {
 		loop: true,
-		modules: [Navigation, Thumbs,],
+		modules: [Navigation, Thumbs],
+		breakpoints: {
+			0: {
+				allowTouchMove: true,
+				navigation: {
+					enabled: false,
+				},
+			},
+			500: {
+				allowTouchMove: true,
+				navigation: {
+					enabled: false,
+				},
+			},
+			600: {
+				allowTouchMove: true,
+				navigation: {
+					enabled: false,
+				},
+			},
+			960: {
+				allowTouchMove: false,
+				navigation: {
+					enabled: true,
+				},
+			},
+			1100: {
+				allowTouchMove: false,
+				navigation: {
+					enabled: true,
+				},
+			},
+		},
 		thumbs: {
 			swiper: thumbsSwiper,
 			multipleActiveThumbs: false,
@@ -46,7 +78,6 @@ const apartmentSliderSwiper = () => {
 			prevEl: '.swiper-button-prev',
 		},
 	});
-
 };
 
 export default apartmentSliderSwiper;

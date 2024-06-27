@@ -5,8 +5,8 @@ const apartmentSliderRender = (findApartment) => {
 
 	// Сделать проверку, если начало на localhost, то вернуть ${photos}, иначе /Ideal-apartment/${photos}
 
-	// const photosVar = `/Ideal-apartment/${photos}`;
-	const photosVar = `${photos}`;
+	const photosVar = `/Ideal-apartment/${photos}`;
+	// const photosVar = `${photos}`;
 	const mainSlider = document.querySelector('.swiper');
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');

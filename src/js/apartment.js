@@ -686,9 +686,11 @@ const renderApartmentDetailed = (findApartment) => {
 		
 		<!-- Описание -->
 		
-		<section class="section" loading="lazy">
+		<section class="section apart-detail-descr" loading="lazy">
 			<h2 class="section-title">Описание</h2>
-			<p class="section-p">${apartmentDescription}</p>
+			<div class="apart-detail-descr-wrapper">
+			${apartmentDescription}
+			</div>
 		</section>
 		`;
 	const apartmentHTMLComments = `

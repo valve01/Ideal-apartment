@@ -7,6 +7,7 @@ const apartmentSliderRender = (findApartment) => {
 
 	const photosVar = `/Ideal-apartment/${photos}`;
 	// const photosVar = `${photos}`;
+
 	const mainSlider = document.querySelector('.swiper');
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
@@ -43,21 +44,22 @@ const apartmentSliderRender = (findApartment) => {
 			}
 		};
 		mainImgLoad.onload = () => {
-
 			const mainSlideEl =
-
 				// `
 				// 	<a  href="${mainImgUrlWebp}" class="swiper-slide slider-main-img" style="background-image:url('${mainImgUrlWebp}')"></a>
 				// `;
 
 				`
-					<a  href="${mainImgUrlWebp}" class="swiper-slide slider-main-img" style="background-image:
+					
+					
+					<a  href="${mainImgUrlWebp}" loading="lazy" class="swiper-slide slider-main-img" style="background-image:
 							image-set(
 								url('${mainImgUrlAvif}') type('image/avif'),
 								url('${mainImgUrlWebp}') type('image/webp'),
 								url('${mainImgUrlJpg}') type('image/jpeg')
 							)
 					"></a>
+					
 				`;
 
 			mainSliderWrapper.insertAdjacentHTML('beforeend', mainSlideEl);
@@ -102,6 +104,7 @@ const apartmentSliderRender = (findApartment) => {
 					url("${miniImgUrlJpg}") type("image/jpeg")
 				)
 			`;
+			thumbSlideEl.setAttribute('loading', 'lazy');
 			thumbSlideEl.classList.add('swiper-slide', 'slider-mini-img');
 			thumbsSliderWrapper.append(thumbSlideEl);
 			if (i == 39) {

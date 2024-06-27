@@ -1,6 +1,6 @@
-import apartmentSlider from './modules/apartment-slider.js';
+// import apartmentSlider from './modules/apartment-slider.js';
 import apartmentSliderRender from './modules/slider-render.js';
-import apartmentSliderSwiper from './modules/apartment-slider-swiper.js';
+
 
 import './modules/mobile-nav';
 import './modules/booking-form.js';

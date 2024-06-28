@@ -4,8 +4,20 @@ const apartmentSliderRender = (findApartment) => {
 	const { photos } = findApartment;
 
 	// Сделать проверку, если начало на localhost, то вернуть ${photos}, иначе /Ideal-apartment/${photos}
+	let photosVar;
+	const setPhotosVar = () => {
+		
 
-	const photosVar = `/Ideal-apartment/${photos}`;
+		if (window.location.href.includes('github')) {
+			photosVar = `/Ideal-apartment/${photos}`;
+		} else {
+			photosVar = `${photos}`;
+		}
+		return photosVar;
+	};
+	setPhotosVar();
+
+	// const photosVar = `/Ideal-apartment/${photos}`;
 	// const photosVar = `${photos}`;
 
 	const mainSlider = document.querySelector('.swiper');
@@ -35,8 +47,8 @@ const apartmentSliderRender = (findApartment) => {
 		miniImgLoad.onerror = () => {
 			miniImgLoad.remove();
 			// if (i == 39) {
-				// apartmentSliderSwiper();
-				// return true;
+			// apartmentSliderSwiper();
+			// return true;
 			// }
 		};
 		miniImgLoad.onload = () => {
@@ -56,8 +68,8 @@ const apartmentSliderRender = (findApartment) => {
 			thumbSlideEl.classList.add('swiper-slide', 'slider-mini-img');
 			thumbsSliderWrapper.append(thumbSlideEl);
 			// if (i == 39) {
-				// apartmentSliderSwiper();
-				// return true;
+			// apartmentSliderSwiper();
+			// return true;
 			// }
 		};
 	}

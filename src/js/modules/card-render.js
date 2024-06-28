@@ -13,8 +13,20 @@ const cardsRender = async () => {
 const cardsCreate = (apartmentsData) => {
 	apartmentsData.forEach((card) => {
 		const { id, price, parameters, city, street, photos, apartmentDescription } = card;
+		let photoHref;
+		const setPhotoHref = () => {
+			
 
-		const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
+			if (window.location.href.includes('github')) {
+				photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
+			} else {
+				photoHref = `/apartment.html?id=${id}`;
+			}
+			return photoHref;
+		};
+		setPhotoHref();
+
+		// const photoHref = `/Ideal-apartment/apartment.html?id=${id}`;
 		// const photoHref = `/apartment.html?id=${id}`;
 
 		const cardItem = `

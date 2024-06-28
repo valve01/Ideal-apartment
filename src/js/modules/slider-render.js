@@ -86,8 +86,8 @@ const apartmentSliderRender = (findApartment) => {
 			mainImgLoad.remove();
 			if (i == 39) {
 				mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
-				// apartmentSliderSwiper();
 				baguetteBox.run('.swiper .swiper-wrapper');
+				// apartmentSliderSwiper();
 				// initMainSwiper();
 				// return true;
 			}
@@ -114,8 +114,8 @@ const apartmentSliderRender = (findApartment) => {
 			mainSliderWrapper.insertAdjacentHTML('beforeend', mainSlideEl);
 			if (i == 39) {
 				mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
-				// apartmentSliderSwiper();
 				baguetteBox.run('.swiper .swiper-wrapper');
+				// apartmentSliderSwiper();
 				// initMainSwiper();
 				// return true;
 			}

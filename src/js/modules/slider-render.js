@@ -41,6 +41,7 @@ const apartmentSliderRender = (findApartment) => {
 	let sliderItemsArr = [];
 	let flag = false;
 	let arrLenght = [];
+	let arrErrLenght = [];
 	new Promise(function (resolve) {
 		for (let i = 0; i < 40; i++) {
 			const mainImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
@@ -48,11 +49,8 @@ const apartmentSliderRender = (findApartment) => {
 			const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
 			const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
-				if (i == 39) {
-					// !!! Тут неправильно возвращает
-					console.log(arrLenght.length);
+				if ( arrErrLenght.length + arrLenght.length == 40) {
 					sliderItemsArr.push(mainSliderItems, thumbSliderItems);
-					// console.log(sliderItemsArr);
 					resolve(sliderItemsArr);
 				}
 			};
@@ -87,20 +85,18 @@ const apartmentSliderRender = (findApartment) => {
 
 			mainImgLoad.onload = () => {
 				new Promise(function (resolve) {
-
 					const getLenght = () => {
 						arrLenght.push(`slide ${i + 1}`);
-						console.log(arrLenght.length);
+						// console.log(arrLenght.length);
 						// !!!! Тут правильно возвращает
 						return arrLenght;
 					};
-					
+
 					resolve(getLenght());
-
 				}).then(function (arrLenght) {
-
 					mainSliderItems += mainSlideEl;
 					thumbSliderItems += thumbSlideEl;
+					// !!
 
 					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
 					mainImgLoad.remove();
@@ -108,16 +104,16 @@ const apartmentSliderRender = (findApartment) => {
 			};
 			mainImgLoad.onerror = () => {
 				new Promise(function (resolve) {
-
 					const getLenght = () => {
-						console.log(arrLenght.length);
+						arrErrLenght.push(`slide ${i + 1}`);
+						// console.log(arrErrLenght.length);
 						// !!!! Тут правильно возвращает
 						return arrLenght;
 					};
 
-
 					resolve(getLenght());
 				}).then(function (arrLenght) {
+					// !!
 
 					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
 					mainImgLoad.remove();

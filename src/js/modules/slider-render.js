@@ -87,35 +87,41 @@ const apartmentSliderRender = (findApartment) => {
 
 			mainImgLoad.onload = () => {
 				new Promise(function (resolve) {
-					// let twoSlide = [];
-					// mainSliderItems += mainSlideEl;
-					// thumbSliderItems += thumbSlideEl;
-					// twoSlide.push(mainSliderItems, thumbSliderItems);
-					// console.log(twoSlide);
+
 					const getLenght = () => {
 						arrLenght.push(`slide ${i + 1}`);
 						console.log(arrLenght.length);
 						// !!!! Тут правильно возвращает
 						return arrLenght;
-						
 					};
-
 					
-					// resolve отрабатывает раньше чем обновляется twoSlide
-					// resolve(twoSlide);
 					resolve(getLenght());
+
 				}).then(function (arrLenght) {
-					// console.log(arrLenght.lenght);
+
 					mainSliderItems += mainSlideEl;
 					thumbSliderItems += thumbSlideEl;
-					// console.log(mainSliderItems);
+
 					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
 					mainImgLoad.remove();
 				});
 			};
 			mainImgLoad.onerror = () => {
-				sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
-				mainImgLoad.remove();
+				new Promise(function (resolve) {
+
+					const getLenght = () => {
+						console.log(arrLenght.length);
+						// !!!! Тут правильно возвращает
+						return arrLenght;
+					};
+
+
+					resolve(getLenght());
+				}).then(function (arrLenght) {
+
+					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+					mainImgLoad.remove();
+				});
 			};
 		}
 	})

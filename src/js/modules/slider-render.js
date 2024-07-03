@@ -47,15 +47,6 @@ const apartmentSliderRender = (findApartment) => {
 			const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 			const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
-			const mainImgLoad = new Image();
-			if (mainImgUrlAvif) {
-				mainImgLoad.src = mainImgUrlAvif;
-			} else if (mainImgUrlWebp) {
-				mainImgLoad.src = mainImgUrlWebp;
-			} else if (mainImgUrlJpg) {
-				mainImgLoad.src = mainImgUrlJpg;
-			}
-
 			const sendHtmlData = (mainSliderItems, thumbSliderItems) => {
 				if (i == 39) {
 					sliderItemsArr.push(mainSliderItems, thumbSliderItems);
@@ -82,14 +73,31 @@ const apartmentSliderRender = (findApartment) => {
 				);">
 			</div>
 		`;
+
+			const mainImgLoad = new Image();
+			if (mainImgUrlAvif) {
+				mainImgLoad.src = mainImgUrlAvif;
+			} else if (mainImgUrlWebp) {
+				mainImgLoad.src = mainImgUrlWebp;
+			} else if (mainImgUrlJpg) {
+				mainImgLoad.src = mainImgUrlJpg;
+			}
+
 			mainImgLoad.onload = () => {
-				mainSliderItems += mainSlideEl;
-				thumbSliderItems += thumbSlideEl;
-				sendHtmlData(mainSliderItems, thumbSliderItems);
-				mainImgLoad.remove();
+				new Promise(function (resolve) {
+					let twoSlide = [];
+					mainSliderItems += mainSlideEl;
+					thumbSliderItems += thumbSlideEl;
+					twoSlide.push(mainSliderItems, thumbSliderItems);
+					console.log(twoSlide)
+					// resolve отрабатывает раньше чем обновляется twoSlide
+					resolve(twoSlide);
+				}).then(function (twoSlide) {
+					sendHtmlData(twoSlide[0], twoSlide[1]);
+					mainImgLoad.remove();
+				});
 			};
 			mainImgLoad.onerror = () => {
-				console.log(`на картинке номер ${i+1} ошибка`)
 				sendHtmlData(mainSliderItems, thumbSliderItems);
 				mainImgLoad.remove();
 			};

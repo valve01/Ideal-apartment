@@ -97,7 +97,6 @@ const apartmentSliderRender = (findApartment) => {
 					mainSliderItems += mainSlideEl;
 					thumbSliderItems += thumbSlideEl;
 					// !!
-
 					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
 					mainImgLoad.remove();
 				});

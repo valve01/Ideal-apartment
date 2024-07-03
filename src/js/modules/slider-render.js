@@ -40,17 +40,19 @@ const apartmentSliderRender = (findApartment) => {
 	let thumbSliderItems = '';
 	let sliderItemsArr = [];
 	let flag = false;
-
+	let arrLenght = [];
 	new Promise(function (resolve) {
 		for (let i = 0; i < 40; i++) {
 			const mainImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
 			const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 			const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
-			const sendHtmlData = (mainSliderItems, thumbSliderItems) => {
+			const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
 				if (i == 39) {
+					// !!! Тут неправильно возвращает
+					console.log(arrLenght.length);
 					sliderItemsArr.push(mainSliderItems, thumbSliderItems);
-					console.log(sliderItemsArr);
+					// console.log(sliderItemsArr);
 					resolve(sliderItemsArr);
 				}
 			};
@@ -85,20 +87,34 @@ const apartmentSliderRender = (findApartment) => {
 
 			mainImgLoad.onload = () => {
 				new Promise(function (resolve) {
-					let twoSlide = [];
+					// let twoSlide = [];
+					// mainSliderItems += mainSlideEl;
+					// thumbSliderItems += thumbSlideEl;
+					// twoSlide.push(mainSliderItems, thumbSliderItems);
+					// console.log(twoSlide);
+					const getLenght = () => {
+						arrLenght.push(`slide ${i + 1}`);
+						console.log(arrLenght.length);
+						// !!!! Тут правильно возвращает
+						return arrLenght;
+						
+					};
+
+					
+					// resolve отрабатывает раньше чем обновляется twoSlide
+					// resolve(twoSlide);
+					resolve(getLenght());
+				}).then(function (arrLenght) {
+					// console.log(arrLenght.lenght);
 					mainSliderItems += mainSlideEl;
 					thumbSliderItems += thumbSlideEl;
-					twoSlide.push(mainSliderItems, thumbSliderItems);
-					console.log(twoSlide)
-					// resolve отрабатывает раньше чем обновляется twoSlide
-					resolve(twoSlide);
-				}).then(function (twoSlide) {
-					sendHtmlData(twoSlide[0], twoSlide[1]);
+					// console.log(mainSliderItems);
+					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
 					mainImgLoad.remove();
 				});
 			};
 			mainImgLoad.onerror = () => {
-				sendHtmlData(mainSliderItems, thumbSliderItems);
+				sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
 				mainImgLoad.remove();
 			};
 		}

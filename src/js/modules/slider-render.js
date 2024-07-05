@@ -23,13 +23,13 @@ const apartmentSliderRender = (findApartment) => {
 		<div class="swiper-button-next"></div>
 	`;
 	const insertHtml = (slidesHtml) => {
-		let done = false;
+		
 		mainSliderWrapper.insertAdjacentHTML('beforeend', slidesHtml[0]);
 		thumbsSliderWrapper.insertAdjacentHTML('beforeend', slidesHtml[1]);
 		mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
-		flag = true;
+		
 
-		return (done = true);
+		
 	};
 	const initSwiper = () => {
 		apartmentSliderSwiper();
@@ -39,7 +39,7 @@ const apartmentSliderRender = (findApartment) => {
 	let mainSliderItems = '';
 	let thumbSliderItems = '';
 	let sliderItemsArr = [];
-	let flag = false;
+
 	let arrLenght = [];
 	let arrErrLenght = [];
 	new Promise(function (resolve) {
@@ -125,10 +125,10 @@ const apartmentSliderRender = (findApartment) => {
 				resolve(insertHtml(slidesHtml));
 			});
 		})
-		.then(function (done) {
-			if (done && flag) {
+		.then(function () {
+			
 				initSwiper();
-			}
+			
 		});
 };
 

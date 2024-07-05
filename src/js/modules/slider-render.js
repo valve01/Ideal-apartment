@@ -22,7 +22,7 @@ const apartmentSliderRender = (findApartment) => {
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
 	`;
-	const insertHtml = (mainSliderItems,thumbSliderItems) => {
+	const insertHtml = (mainSliderItems, thumbSliderItems) => {
 		mainSliderWrapper.insertAdjacentHTML('beforeend', mainSliderItems);
 		thumbsSliderWrapper.insertAdjacentHTML('beforeend', thumbSliderItems);
 		mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
@@ -45,7 +45,7 @@ const apartmentSliderRender = (findApartment) => {
 
 		const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
 			if (arrErrLenght.length + arrLenght.length == 40) {
-				insertHtml(mainSliderItems,thumbSliderItems);
+				insertHtml(mainSliderItems, thumbSliderItems);
 				initSwiper();
 			}
 		};
@@ -79,39 +79,18 @@ const apartmentSliderRender = (findApartment) => {
 		}
 
 		mainImgLoad.onload = () => {
-			new Promise(function (resolve) {
-				const getLenght = () => {
-					arrLenght.push(`slide ${i + 1}`);
-					// console.log(arrLenght.length);
-					// !!!! Тут правильно возвращает
-					return arrLenght;
-				};
-				resolve(getLenght());
-			}).then(function (arrLenght) {
-				mainSliderItems += mainSlideEl;
-				thumbSliderItems += thumbSlideEl;
-				// !!
-				sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
-				mainImgLoad.remove();
-			});
+			arrLenght.push(`slide ${i + 1}`);
+			mainSliderItems += mainSlideEl;
+			thumbSliderItems += thumbSlideEl;
+			sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+			mainImgLoad.remove();
 		};
 		mainImgLoad.onerror = () => {
-			new Promise(function (resolve) {
-				const getLenght = () => {
-					arrErrLenght.push(`slide ${i + 1}`);
-					// !!!! Тут правильно возвращает
-					return arrLenght;
-				};
-				resolve(getLenght());
-			}).then(function (arrLenght) {
-				// !!
-				sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
-				mainImgLoad.remove();
-			});
+			arrErrLenght.push(`slide ${i + 1}`);
+			sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+			mainImgLoad.remove();
 		};
 	}
-
-
 };
 
 export default apartmentSliderRender;

@@ -22,7 +22,7 @@ const apartmentSliderRender = (findApartment) => {
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
 	`;
-	const insertHtml = (mainSliderItems, thumbSliderItems) => {
+	const insertHtml = () => {
 		mainSliderWrapper.insertAdjacentHTML('beforeend', mainSliderItems);
 		thumbsSliderWrapper.insertAdjacentHTML('beforeend', thumbSliderItems);
 		mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
@@ -30,6 +30,12 @@ const apartmentSliderRender = (findApartment) => {
 	const initSwiper = () => {
 		apartmentSliderSwiper();
 		baguetteBox.run('.swiper .swiper-wrapper');
+	};
+	const sendHtmlData = () => {
+		if (arrErrLenght.length + arrLenght.length == 40) {
+			insertHtml();
+			initSwiper();
+		}
 	};
 
 	let mainSliderItems = '';
@@ -43,12 +49,6 @@ const apartmentSliderRender = (findApartment) => {
 		const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 		const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
-		const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
-			if (arrErrLenght.length + arrLenght.length == 40) {
-				insertHtml(mainSliderItems, thumbSliderItems);
-				initSwiper();
-			}
-		};
 		const mainSlideEl = `
 			<a  href="${mainImgUrlWebp}"  class="swiper-slide slider-main-img" style="background-image:
 				image-set(
@@ -82,12 +82,12 @@ const apartmentSliderRender = (findApartment) => {
 			arrLenght.push(`slide ${i + 1}`);
 			mainSliderItems += mainSlideEl;
 			thumbSliderItems += thumbSlideEl;
-			sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+			sendHtmlData();
 			mainImgLoad.remove();
 		};
 		mainImgLoad.onerror = () => {
-			arrErrLenght.push(`slide ${i + 1}`);
-			sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+			arrErrLenght.push(`err slide ${i + 1}`);
+			sendHtmlData();
 			mainImgLoad.remove();
 		};
 	}

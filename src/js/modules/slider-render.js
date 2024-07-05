@@ -23,13 +23,9 @@ const apartmentSliderRender = (findApartment) => {
 		<div class="swiper-button-next"></div>
 	`;
 	const insertHtml = (slidesHtml) => {
-		
 		mainSliderWrapper.insertAdjacentHTML('beforeend', slidesHtml[0]);
 		thumbsSliderWrapper.insertAdjacentHTML('beforeend', slidesHtml[1]);
 		mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
-		
-
-		
 	};
 	const initSwiper = () => {
 		apartmentSliderSwiper();
@@ -49,7 +45,7 @@ const apartmentSliderRender = (findApartment) => {
 			const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
 			const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
-				if ( arrErrLenght.length + arrLenght.length == 40) {
+				if (arrErrLenght.length + arrLenght.length == 40) {
 					sliderItemsArr.push(mainSliderItems, thumbSliderItems);
 					resolve(sliderItemsArr);
 				}
@@ -119,17 +115,10 @@ const apartmentSliderRender = (findApartment) => {
 				});
 			};
 		}
-	})
-		.then(function (slidesHtml) {
-			return new Promise((resolve) => {
-				resolve(insertHtml(slidesHtml));
-			});
-		})
-		.then(function () {
-			
-				initSwiper();
-			
-		});
+	}).then(function (slidesHtml) {
+		insertHtml(slidesHtml);
+		initSwiper();
+	});
 };
 
 export default apartmentSliderRender;

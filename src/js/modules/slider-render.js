@@ -22,9 +22,9 @@ const apartmentSliderRender = (findApartment) => {
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
 	`;
-	const insertHtml = (slidesHtml) => {
-		mainSliderWrapper.insertAdjacentHTML('beforeend', slidesHtml[0]);
-		thumbsSliderWrapper.insertAdjacentHTML('beforeend', slidesHtml[1]);
+	const insertHtml = (mainSliderItems,thumbSliderItems) => {
+		mainSliderWrapper.insertAdjacentHTML('beforeend', mainSliderItems);
+		thumbsSliderWrapper.insertAdjacentHTML('beforeend', thumbSliderItems);
 		mainSlider.insertAdjacentHTML('beforeend', navigationSwiperHtml);
 	};
 	const initSwiper = () => {
@@ -34,23 +34,22 @@ const apartmentSliderRender = (findApartment) => {
 
 	let mainSliderItems = '';
 	let thumbSliderItems = '';
-	let sliderItemsArr = [];
 
 	let arrLenght = [];
 	let arrErrLenght = [];
-	new Promise(function (resolve) {
-		for (let i = 0; i < 40; i++) {
-			const mainImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
-			const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
-			const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
-			const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
-				if (arrErrLenght.length + arrLenght.length == 40) {
-					sliderItemsArr.push(mainSliderItems, thumbSliderItems);
-					resolve(sliderItemsArr);
-				}
-			};
-			const mainSlideEl = `
+	for (let i = 0; i < 40; i++) {
+		const mainImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
+		const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
+		const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
+
+		const sendHtmlData = (mainSliderItems, thumbSliderItems, arrLenght) => {
+			if (arrErrLenght.length + arrLenght.length == 40) {
+				insertHtml(mainSliderItems,thumbSliderItems);
+				initSwiper();
+			}
+		};
+		const mainSlideEl = `
 			<a  href="${mainImgUrlWebp}"  class="swiper-slide slider-main-img" style="background-image:
 				image-set(
 					url('${mainImgUrlAvif}') type('image/avif'),
@@ -60,7 +59,7 @@ const apartmentSliderRender = (findApartment) => {
 			"></a>
 		`;
 
-			const thumbSlideEl = `
+		const thumbSlideEl = `
 			<div  class="swiper-slide slider-mini-img" style="background-image: 
 				image-set(
 					url('${mainImgUrlAvif}') type('image/avif'),
@@ -70,55 +69,49 @@ const apartmentSliderRender = (findApartment) => {
 			</div>
 		`;
 
-			const mainImgLoad = new Image();
-			if (mainImgUrlAvif) {
-				mainImgLoad.src = mainImgUrlAvif;
-			} else if (mainImgUrlWebp) {
-				mainImgLoad.src = mainImgUrlWebp;
-			} else if (mainImgUrlJpg) {
-				mainImgLoad.src = mainImgUrlJpg;
-			}
-
-			mainImgLoad.onload = () => {
-				new Promise(function (resolve) {
-					const getLenght = () => {
-						arrLenght.push(`slide ${i + 1}`);
-						// console.log(arrLenght.length);
-						// !!!! Тут правильно возвращает
-						return arrLenght;
-					};
-
-					resolve(getLenght());
-				}).then(function (arrLenght) {
-					mainSliderItems += mainSlideEl;
-					thumbSliderItems += thumbSlideEl;
-					// !!
-					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
-					mainImgLoad.remove();
-				});
-			};
-			mainImgLoad.onerror = () => {
-				new Promise(function (resolve) {
-					const getLenght = () => {
-						arrErrLenght.push(`slide ${i + 1}`);
-						// console.log(arrErrLenght.length);
-						// !!!! Тут правильно возвращает
-						return arrLenght;
-					};
-
-					resolve(getLenght());
-				}).then(function (arrLenght) {
-					// !!
-
-					sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
-					mainImgLoad.remove();
-				});
-			};
+		const mainImgLoad = new Image();
+		if (mainImgUrlAvif) {
+			mainImgLoad.src = mainImgUrlAvif;
+		} else if (mainImgUrlWebp) {
+			mainImgLoad.src = mainImgUrlWebp;
+		} else if (mainImgUrlJpg) {
+			mainImgLoad.src = mainImgUrlJpg;
 		}
-	}).then(function (slidesHtml) {
-		insertHtml(slidesHtml);
-		initSwiper();
-	});
+
+		mainImgLoad.onload = () => {
+			new Promise(function (resolve) {
+				const getLenght = () => {
+					arrLenght.push(`slide ${i + 1}`);
+					// console.log(arrLenght.length);
+					// !!!! Тут правильно возвращает
+					return arrLenght;
+				};
+				resolve(getLenght());
+			}).then(function (arrLenght) {
+				mainSliderItems += mainSlideEl;
+				thumbSliderItems += thumbSlideEl;
+				// !!
+				sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+				mainImgLoad.remove();
+			});
+		};
+		mainImgLoad.onerror = () => {
+			new Promise(function (resolve) {
+				const getLenght = () => {
+					arrErrLenght.push(`slide ${i + 1}`);
+					// !!!! Тут правильно возвращает
+					return arrLenght;
+				};
+				resolve(getLenght());
+			}).then(function (arrLenght) {
+				// !!
+				sendHtmlData(mainSliderItems, thumbSliderItems, arrLenght);
+				mainImgLoad.remove();
+			});
+		};
+	}
+
+
 };
 
 export default apartmentSliderRender;

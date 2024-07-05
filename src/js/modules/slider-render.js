@@ -31,7 +31,7 @@ const apartmentSliderRender = (findApartment) => {
 		apartmentSliderSwiper();
 		baguetteBox.run('.swiper .swiper-wrapper');
 	};
-	const sendHtmlData = () => {
+	const renderSlider = () => {
 		if (arrErrLenght.length + arrLenght.length == 40) {
 			insertHtml();
 			initSwiper();
@@ -45,16 +45,16 @@ const apartmentSliderRender = (findApartment) => {
 	let arrErrLenght = [];
 
 	for (let i = 0; i < 40; i++) {
-		const mainImgUrlAvif = `${photosVar}/(${i + 1}).avif`;
-		const mainImgUrlWebp = `${photosVar}/(${i + 1}).webp`;
-		const mainImgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
+		const imgUrlAvif = `${photosVar}/(${i + 1}).avif`;
+		const imgUrlWebp = `${photosVar}/(${i + 1}).webp`;
+		const imgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
 		const mainSlideEl = `
-			<a  href="${mainImgUrlWebp}"  class="swiper-slide slider-main-img" style="background-image:
+			<a  href="${imgUrlWebp}"  class="swiper-slide slider-main-img" style="background-image:
 				image-set(
-					url('${mainImgUrlAvif}') type('image/avif'),
-					url('${mainImgUrlWebp}') type('image/webp'),
-					url('${mainImgUrlJpg}') type('image/jpeg')
+					url('${imgUrlAvif}') type('image/avif'),
+					url('${imgUrlWebp}') type('image/webp'),
+					url('${imgUrlJpg}') type('image/jpeg')
 				)
 			"></a>
 		`;
@@ -62,33 +62,33 @@ const apartmentSliderRender = (findApartment) => {
 		const thumbSlideEl = `
 			<div  class="swiper-slide slider-mini-img" style="background-image: 
 				image-set(
-					url('${mainImgUrlAvif}') type('image/avif'),
-					url('${mainImgUrlWebp}') type('image/webp'),
-					url('${mainImgUrlJpg}') type('image/jpeg')
+					url('${imgUrlAvif}') type('image/avif'),
+					url('${imgUrlWebp}') type('image/webp'),
+					url('${imgUrlJpg}') type('image/jpeg')
 				);">
 			</div>
 		`;
 
-		const mainImgLoad = new Image();
-		if (mainImgUrlAvif) {
-			mainImgLoad.src = mainImgUrlAvif;
-		} else if (mainImgUrlWebp) {
-			mainImgLoad.src = mainImgUrlWebp;
-		} else if (mainImgUrlJpg) {
-			mainImgLoad.src = mainImgUrlJpg;
+		const imgForCheckExist = new Image();
+		if (imgUrlAvif) {
+			imgForCheckExist.src = imgUrlAvif;
+		} else if (imgUrlWebp) {
+			imgForCheckExist.src = imgUrlWebp;
+		} else if (imgUrlJpg) {
+			imgForCheckExist.src = imgUrlJpg;
 		}
 
-		mainImgLoad.onload = () => {
+		imgForCheckExist.onload = () => {
 			arrLenght.push(`slide ${i + 1}`);
 			mainSliderItems += mainSlideEl;
 			thumbSliderItems += thumbSlideEl;
-			sendHtmlData();
-			mainImgLoad.remove();
+			renderSlider();
+			imgForCheckExist.remove();
 		};
-		mainImgLoad.onerror = () => {
+		imgForCheckExist.onerror = () => {
 			arrErrLenght.push(`err slide ${i + 1}`);
-			sendHtmlData();
-			mainImgLoad.remove();
+			renderSlider();
+			imgForCheckExist.remove();
 		};
 	}
 };

@@ -18,6 +18,7 @@ const apartmentSliderRender = (findApartment) => {
 	const mainSlider = document.querySelector('.swiper');
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
+	const preloader = document.querySelector('.swiper-lazy-preloader');
 	const navigationSwiperHtml = `
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
@@ -31,13 +32,17 @@ const apartmentSliderRender = (findApartment) => {
 		apartmentSliderSwiper();
 		baguetteBox.run('.swiper .swiper-wrapper');
 	};
+	const removePreloader = () => {
+		preloader.remove();
+	};
 	const renderSlider = () => {
 		if (arrErrLenght.length + arrLenght.length == 40) {
 			insertHtml();
 			initSwiper();
+			removePreloader();
 		}
 	};
-
+	let per = 'here';
 	let mainSliderItems = '';
 	let thumbSliderItems = '';
 

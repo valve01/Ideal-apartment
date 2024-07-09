@@ -122,7 +122,9 @@ const renderApartmentDetailed = (findApartment) => {
 		
 				<!-- Slider main container -->
 				<div class="swiper">
-		
+
+						<div class="swiper-lazy-preloader"></div>
+						
 					  <!-- Additional required wrapper -->
 					  <div class="swiper-wrapper">
 		

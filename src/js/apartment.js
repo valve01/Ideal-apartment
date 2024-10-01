@@ -129,10 +129,6 @@ const renderApartmentDetailed = (findApartment) => {
 					  <div class="swiper-wrapper">
 		
 						<!-- Slides -->
-						
-		
-		
-		
 					  </div>
 		
 

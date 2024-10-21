@@ -11,6 +11,7 @@ rulesLink.on('click', function (e) {
 	scrollToRules();
 });
 
+//  document.referrer - откуда был переход
 // if (document.referrer.includes('apartment')) {
 // 	// console.log(' содержит apartment');
 // 	scrollToRules();

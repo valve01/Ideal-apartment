@@ -103,13 +103,30 @@ function scssDocs() {
 
 // ========================================================== Images ==================================================================
 
+function makeThumbnails() {
+	return (
+		src('./src/img/apartments/**/*.{png,jpg,jpeg}')
+			// .pipe(changed('./docs/img/'))
+			// .pipe(avif())
+			.pipe(avif({ quality: 10 }))
+			.pipe(dest('./docs/img/apartments-thumbnails/'))
+	);
+}
+
 function imagesDocs() {
 	return (
 		src('./src/img/**/*.{png,jpg,jpeg}')
 			.pipe(changed('./docs/img/'))
-			.pipe(avif())
+			.pipe(avif({ quality: 90 }))
 			.pipe(dest('./docs/img/'))
 			// Два раза обращаемся к /img/
+			// .pipe(avif({ quality: 50 }))
+			// .pipe(src('./docs/img/apartments/**/*'))
+			// .pipe(changed('./docs/img/apartments/'))
+			// .pipe(avif())
+
+			// .pipe(dest('./docs/img/apartments-thumbnails/'))
+
 			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
 			.pipe(changed('./docs/img/'))
 			.pipe(webp())
@@ -199,6 +216,7 @@ function deployGhP() {
 exports.cleanDocs = cleanDocs;
 exports.htmlIncludeDocs = htmlIncludeDocs;
 exports.scssDocs = scssDocs;
+exports.makeThumbnails = makeThumbnails;
 exports.imagesDocs = imagesDocs;
 exports.spriteDocs = spriteDocs;
 exports.fontsDocs = fontsDocs;

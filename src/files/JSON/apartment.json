@@ -5,6 +5,7 @@
 		"street": "Речная 1г",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Af92fa727a26848d4de52bad0f51eb81d6a80bda4efd340f301441a70820c12d3&amp;source=constructor",
 		"photos": "img/apartments/Rechnaya-1g",
+		"thumbnails": "img/apartments-thumbnails/Rechnaya-1g",
 		"videos": "#",
 		"price": {
 			"priceMin": "1700",
@@ -86,6 +87,7 @@
 		"street": "Маршала Жукова 5",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Afb0d1ec2562688d69050861100d4a597f04658e8d8de3e2cca6fa334a4d87253&amp;source=constructor",
 		"photos": "img/apartments/Zhukova-5",
+		"thumbnails": "img/apartments-thumbnails/Zhukova-5",
 		"videos": "#",
 		"price": {
 			"priceMin": "3000",
@@ -166,6 +168,7 @@
 		"street": "Гоголя 6",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A445127c2ae4bcf333f589e602728b01da7b6ca88e0213461c3e0d916c921f113&amp;source=constructor",
 		"photos": "img/apartments/Gogolya-6",
+		"thumbnails": "img/apartments-thumbnails/Gogolya-6",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -246,6 +249,7 @@
 		"street": "Карла Маркса 79",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A733fbe061eb6b2eff712a697ae964910cd043d3bed40bb6fdbc81e9ab56d4dbd&amp;source=constructor",
 		"photos": "img/apartments/Marx-79",
+		"thumbnails": "img/apartments-thumbnails/Marx-79",
 		"videos": "#",
 		"price": {
 			"priceMin": "1500",
@@ -326,6 +330,7 @@
 		"street": "Карла Маркса 61",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A7661adbbf20f31635c03cf5eef221d249091d294398e918e369b0162363fd6d8&amp;source=constructor",
 		"photos": "img/apartments/Marx-61",
+		"thumbnails": "img/apartments-thumbnails/Marx-61",
 		"videos": "#",
 		"price": {
 			"priceMin": "2500",
@@ -406,6 +411,7 @@
 		"street": "Рабфаковская 9",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Aeb665a181b0908273feb7a638344fd4c5d91effe94ab230d75efe7245c3d2198&amp;source=constructor",
 		"photos": "img/apartments/Rabfacovskaya-9",
+		"thumbnails": "img/apartments-thumbnails/Rabfacovskaya-9",
 		"videos": "#",
 		"price": {
 			"priceMin": "2500",
@@ -486,6 +492,7 @@
 		"street": "Портовиков 39/3",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Ace37ac251d54210f6cfaec1c2d1ee09db8d797228fa32341384c4447de95b158&amp;source=constructor",
 		"photos": "img/apartments/Portovikov-39-3",
+		"thumbnails": "img/apartments-thumbnails/Portovikov-39-3",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -566,6 +573,7 @@
 		"street": "Маршала Жукова 20",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A88261d5ca971a0bc3055cead7cc03197d3d2bcb3753fc1a98f6295a4badc11c0&amp;source=constructor",
 		"photos": "img/apartments/Zhukova-20",
+		"thumbnails": "img/apartments-thumbnails/Zhukova-20",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -646,6 +654,7 @@
 		"street": "Карла Маркса 10",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A7772036d8fa25e0a95324b377edbc1a7e82a6abc531b1ce361f83d238f559e4b&amp;source=constructor",
 		"photos": "img/apartments/Marx-10",
+		"thumbnails": "img/apartments-thumbnails/Marx-10",
 		"videos": "#",
 		"price": {
 			"priceMin": "3000",
@@ -726,6 +735,7 @@
 		"street": "Маршала Жукова 1",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Ada6c321d6a624f168aeb491fc131ee7df09a2826d24b580b756122362a9e7c8f&amp;source=constructor",
 		"photos": "img/apartments/Zhukova-1",
+		"thumbnails": "img/apartments-thumbnails/Zhukova-1",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -806,6 +816,7 @@
 		"street": "Карла Маркса 19",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A0adbdf56d547acd78772d8afc1ee97606e5dad5ea37825117db70a91b49e86c6&amp;source=constructor",
 		"photos": "img/apartments/Marx-19",
+		"thumbnails": "img/apartments-thumbnails/Marx-19",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -886,6 +897,7 @@
 		"street": "Кирова 33а",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A2463be4af3014ccfddc212cff659a043583a44443c848286b1a21cb664ff6b3b&amp;source=constructor",
 		"photos": "img/apartments/Kirova-33a-1",
+		"thumbnails": "img/apartments-thumbnails/Kirova-33a-1",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -966,6 +978,7 @@
 		"street": "Фрунзе 25",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A9f5b3d45a633e061ef7b4762e105eda7f5f3bcb4160c14c199c357225d593c78&amp;source=constructor",
 		"photos": "img/apartments/Frunze-25",
+		"thumbnails": "img/apartments-thumbnails/Frunze-25",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -1046,6 +1059,7 @@
 		"street": "Полетаева 2",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3A229ecc57802075183a9caea02efb575509881ee0ef3ccb390d52d10b6d41f3d4&amp;source=constructor",
 		"photos": "img/apartments/Poletaeva-2",
+		"thumbnails": "img/apartments-thumbnails/Poletaeva-2",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",
@@ -1126,6 +1140,7 @@
 		"street": "Портовиков 39/4",
 		"mapUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Adfebd1bd60d6d34ed5e666c2f4f5e8642d8b712cd58be9d9b0d9f2ab534d0209&amp;source=constructor",
 		"photos": "img/apartments/Portovikov-39-4",
+		"thumbnails": "img/apartments-thumbnails/Portovikov-39-4",
 		"videos": "#",
 		"price": {
 			"priceMin": "1400",

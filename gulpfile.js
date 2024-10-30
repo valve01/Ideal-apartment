@@ -25,6 +25,7 @@ const {
 	cleanDocs,
 	htmlIncludeDocs,
 	scssDocs,
+	makeThumbnails,
 	imagesDocs,
 	fontsDocs,
 	copyFilesDocs,
@@ -37,7 +38,15 @@ const {
 
 exports.docs = series(
 	parallel(cleanDocs, cleanPublish),
-	parallel(htmlIncludeDocs, scssDocs, imagesDocs, spriteDocs, fontsDocs, copyFilesDocs, jsDocs),
+	parallel(
+		htmlIncludeDocs,
+		scssDocs,
+		series(makeThumbnails, imagesDocs),
+		spriteDocs,
+		fontsDocs,
+		copyFilesDocs,
+		jsDocs,
+	),
 	parallel(startServerDocs),
 );
 exports.deployGhP = deployGhP;

@@ -1,20 +1,22 @@
 import apartmentSliderSwiper from './apartment-slider-swiper.js';
 import baguetteBox from 'baguettebox.js';
 const apartmentSliderRender = (findApartment) => {
-	const { photos } = findApartment;
+	const { photos, thumbnails } = findApartment;
 
 	// Проверка, если url на github, то вернуть /Ideal-apartment/${photos}, иначе ${photos}
 	let photosVar = '';
 	const setPhotosVar = () => {
 		if (window.location.href.includes('github')) {
 			photosVar = `/Ideal-apartment/${photos}`;
+			thumbsVar = `/Ideal-apartment/${thumbnails}`;
 		} else {
 			photosVar = `${photos}`;
+			thumbsVar = `${thumbnails}`;
 		}
-		return photosVar;
+		return photosVar, thumbsVar;
 	};
 	setPhotosVar();
-
+	console.log(photosVar, thumbsVar);
 	const mainSlider = document.querySelector('.swiper');
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');

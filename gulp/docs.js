@@ -30,6 +30,7 @@ const babel = require('gulp-babel');
 const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
+const { gifsicle, mozjpeg, optipng } = require('gulp-imagemin');
 const svgSprite = require('gulp-svg-sprite');
 
 //Fonts
@@ -107,8 +108,26 @@ function makeThumbnails() {
 	return (
 		src('./src/img/apartments/**/*.{png,jpg,jpeg}')
 			// .pipe(changed('./docs/img/'))
-			// .pipe(avif())
 			.pipe(avif({ quality: 10 }))
+			.pipe(dest('./docs/img/apartments-thumbnails/'))
+
+			.pipe(src('./src/img/apartments/**/*'))
+			// .pipe(changed('./docs/img/'))
+			.pipe(webp({ quality: 10 }))
+			.pipe(dest('./docs/img/apartments-thumbnails/'))
+
+			.pipe(src('./src/img/apartments/**/*'))
+			// .pipe(changed('./docs/img/'))
+			.pipe(
+				imagemin(
+					[
+						gifsicle({ interlaced: true, optimizationLevel: 3 }),
+						mozjpeg({ quality: 10, progressive: true }),
+						optipng({ optimizationLevel: 5 }),
+					],
+					{ verbose: true },
+				),
+			)
 			.pipe(dest('./docs/img/apartments-thumbnails/'))
 	);
 }
@@ -117,21 +136,14 @@ function imagesDocs() {
 	return (
 		src('./src/img/**/*.{png,jpg,jpeg}')
 			.pipe(changed('./docs/img/'))
-			.pipe(avif({ quality: 90 }))
+			.pipe(avif({ quality: 80 }))
 			.pipe(dest('./docs/img/'))
-			// Два раза обращаемся к /img/
-			// .pipe(avif({ quality: 50 }))
-			// .pipe(src('./docs/img/apartments/**/*'))
-			// .pipe(changed('./docs/img/apartments/'))
-			// .pipe(avif())
-
-			// .pipe(dest('./docs/img/apartments-thumbnails/'))
-
+			// Второй раз обращаемся к /img/
 			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg']))
 			.pipe(changed('./docs/img/'))
 			.pipe(webp())
 			.pipe(dest('./docs/img/'))
-			// Третий раза обращаемся к /img/
+			// Третий раз обращаемся к /img/
 			.pipe(src(['./src/img/**/*', '!./src/img/**/*.svg', './src/img/logo.svg']))
 			.pipe(changed('./docs/img/'))
 			.pipe(imagemin({ verbose: true }))

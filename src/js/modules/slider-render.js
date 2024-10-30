@@ -62,7 +62,7 @@ const apartmentSliderRender = (findApartment) => {
 		const thumbImgUrlJpg = `${thumbsVar}/(${i + 1}).jpg`;
 
 		const mainSlideEl = `
-			<a href="${imgUrlWebp}" class="swiper-slide slider-main-img" loading='lazy' style="background-image:
+			<a href="${imgUrlWebp}" class="swiper-slide slider-main-img" style="background-image:
 				image-set(
 					url('${imgUrlAvif}') type('image/avif'),
 					url('${imgUrlWebp}') type('image/webp'),
@@ -72,7 +72,7 @@ const apartmentSliderRender = (findApartment) => {
 		`;
 
 		const thumbSlideEl = `
-			<div class="swiper-slide slider-mini-img" loading='lazy' style="background-image: 
+			<div class="swiper-slide slider-mini-img" style="background-image: 
 				image-set(
 					url('${thumbImgUrlAvif}') type('image/avif'),
 					url('${thumbImgUrlWebp}') type('image/webp'),

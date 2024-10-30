@@ -5,6 +5,7 @@ const apartmentSliderRender = (findApartment) => {
 
 	// Проверка, если url на github, то вернуть /Ideal-apartment/${photos}, иначе ${photos}
 	let photosVar = '';
+	let thumbsVar = '';
 	const setPhotosVar = () => {
 		if (window.location.href.includes('github')) {
 			photosVar = `/Ideal-apartment/${photos}`;
@@ -16,7 +17,7 @@ const apartmentSliderRender = (findApartment) => {
 		return photosVar, thumbsVar;
 	};
 	setPhotosVar();
-	console.log(photosVar, thumbsVar);
+
 	const mainSlider = document.querySelector('.swiper');
 	const mainSliderWrapper = document.querySelector('.swiper .swiper-wrapper');
 	const thumbsSliderWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
@@ -56,8 +57,12 @@ const apartmentSliderRender = (findApartment) => {
 		const imgUrlWebp = `${photosVar}/(${i + 1}).webp`;
 		const imgUrlJpg = `${photosVar}/(${i + 1}).jpg`;
 
+		const thumbImgUrlAvif = `${thumbsVar}/(${i + 1}).avif`;
+		const thumbImgUrlWebp = `${thumbsVar}/(${i + 1}).webp`;
+		const thumbImgUrlJpg = `${thumbsVar}/(${i + 1}).jpg`;
+
 		const mainSlideEl = `
-			<a  href="${imgUrlWebp}"  class="swiper-slide slider-main-img" style="background-image:
+			<a href="${imgUrlWebp}" class="swiper-slide slider-main-img" loading='lazy' style="background-image:
 				image-set(
 					url('${imgUrlAvif}') type('image/avif'),
 					url('${imgUrlWebp}') type('image/webp'),
@@ -67,22 +72,22 @@ const apartmentSliderRender = (findApartment) => {
 		`;
 
 		const thumbSlideEl = `
-			<div  class="swiper-slide slider-mini-img" style="background-image: 
+			<div class="swiper-slide slider-mini-img" loading='lazy' style="background-image: 
 				image-set(
-					url('${imgUrlAvif}') type('image/avif'),
-					url('${imgUrlWebp}') type('image/webp'),
-					url('${imgUrlJpg}') type('image/jpeg')
+					url('${thumbImgUrlAvif}') type('image/avif'),
+					url('${thumbImgUrlWebp}') type('image/webp'),
+					url('${thumbImgUrlJpg}') type('image/jpeg')
 				);">
 			</div>
 		`;
 
 		const imgForCheckExist = new Image();
-		if (imgUrlAvif) {
-			imgForCheckExist.src = imgUrlAvif;
-		} else if (imgUrlWebp) {
-			imgForCheckExist.src = imgUrlWebp;
-		} else if (imgUrlJpg) {
-			imgForCheckExist.src = imgUrlJpg;
+		if (thumbImgUrlAvif) {
+			imgForCheckExist.src = thumbImgUrlAvif;
+		} else if (thumbImgUrlWebp) {
+			imgForCheckExist.src = thumbImgUrlWebp;
+		} else if (thumbImgUrlJpg) {
+			imgForCheckExist.src = thumbImgUrlJpg;
 		}
 
 		imgForCheckExist.onload = () => {
@@ -90,7 +95,7 @@ const apartmentSliderRender = (findApartment) => {
 			mainSliderItems += mainSlideEl;
 			thumbSliderItems += thumbSlideEl;
 			renderSlider();
-			imgForCheckExist.remove();
+			// imgForCheckExist.remove();
 		};
 		imgForCheckExist.onerror = () => {
 			arrErrLenght.push(`err slide ${i + 1}`);

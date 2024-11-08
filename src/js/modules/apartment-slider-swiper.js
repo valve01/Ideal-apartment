@@ -1,9 +1,10 @@
 import Swiper from 'swiper';
-import { Navigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+import 'swiper/css/autoplay'
 
 // import Swiper bundle with all modules installed
 // import Swiper from 'swiper/bundle';
@@ -15,6 +16,13 @@ const apartmentSliderSwiper = () => {
 
 	const thumbsSwiper = new Swiper('.thumbs-swiper', {
 		spaceBetween: 3,
+		modules: [Autoplay],
+
+		autoplay: {
+			delay: 4000,
+			pauseOnMouseEnter: true,
+			stopOnLastSlide: true,
+		  },
 		breakpoints: {
 			0: {
 				slidesPerView: 6,

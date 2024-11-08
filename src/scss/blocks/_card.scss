@@ -180,6 +180,16 @@
 		&__photo-container {
 			width: 300px;
 		}
+		&__photo {
+			& picture {
+				& source,
+				& img {
+					
+					height: 200px;
+					
+				}
+			}
+		}
 		&__price {
 			border-radius: 3px;
 			padding: 4px 8px;
@@ -267,6 +277,16 @@
 		}
 		&__photo-container {
 			width: 340px;
+		}
+		&__photo {
+			& picture {
+				& source,
+				& img {
+					
+					height: 200px;
+					
+				}
+			}
 		}
 		&__price {
 			border-radius: 3px;

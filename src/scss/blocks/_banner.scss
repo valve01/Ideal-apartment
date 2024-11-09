@@ -1,12 +1,9 @@
 .banner {
 	margin-top: -2px;
 	padding: 0 30px 20px 30px;
-	// background-color: var(--color-main);
-
 	background: linear-gradient(-90deg, #35a39e, #613ce7, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,7 +24,7 @@
 	text-transform: uppercase;
 }
 
-@media screen and (min-width: 600px) and (max-width: 959px) {
+@media screen and (max-width: 959px) {
 	.banner {
 		padding: 0 20px 10px 20px;
 		justify-content: space-between;
@@ -41,24 +38,12 @@
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 360px) {
+@media screen and (max-width: 599px) {
 	.banner {
-		padding: 0 20px 10px 20px;
 		justify-content: center;
 		gap: 20px;
 	}
 	.banner-text {
 		display: none;
-	}
-}
-
-@media screen and (max-width: 359px) {
-	.banner {
-		padding: 0 20px 10px 20px;
-		justify-content: center;
-
-	}
-	.banner-text {
-display: none;
 	}
 }

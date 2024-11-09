@@ -31,10 +31,7 @@
 	@extend %--shadow-main;
 }
 
-@media screen and (min-width: 600px) and (max-width: 959px) {
-	.map-main {
-		width: 583px;
-	}
+@media screen and (max-width: 959px) {
 	.map__title {
 		font-size: 24px;
 	}
@@ -45,8 +42,5 @@
 	}
 	.yandex-map {
 		box-shadow: none;
-	}
-	.map__title {
-		font-size: 24px;
 	}
 }

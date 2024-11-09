@@ -1,13 +1,10 @@
-
 .swiper {
-	// width: inherit;
 	width: 835.5px;
 	height: 470px;
 }
 
 .thumbs-swiper {
 	width: 835.5px;
-	// width: fit-content;
 	overflow: hidden;
 	height: 98px;
 	padding: 5px 3px;
@@ -17,6 +14,7 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
+
 @media screen and (min-width: 960px) and (max-width: 1099px) {
 	.swiper,
 	.thumbs-swiper,
@@ -27,6 +25,7 @@
 		height: 396px;
 	}
 }
+
 @media screen and (min-width: 600px) and (max-width: 959px) {
 	.swiper,
 	.thumbs-swiper,
@@ -37,6 +36,7 @@
 		height: 210px;
 	}
 }
+
 @media screen  and (min-width: 500px) and (max-width: 599px) {
 	.swiper,
 	.thumbs-swiper,
@@ -48,6 +48,7 @@
 		height: 260px;
 	}
 }
+
 @media screen  and (min-width: 360px) and (max-width: 499px) {
 	.swiper,
 	.thumbs-swiper,

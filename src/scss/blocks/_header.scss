@@ -1,5 +1,4 @@
 .header {
-	// background-color: var(--color-main);
 	background: linear-gradient(-90deg, #35a39e, #613ce7, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
@@ -12,7 +11,6 @@
 		gap: 15px;
 		padding: 0 15px 0 15px;
 	}
-
 	&__menu-list {
 		display: flex;
 	}
@@ -21,7 +19,6 @@
 		&:last-child {
 			padding-right: 0;
 		}
-
 		&:hover {
 			text-shadow: 4px 4px 10px #ffffffb9;
 			transform: translate(0, -3px);
@@ -48,7 +45,6 @@
 		flex-direction: column;
 		justify-content: center;
 	}
-
 	&__phone-container {
 		min-width: 253px;
 		display: flex;
@@ -129,7 +125,7 @@
 	}
 }
 
-@media screen and (min-width: 600px) and (max-width: 959px) {
+@media screen and (max-width: 959px) {
 	.header__menu-list {
 		display: none;
 	}
@@ -172,38 +168,11 @@
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 360px) {
-	.header__menu-list {
-		display: none;
-	}
-	.social-icons-container {
-		display: flex;
-		gap: 8px;
-		min-width: 80px;
-	}
-	.svg-icons {
-		&--whatsaap-icon-dims {
-			width: 36px;
-			height: 36px;
-		}
-		&--telegram-icon-dims {
-			width: 36px;
-			height: 36px;
-		}
-		&--avito-icon-dims {
-			width: 36px;
-			height: 36px;
-		}
-		&--phone-icon-dims {
-			display: none;
-		}
-	}
+@media screen and (max-width: 599px) {
 	.callback-btn {
 		display: none;
 	}
-
 	.header__phone-container {
-		min-width: 0;
 		font: {
 			size: 12px;
 		}
@@ -215,43 +184,12 @@
 
 @media screen and (max-width: 359px) {
 	.header {
-		&__menu-list {
-			display: none;
-		}
 		&__first-row {
 			flex-wrap: wrap;
 			justify-content: space-around;
 		}
 	}
-
-	.social-icons-container {
-		display: flex;
-		gap: 8px;
-		min-width: 80px;
-	}
-	.svg-icons {
-		&--whatsaap-icon-dims {
-			width: 36px;
-			height: 36px;
-		}
-		&--telegram-icon-dims {
-			width: 36px;
-			height: 36px;
-		}
-		&--avito-icon-dims {
-			width: 36px;
-			height: 36px;
-		}
-		&--phone-icon-dims {
-			display: none;
-		}
-	}
-	.callback-btn {
-		display: none;
-	}
-
 	.header__phone-container {
-		min-width: 0;
 		font: {
 			size: 14px;
 		}

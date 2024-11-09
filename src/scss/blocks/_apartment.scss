@@ -1,6 +1,3 @@
-.main {
-}
-
 .apartment {
 	&__inner {
 		display: grid;
@@ -8,81 +5,15 @@
 		gap: 30px;
 		margin-bottom: 20px;
 	}
-	&__container {
-	}
 	&__adress {
 		font-size: 40px;
 		padding: 30px 0 30px 0;
 	}
-	// &__slider {
-	// width: 835.5px;
-	// margin: 0 auto;
-	// }
 	&__slider-main-container {
-		// width: 100%;
-		// height: 470px;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		// background-color: rgba(159, 207, 231, 0.247);
 	}
-	&__slider-main-img {
-		// width: 100%;
-		// height: 100%;
-		// background-size: contain;
-		// background-repeat: no-repeat;
-		// background-position: 50% 50%;
-	}
-
-	// Кнопки слайдера
-	// &__slider-prev-btn {
-	// 	display: flex;
-	// 	align-items: center;
-	// 	justify-content: center;
-	// 	height: 100%;
-	// 	width: 50px;
-	// 	position: absolute;
-	// 	cursor: pointer;
-	// 	&:hover {
-	// 		transition: 0.5s;
-	// 		background-color: rgba(0, 0, 0, 0.5);
-	// 	}
-	// }
-	// .svg-icons--slider-prev-btn-icon-dims {
-	// 	height: 50px;
-	// }
-	// &__slider-next-btn {
-	// 	right: 0%;
-	// 	display: flex;
-	// 	align-items: center;
-	// 	justify-content: center;
-	// 	width: 50px;
-	// 	height: 100%;
-	// 	position: absolute;
-	// 	cursor: pointer;
-	// 	&:hover {
-	// 		transition: 0.5s;
-	// 		background-color: rgba(0, 0, 0, 0.5);
-	// 	}
-	// }
-	// .svg-icons--slider-next-btn-icon-dims {
-	// 	height: 50px;
-	// }
-
-	// &__slider-full-screen-btn {
-	// 	right: 5px;
-	// 	bottom: 5px;
-	// 	position: absolute;
-	// 	width: 40px;
-	// 	height: 40px;
-	// 	cursor: pointer;
-	// }
-	// &__slider-mini-images-container {
-	// margin-top:5px ;
-	// display: grid;
-	// gap: 3px;
-	// grid-template-columns: repeat(10, 1fr);
-	// }
 	&__label-row-container {
 		font-size: 20px;
 		margin-top: 34px;
@@ -96,8 +27,6 @@
 		align-items: center;
 		justify-content: center;
 	}
-	&__rooms-number {
-	}
 	&__rooms-span {
 		font-size: 14px;
 	}
@@ -106,8 +35,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
-	&__bed-places-number {
 	}
 	&__bed-places-span {
 		font-size: 14px;
@@ -123,7 +50,6 @@
 %slider-mini-img-container-style {
 	cursor: pointer;
 	height: 84px;
-	// width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -164,11 +90,6 @@
 		background-color: #fcfcfc;
 		min-height: 2rem;
 	}
-	&__table-property {
-	}
-	&__table-value {
-	}
-
 	&__checked-condition {
 		width: 50%;
 		display: flex;
@@ -176,8 +97,7 @@
 		margin-top: 10px;
 	}
 }
-.price-section {
-}
+
 .section-title {
 	font-size: 33px;
 	color: var(--text-color);
@@ -188,61 +108,58 @@
 .marked-checkbox-img-container {
 	flex-shrink: 0;
 }
+
 .svg-icons--marked-checkbox-icon-dims {
 	width: 25px;
 	height: 25px;
 	margin: 4px;
 }
-.checked-condition-span {
-}
-.container-rigth {
-}
+
 .separator {
 	margin: 35px 35px 35px 70px;
 	border: 1px solid #d8d8d879;
 }
+
 .separator-vert {
 	margin: 110px 35px 35px 63px;
 	border: 1px solid #d8d8d879;
 }
+
 .map {
 	&__container {
 		max-height: 500px;
 		width: 100%;
 	}
 }
+
 .section-p {
 	margin-top: 20px;
 }
+
 .comment {
 	margin: 35px 0 50px 0;
 	background-color: #f7f7f7;
 	padding: 10px 1rem 1rem 1rem;
 }
+
 .comment-title {
 	font-size: 25px;
 	color: var(--text-color);
 	font-weight: 500;
 }
+
 .comment-p {
 	margin-top: 15px;
 }
+
 .aside-booking-form {
 	margin-top: 109px;
 }
 
-@media screen and (min-width: 960px) and (max-width: 1199px) {
-	// .apartment__slider-mini-images-container {
-	// 	grid-template-columns: repeat(8, 1fr);
-	// }
-}
-@media screen and (min-width: 600px) and (max-width: 959px) {
+@media screen and (max-width: 959px) {
 	.aside-booking-form {
 		margin-top: 67px;
 	}
-	// .apartment__slider-mini-images-container {
-	// 	grid-template-columns: repeat(5, 1fr);
-	// }
 	.separator {
 		margin: 15px 15px 15px 35px;
 	}
@@ -272,13 +189,12 @@
 		gap: 10px;
 		padding: 0 10px 0 10px;
 	}
-
 	%slider-mini-img-container-style {
 		height: 64px;
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 360px) {
+@media screen and (max-width: 599px) {
 	.apartment__inner {
 		grid-template-columns: 1fr;
 		gap: 10px;
@@ -287,8 +203,6 @@
 	.map {
 		margin-left: -10px;
 		margin-right: -10px;
-		&__container {
-		}
 	}
 	%slider-mini-img-container-style {
 		height: 64px;
@@ -296,34 +210,6 @@
 	.apartment__inner {
 		gap: 10px;
 		padding: 0 10px 0 10px;
-	}
-	// .apartment__slider-mini-images-container {
-	// 	grid-template-columns: repeat(5, 1fr);
-	// }
-	.separator {
-		margin: 15px 15px 15px 35px;
-	}
-	.section-title {
-		margin-top: 20px;
-		font-size: 24px;
-	}
-	.section__checked-condition {
-		font-size: $tablet-font-size-common;
-		margin-top: 4px;
-	}
-	.svg-icons--marked-checkbox-icon-dims {
-		width: 20px;
-		height: 20px;
-	}
-	.section__table-container {
-		font-size: $tablet-font-size-common;
-	}
-	.section-p {
-		font-size: $tablet-font-size-common;
-	}
-	.apartment__adress {
-		font-size: 30px;
-		padding: 15px 0 15px 0;
 	}
 	.apartment__slider {
 		margin-left: -10px;
@@ -334,64 +220,22 @@
 @media screen and (max-width: 359px) {
 	.apartment__inner {
 		grid-template-columns: 1fr;
-		gap: 10px;
-		padding: 0 10px 0 10px;
 	}
 	.map {
 		margin-left: -10px;
 		margin-right: -10px;
-		&__container {
-		}
-	}
-	%slider-mini-img-container-style {
-		height: 64px;
-	}
-	.apartment__inner {
-		gap: 10px;
-		padding: 0 10px 0 10px;
-	}
-	// .apartment__slider-mini-images-container {
-	// 	grid-template-columns: repeat(5, 1fr);
-	// }
-	.separator {
-		margin: 15px 15px 15px 35px;
 	}
 	.section-title {
-		margin-top: 20px;
-		font-size: 24px;
 		text-align: center;
 	}
 	.section__checked-condition {
 		width: 100%;
 	}
-	.section__checked-condition {
-		font-size: $tablet-font-size-common;
-		margin-top: 4px;
-	}
-	.svg-icons--marked-checkbox-icon-dims {
-		width: 20px;
-		height: 20px;
-	}
-	.section__table-container {
-		font-size: $tablet-font-size-common;
-	}
-	.section-p {
-		font-size: $tablet-font-size-common;
-	}
-	.apartment__adress {
-		font-size: 30px;
-		padding: 15px 0 15px 0;
-	}
-	.apartment__slider {
-		margin-left: -10px;
-		margin-right: -10px;
-	}
 }
 .apart-detail-descr p {
-	// text-indent: 10px;
 	margin-bottom: 10px;
 }
-.apart-detail-descr-wrapper{
+.apart-detail-descr-wrapper {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }

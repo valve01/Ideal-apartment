@@ -9,7 +9,6 @@
 			transform: scale(1.05);
 			transition: transform 0.2s ease-in-out;
 		}
-
 		transition: transform 0.2s ease-in-out;
 	}
 
@@ -23,7 +22,6 @@
 	}
 	&__photo-container {
 		width: 472px;
-		// max-height: 265px;
 		position: relative;
 		cursor: pointer;
 	}
@@ -78,8 +76,6 @@
 			weight: 600;
 		}
 	}
-	&__bed-place-container {
-	}
 	&__bed-place-title {
 		font: {
 			size: 16px;
@@ -90,13 +86,8 @@
 		display: flex;
 		align-items: center;
 	}
-	&__bed-place-number {
-	}
-	&__bed-place-icon {
-	}
 	&__facilities {
 		display: flex;
-
 		gap: 10px;
 	}
 	&__facilities-icon {
@@ -134,6 +125,7 @@
 		}
 	}
 }
+
 .svg-icons--bed-place-icon-dims {
 	width: 40px;
 	height: 50px;
@@ -163,7 +155,7 @@
 	}
 }
 
-@media screen and (min-width: 600px) and (max-width: 959px) {
+@media screen and (max-width: 959px) {
 	.card {
 		&__container {
 			margin-top: 10px;
@@ -184,9 +176,7 @@
 			& picture {
 				& source,
 				& img {
-					
 					height: 200px;
-					
 				}
 			}
 		}
@@ -260,130 +250,43 @@
 	}
 }
 
-@media screen and (max-width: 599px) and (min-width: 360px) {
+@media screen and (max-width: 599px) {
 	.card {
 		&__container {
 			flex-direction: column;
-			margin-top: 10px;
-			margin-bottom: 20px;
-			&:hover {
-				transform: scale(1.03);
-			}
-		}
-		&__photo-labels-container {
-			top: -8px;
-			left: -8px;
-			width: calc(100% + 16px);
 		}
 		&__photo-container {
 			width: 340px;
 		}
-		&__photo {
-			& picture {
-				& source,
-				& img {
-					
-					height: 200px;
-					
-				}
-			}
-		}
-		&__price {
-			border-radius: 3px;
-			padding: 4px 8px;
-		}
-		&__rooms {
-			border-radius: 3px;
-			padding: 4px 8px;
-			font: {
-				size: 16px;
-				weight: 500;
-			}
-		}
 		&__description {
 			display: grid;
 			grid-template-columns: 1fr 3fr 3fr;
-			padding: 4px 12px 4px 16px;
-			gap: 8px;
-
 			grid-template-areas:
 				'adress adress adress'
 				'bed-place bottom-row bottom-row';
 		}
-		&__title {
-			display: none;
-		}
 		&__adress {
-			margin-top: 5px;
-			font: {
-				size: 16px;
-			}
 			grid-area: adress;
 		}
 		&__bed-place {
 			grid-area: bed-place;
-		}
-		&__bed-place-title {
-			display: none;
 		}
 		&__bottom-row {
 			justify-content: space-between;
 			grid-area: bottom-row;
 		}
 		&__facilities {
-			gap: 4px;
 			padding-left: 20px;
-		}
-	}
-	.svg-icons--bed-place-icon-dims {
-		width: 30px;
-		height: 38px;
-	}
-	.svg-icons--WiFi-icon-dims {
-		width: 30px;
-		height: 30px;
-	}
-	.svg-icons--conditioner-icon-dims {
-		width: 38px;
-		height: 38px;
-	}
-	.svg-icons--washer-icon-dims {
-		width: 30px;
-		height: 30px;
-	}
-	.price-number {
-		font: {
-			size: 16px;
-			weight: 600;
-		}
-	}
-	.price-day {
-		font: {
-			size: 13px;
 		}
 	}
 }
 
 @media screen and (max-width: 359px) {
 	.card {
-		&__container {
-			flex-direction: column;
-			margin-top: 10px;
-			margin-bottom: 20px;
-			&:hover {
-				transform: scale(1.03);
-			}
-		}
-		&__photo-labels-container {
-			top: -8px;
-			left: -8px;
-			width: calc(100% + 16px);
-		}
 		&__photo-container {
 			width: 200px;
 		}
 		&__price {
-			border-radius: 3px;
 			padding: 3px 6px;
 		}
 		&__rooms {
@@ -396,17 +299,11 @@
 		}
 		&__description {
 			max-width: 200px;
-			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			padding: 4px;
-			gap: 8px;
-
 			grid-template-areas:
 				'adress adress'
 				'bed-place bottom-row';
-		}
-		&__title {
-			display: none;
 		}
 		&__adress {
 			padding: 0 4px 0 4px;
@@ -414,50 +311,15 @@
 			font: {
 				size: 14px;
 			}
-			grid-area: adress;
-		}
-		&__bed-place {
-			grid-area: bed-place;
 		}
 		&__bed-place-title {
 			display: none;
-		}
-		&__bottom-row {
-			justify-content: space-between;
-			grid-area: bottom-row;
 		}
 		&__facilities {
 			gap: 4px;
 		}
 		&__detailed-btn {
 			display: none;
-		}
-	}
-	.svg-icons--bed-place-icon-dims {
-		width: 30px;
-		height: 38px;
-	}
-	.svg-icons--WiFi-icon-dims {
-		width: 30px;
-		height: 30px;
-	}
-	.svg-icons--conditioner-icon-dims {
-		width: 38px;
-		height: 38px;
-	}
-	.svg-icons--washer-icon-dims {
-		width: 30px;
-		height: 30px;
-	}
-	.price-number {
-		font: {
-			size: 16px;
-			weight: 600;
-		}
-	}
-	.price-day {
-		font: {
-			size: 13px;
 		}
 	}
 }

@@ -133,6 +133,18 @@
 		}
 	}
 }
+
+@media (pointer: coarse) {
+	.booking-form {
+		&__submit-hide {
+			&:hover {
+				color: #fff;
+				background-color: var(--color-main);
+			}
+		}
+	}
+}
+
 select.booking-form__input {
 	&:focus {
 		outline: none;
@@ -163,6 +175,15 @@ select.booking-form__input {
 	&:hover {
 		color: var(--color-main);
 		background-color: var(--accent);
+	}
+}
+
+@media (pointer: coarse) {
+	.show-booking-form-btn {
+		&:hover {
+			color: #fff;
+			background-color: var(--color-main);
+		}
 	}
 }
 

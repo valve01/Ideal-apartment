@@ -121,6 +121,16 @@
 			opacity: 0.5;
 			cursor: not-allowed;
 		}
+		&:disabled {
+			&:hover {
+				background: var(--color-main);
+				color: #fff;
+			}
+			&:active {
+				transform: none;
+				box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+			}
+		}
 	}
 }
 select.booking-form__input {

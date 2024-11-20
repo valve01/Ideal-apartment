@@ -2,6 +2,7 @@
 
 Посмотреть сайт можно тут:<br>
 <https://valve01.github.io/Ideal-apartment><br>
+<br>
 Посмотреть исходный макет можно тут:<br>
 <https://goo.su/Bd9Mh>
 

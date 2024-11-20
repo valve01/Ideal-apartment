@@ -1,7 +1,7 @@
 # Сайт посуточной аренды квартир
 
 Посмотреть сайт можно тут:
-valve01.github.io/Ideal-apartment/
+<valve01.github.io/Ideal-apartment/>
 
 ## Использованные библиотеки:
 - air-datepicker

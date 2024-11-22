@@ -12,6 +12,17 @@
 - baguettebox.js
 - swiper
 
+## Стэк
+- HTML 5
+- CSS 3
+- SCSS
+- Vanilla JS
+- БЭМ
+- Gulp
+- Webpack
+- SVG
+- Figma
+
 ## Реализовано
 - полный адаптив от 360px до 1920px
 - мобильное меню

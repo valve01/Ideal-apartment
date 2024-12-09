@@ -29,7 +29,11 @@ const getApartmentData = async () => {
 	} catch {}
 };
 getApartmentData();
-
+/**
+ * 
+ * @param {string} parameter 
+ * @returns 
+ */
 const getParameterFromURL = (parameter) => {
 	const urlParams = new URLSearchParams(window.location.search);
 	return urlParams.get(parameter);

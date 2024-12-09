@@ -1,6 +1,8 @@
 const allApartmentsContainer = document.querySelector('.all-apartments-container');
 let apartmentsData = [];
-
+/**
+ * Корневая функция. Рендерит карточку объекта.
+ */
 const cardsRender = async () => {
 	try {
 		if (!apartmentsData.length) {
@@ -91,5 +93,4 @@ const cardsCreate = (apartmentsData) => {
 		allApartmentsContainer.insertAdjacentHTML('beforeend', cardItem);
 	});
 };
-// console.log(apartmentsData);
 cardsRender();
